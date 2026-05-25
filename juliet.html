@@ -1031,15 +1031,67 @@ nav ul a:hover{color:var(--white)}
   .anat-right{position:static;min-height:auto}
   .farm-wrap{grid-template-columns:1fr;gap:3rem}
   .why-grid{grid-template-columns:repeat(2,1fr)}
+  .map-wrap{grid-template-columns:1fr;gap:2.5rem}
 }
 @media(max-width:768px){
-  .container{padding:0 1.5rem}
+  .container{padding:0 1.25rem}
   .paths,.prod-grid,.boxes,.rec-grid{grid-template-columns:1fr}
   nav ul,.nav-wa{display:none}
   .hamburger{display:flex}
-  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr}
   .hero-stats{display:none}
+
+  /* Hero */
+  .hero{padding-bottom:3.5rem}
+  .hero-inner{padding:0 1.25rem}
+  .hero-ctas{flex-direction:column;align-items:stretch;width:100%;max-width:340px;margin-left:auto;margin-right:auto}
+  .hero-cta-grp{width:100%}
+  .hero-cta-grp .btn{width:100%;text-align:center;display:block;box-sizing:border-box}
+  .hero-delivery{font-size:.42rem;letter-spacing:.12em;gap:.35rem}
+
+  /* Breeds */
+  .breed-grid{grid-template-columns:1fr}
+  .breed-grid-2{grid-template-columns:1fr}
+  .breed-row-divider{margin-top:1.5rem}
+
+  /* Map */
+  .map-frame{min-height:240px}
+
+  /* Farm images */
+  .farm-imgs-row{grid-template-columns:1fr}
+
+  /* Steps */
+  .step{grid-template-columns:44px 1fr;gap:1rem}
+  .step-n{font-size:2rem}
+
+  /* Box comparison featured badge */
+  .bc-col.featured{padding-top:2.75rem}
+
+  /* WhatsApp float — iOS safe area */
+  .wa-float{
+    bottom:max(1.25rem,calc(env(safe-area-inset-bottom) + .75rem));
+    right:max(1.25rem,env(safe-area-inset-right));
+    padding:.75rem 1.125rem;font-size:.46rem
+  }
+
+  /* Modals on mobile */
+  .recipe-modal,.box-modal,.breed-modal{padding:2vh .75rem}
+  .recipe-box,.box-panel,.breed-panel{width:100%;max-width:100%}
+  .box-panel-body,.breed-panel-body{padding:1.5rem 1.25rem 2rem}
+}
+@media(max-width:480px){
+  .hero-brand{font-size:clamp(2.75rem,11vw,4.5rem)}
+  .hero h1{font-size:clamp(2rem,8vw,2.8rem)}
+  .anat-tabs{gap:.25rem;flex-wrap:wrap}
+  .anat-tab{font-size:.45rem;padding:.6rem .75rem;letter-spacing:.1em}
+  .breed-info{padding:1.25rem 1.25rem 1.5rem}
+  .bc-col{padding:1.375rem 1.25rem}
+  .bc-col.featured{padding-top:2.75rem}
+  .fstat{padding:1.25rem}
+  .fstat-n{font-size:2.25rem}
+  .why-card{padding:1.5rem 1.25rem}
+  .footer-grid{grid-template-columns:1fr}
 }
 
 /* ── Hero video background ── */
@@ -2056,6 +2108,23 @@ anatObs.observe(document.getElementById('anatomy'));
   });
 
   stage.addEventListener('mouseleave',()=>{
+    tgt = {x:0,y:0,rx:0,ry:0};
+    if(!raf) raf = requestAnimationFrame(tick);
+  });
+
+  // Touch parallax for mobile
+  stage.addEventListener('touchmove',e=>{
+    const r = stage.getBoundingClientRect();
+    const t = e.touches[0];
+    const nx = (t.clientX - r.left) / r.width  - 0.5;
+    const ny = (t.clientY - r.top)  / r.height - 0.5;
+    tgt.x  = nx * 10;
+    tgt.y  = ny * 5;
+    tgt.rx = ny * -3;
+    tgt.ry = nx * 5;
+    if(!raf) raf = requestAnimationFrame(tick);
+  },{passive:true});
+  stage.addEventListener('touchend',()=>{
     tgt = {x:0,y:0,rx:0,ry:0};
     if(!raf) raf = requestAnimationFrame(tick);
   });
