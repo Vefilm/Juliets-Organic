@@ -1,0 +1,287 @@
+{
+  "style_block": "18th-century French copperplate engraving, fine black ink crosshatching on aged cream parchment paper (#F0EAD2), dense parallel hatch lines for shadows, copper plate aesthetic, no color, classical scientific boucherie illustration, consistent line weight 0.3pt, uniform paper grain texture across all assets",
+  "anatomy_illustrations": [
+    {
+      "id": "rabbit_anatomy_chart",
+      "label": "Conejo — Diagrama Anatómico",
+      "output": "illustrations/rabbit_anatomy_chart.png",
+      "is_master": true,
+      "prompt": "Scientific anatomical editorial illustration. Aged cream parchment paper background (#F2EAD3). Domestic rabbit in side profile running pose facing right, full body. The body shows a transparent interior cutaway: exterior outline and head/fur rendered in fine dark pen-and-ink engraving with cross-hatching detail. Inside the body, warm terracotta reddish-brown (burnt sienna) muscle groups are clearly visible — saddle/loin muscle mass along the spine, rib cage muscles, haunch/hind leg muscles, front shoulder muscles — rendered with fine anatomical cross-hatching. Pale cream skeletal structure visible beneath: spine vertebrae, rib cage, pelvis, leg bones. Thin geometric compass-circle and golden-ratio grid lines overlay the background in pale graphite ink. Top-left corner header text in bold serif font: SPECIMEN 01: RABBIT ANATOMY // CULINARY DIVISIONS. Six labeled culinary cuts with thin dashed horizontal leader lines extending left and right to text labels in spaced uppercase sans-serif: SADDLE (LOIN), RACK (RIBS), HIND LEGS, FOREQUARTER (SHOULDER), FLANK, BELLY. Color palette limited to warm parchment, dark pen ink, and terracotta/burnt sienna muscle tones only. High detail, editorial quality, luxury scientific illustration."
+    },
+    {
+      "id": "duck_anatomy_chart",
+      "label": "Pato — Diagrama Anatómico",
+      "output": "illustrations/duck_anatomy_chart.png",
+      "is_master": false,
+      "prompt": "Scientific anatomical editorial illustration. Aged cream parchment paper background (#F2EAD3). Domestic duck in side profile standing pose facing right, full body. Same transparent interior cutaway style as companion rabbit illustration: exterior outline and head/feathers in fine dark pen-and-ink engraving. Inside the body, warm terracotta reddish-brown (burnt sienna) muscle groups visible — large breast/magret pectoral muscle, thigh muscles, drumstick muscles, wing muscles, liver mass — rendered with fine anatomical cross-hatching. Pale cream skeletal structure: keel/sternum bone, wing bones, leg bones, skull, spine vertebrae. Thin geometric compass-circle and golden-ratio grid lines overlay background in pale graphite. Top-left header text: SPECIMEN 02: DUCK ANATOMY // CULINARY DIVISIONS. Six numbered labels with thin dashed leader lines: 1. MAGRET (BREAST), 2. WING, 3. DRUMSTICK, 4. THIGH (CONFIT), 5. LIVER (FOIE GRAS), 6. GIBLETS. Same color palette as companion rabbit: parchment paper, dark pen ink, terracotta muscle tones. Identical line weight, paper texture, and illustration style to reference."
+    },
+    {
+      "id": "chicken_anatomy_chart",
+      "label": "Pollo — Diagrama Anatómico",
+      "output": "illustrations/chicken_anatomy_chart.png",
+      "is_master": false,
+      "prompt": "Scientific anatomical editorial illustration. Aged cream parchment paper background (#F2EAD3). Pasture-raised chicken in side profile standing pose facing right, full body. Same transparent interior cutaway style as companion rabbit and duck illustrations: exterior outline and head/feathers in fine dark pen-and-ink engraving. Inside the body, warm terracotta reddish-brown (burnt sienna) muscle groups visible — large breast/pectoral muscle, thigh muscles, drumstick muscles, wing muscles — rendered with fine anatomical cross-hatching. Pale cream skeletal structure: keel/sternum bone, wing bones, leg bones, skull, spine vertebrae, wishbone. Thin geometric compass-circle and golden-ratio grid lines overlay background in pale graphite. Top-left header text: SPECIMEN 03: CHICKEN ANATOMY // CULINARY DIVISIONS. Five numbered labels with thin dashed leader lines: 1. BREAST (PECHUGA), 2. THIGH (MUSLO), 3. DRUMSTICK (CONTRAMUSLO), 4. WING (ALA), 5. BACK (ESPINAZO). Same color palette as companion series: parchment paper, dark pen ink, terracotta muscle tones. Identical line weight, paper texture, and illustration style to reference."
+    }
+  ],
+  "farm_photography": [
+    {
+      "id": "hero_farm_pasture",
+      "output": "farm/hero_farm_pasture.jpg",
+      "prompt": "Wide cinematic landscape photograph, golden hour late afternoon light, lush green rolling hills in Costa Rica, small organic farm, open pasture, dramatic sky with warm orange and amber tones, no people, photorealistic, 16:9 aspect ratio, ultra high resolution"
+    },
+    {
+      "id": "farm_aerial_sanjose",
+      "output": "farm/farm_aerial_sanjose.jpg",
+      "prompt": "Aerial drone photograph looking down at a small organic farm near San José Costa Rica, green fields divided into paddocks, small farm buildings, surrounded by tropical trees, warm daylight, photorealistic, overhead perspective"
+    },
+    {
+      "id": "farm_aerial_rioclaro",
+      "output": "farm/farm_aerial_rioclaro.jpg",
+      "prompt": "Aerial drone photograph of a lush organic farm in southern Costa Rica near Río Claro, green pasture, hills in background, small farm infrastructure, golden morning light, photorealistic, overhead perspective"
+    },
+    {
+      "id": "farm_animals_pasture",
+      "output": "farm/farm_animals_pasture.jpg",
+      "prompt": "Photorealistic close-up photograph of organic chickens and ducks on open green pasture, Costa Rica tropical farm, natural light, chickens foraging, ducks walking, clean editorial, shallow depth of field, warm tones"
+    },
+    {
+      "id": "farm_rabbit_closeup",
+      "output": "farm/farm_rabbit_closeup.jpg",
+      "prompt": "Photorealistic close-up photograph of a healthy domestic rabbit on green grass, organic farm setting, natural outdoor light, warm tones, shallow depth of field, editorial quality, soft focus background"
+    },
+    {
+      "id": "farm_packaging_vacuum",
+      "output": "farm/farm_packaging_vacuum.jpg",
+      "prompt": "Professional food photography. Two human hands wearing white latex gloves — each hand with exactly five fingers, fully visible, anatomically correct proportions — pressing down on a transparent vacuum-sealed bag of raw rabbit saddle portions. Pale pink rabbit meat with natural white connective tissue lines visible through the clear vacuum plastic. Hands are photographed from slightly above, fingers splayed naturally flat on the bag. Stainless steel work surface. Cool diffused overhead studio lighting. Frame crops at mid-forearm — no face, no body above chest. Sharp focus throughout. Hyper-realistic commercial food photography, no distortion, no missing fingers, no extra fingers."
+    },
+    {
+      "id": "farm_coldchain_delivery",
+      "output": "farm/farm_coldchain_delivery.jpg",
+      "prompt": "Photorealistic photograph of a refrigerated delivery box being handed over, branded cardboard box, refrigerated, clean, professional setting, natural light, hands only, editorial quality"
+    }
+  ],
+  "product_photography": [
+    {
+      "id": "rabbit_whole_overhead",
+      "output": "product/rabbit_whole_overhead.jpg",
+      "prompt": "Professional food photography, overhead flat lay, whole raw organic rabbit portioned and arranged on white butcher paper on dark marble surface, clean editorial style, natural side light, no garnish, high resolution, photorealistic"
+    },
+    {
+      "id": "rabbit_saddle_cut",
+      "output": "product/rabbit_saddle_cut.jpg",
+      "prompt": "Professional food photography, close-up overhead, boneless rabbit saddle cut on white butcher paper, marble surface, soft natural light, editorial quality, clean and precise, photorealistic"
+    },
+    {
+      "id": "rabbit_legs_portioned",
+      "output": "product/rabbit_legs_portioned.jpg",
+      "prompt": "Professional food photography, overhead flat lay, rabbit front and hind legs arranged on dark slate surface, dramatic side light, editorial quality, photorealistic, no garnish"
+    },
+    {
+      "id": "duck_magret_scored",
+      "output": "product/duck_magret_scored.jpg",
+      "prompt": "Professional food photography, overhead close-up, raw duck breast magret with fat cap scored in crosshatch pattern, on marble surface, dramatic natural light, editorial quality, photorealistic"
+    },
+    {
+      "id": "duck_whole_bird",
+      "output": "product/duck_whole_bird.jpg",
+      "prompt": "Professional food photography, overhead flat lay, whole raw organic duck on white butcher paper, dark marble surface, editorial lighting, clean and precise, photorealistic, no garnish"
+    },
+    {
+      "id": "duck_legs_raw",
+      "output": "product/duck_legs_raw.jpg",
+      "prompt": "Professional food photography, overhead, two raw duck legs on marble surface, editorial style, natural side lighting, photorealistic"
+    },
+    {
+      "id": "chicken_whole_pastured",
+      "output": "product/chicken_whole_pastured.jpg",
+      "prompt": "Professional food photography, overhead flat lay, whole raw organic pasture-raised chicken on white butcher paper, light marble surface, clean editorial natural light, photorealistic, no garnish"
+    },
+    {
+      "id": "chicken_portioned_overhead",
+      "output": "product/chicken_portioned_overhead.jpg",
+      "prompt": "Professional food photography, overhead flat lay, organic chicken portioned into pieces breast thighs drumsticks wings arranged on butcher paper, editorial lighting, photorealistic"
+    }
+  ],
+  "recipe_photography": [
+    {
+      "id": "recipe_rabbit_braise",
+      "output": "recipes/recipe_rabbit_braise.jpg",
+      "prompt": "Professional food photography, close-up, braised rabbit legs in white wine sauce, served in a cast iron pot, rustic wooden table, herbs scattered, warm candlelight atmosphere, editorial style, photorealistic"
+    },
+    {
+      "id": "recipe_duck_confit",
+      "output": "recipes/recipe_duck_confit.jpg",
+      "prompt": "Professional food photography, close-up, duck confit with perfectly crispy golden skin, served on a dark plate, glistening rendered fat, thyme garnish, dramatic side lighting, Michelin-quality plating, photorealistic"
+    },
+    {
+      "id": "recipe_roasted_chicken",
+      "output": "recipes/recipe_roasted_chicken.jpg",
+      "prompt": "Professional food photography, three-quarter angle, whole roasted organic chicken in a cast iron pan, golden brown skin, fresh herbs, butter pooling, warm natural light, rustic editorial style, photorealistic"
+    }
+  ],
+  "subscription_boxes": [
+    {
+      "id": "box_essentials_open",
+      "output": "boxes/box_essentials_open.jpg",
+      "prompt": "Overhead flat-lay product photography. Premium organic meat subscription box open, kraft cardboard with white tissue paper interior. Two transparent vacuum-sealed packages of fresh rabbit meat clearly visible: one whole dressed rabbit and one portioned rabbit saddle, pale pink rabbit meat clearly visible through the vacuum plastic. Minimal typographic label stickers on packages. Dark slate countertop, soft diffused overhead studio lighting. Ultra-sharp, photorealistic food photography."
+    },
+    {
+      "id": "box_family_open",
+      "output": "boxes/box_family_open.jpg",
+      "prompt": "Overhead flat-lay product photography. Premium organic meat subscription box open, kraft cardboard with white tissue paper. Three transparent vacuum-sealed packages: one containing a scored duck magret breast with clearly visible diamond crosshatch score marks in the fatty skin, one with two raw duck legs, one with duck wings. Deep red duck meat clearly visible through transparent vacuum packaging. Minimal white label stickers. Dark marble surface. Professional directional food photography lighting. Photorealistic ultra-sharp."
+    },
+    {
+      "id": "box_chefs_selection_open",
+      "output": "boxes/box_chefs_selection_open.jpg",
+      "prompt": "Overhead flat-lay product photography. Premium organic meat subscription box open, dark interior with black tissue paper. Three transparent vacuum-sealed packages: one whole spatchcocked pasture-raised chicken flattened, two bone-in chicken thighs showing golden pastured skin, one portion of chicken liver. Yellow-tinged pastured chicken skin and dark thigh meat visible through vacuum packaging. Embossed premium minimal labels. Dark wood surface. Dramatic overhead studio lighting. Editorial quality photorealistic food photography."
+    },
+    {
+      "id": "box_exterior_branded",
+      "output": "boxes/box_exterior_branded.jpg",
+      "prompt": "Product photography, three-quarter angle, closed premium cardboard delivery box, clean white with minimal dark label, refrigerated, clean white background, editorial product shot, photorealistic"
+    }
+  ],
+  "lifestyle_photography": [
+    {
+      "id": "restaurant_kitchen_service",
+      "output": "lifestyle/restaurant_kitchen_service.jpg",
+      "prompt": "Photorealistic editorial photograph, professional restaurant kitchen during service, chef plating a dish at the pass, warm kitchen lighting, motion and energy, no faces clearly visible, shallow depth of field, cinematic"
+    },
+    {
+      "id": "chef_hands_plating",
+      "output": "lifestyle/chef_hands_plating.jpg",
+      "prompt": "Photorealistic close-up photograph, chef's hands precisely plating a refined meat dish, dark background, dramatic side light, shallow depth of field, Michelin-level presentation, editorial quality"
+    },
+    {
+      "id": "home_cook_kitchen",
+      "output": "lifestyle/home_cook_kitchen.jpg",
+      "prompt": "Photorealistic editorial photograph, person cooking in a bright home kitchen, natural daylight, preparing meat at a wooden cutting board, warm domestic atmosphere, no face needed, lifestyle quality"
+    },
+    {
+      "id": "family_table_dinner",
+      "output": "lifestyle/family_table_dinner.jpg",
+      "prompt": "Photorealistic editorial photograph, overhead view of a family dinner table, roasted chicken as centerpiece, warm candlelight, hands reaching for food, rustic wooden table, warm and inviting atmosphere, no faces needed"
+    }
+  ],
+  "maps": [
+    {
+      "id": "delivery_zone_map",
+      "output": "maps/delivery_zone_map.jpg",
+      "prompt": "Clean minimal illustrated map of Costa Rica, highlighted delivery zones in warm beige and dark ink, Greater Metropolitan Area GAM circled, San José marked, Southern Zone Río Claro marked, elegant cartographic style, aged paper background, no photorealism, editorial illustration style"
+    },
+    {
+      "id": "farm_locations_map",
+      "output": "maps/farm_locations_map.jpg",
+      "prompt": "Luxury illustrated editorial map of Costa Rica. Very dark forest green background, no grid lines, no latitude lines. Costa Rica landmass as a clean filled shape in slightly lighter forest green with a warm gold border outline. Two large soft glowing delivery zone circles: one large semi-transparent warm amber circle centered over the upper-center region (San José / Central Valley area, covering roughly 40% of the country width) and one medium amber circle in the lower-southern area (Río Claro / Southern Zone). The delivery zone circles are soft, glowing, semi-transparent amber — like warm light emanating from each location. Two solid gold pin markers at the center of each zone with small serif text labels: 'Finca Norte' and 'Finca Sur'. Faded italic text 'Océano Pacífico' to the left, 'Mar Caribe' to the right. NO grid lines, NO latitude lines, NO longitude lines. Style: dark luxury editorial, like a Michelin star restaurant brochure. Gold and deep green only."
+    }
+  ],
+  "farm_to_table": [
+    {
+      "id": "step_01_gaze",
+      "output": "sequence/step_01_gaze.jpg",
+      "prompt": "Photorealistic portrait photograph of a healthy adult white New Zealand rabbit standing alert in lush organic pasture grass, golden hour warm amber natural light, extreme shallow depth of field with razor-sharp focus on the rabbit's eye and fur texture, creamy background bokeh of green grass, low angle shot at the rabbit's eye level, the rabbit is calm and noble, clean thick white fur, professional editorial animal photography, 85mm portrait lens aesthetic, ultra high detail, indistinguishable from real photography, no text"
+    },
+    {
+      "id": "step_02_infrastructure",
+      "output": "sequence/step_02_infrastructure.jpg",
+      "prompt": "Wide cinematic establishing shot of a sustainable pasture-based rabbit hutch system on an organic farm, clean well-ventilated raised wooden hutches naturally integrated into rolling green tropical farmland, visible organic feed bins and fresh water dispensers and clean dry straw bedding, green grass pasture surrounding the hutches, warm golden morning light, professional agricultural documentary photography, 24mm wide angle deep depth of field, lush Costa Rica tropical hills in background, photorealistic editorial quality, no people"
+    },
+    {
+      "id": "step_03_verification",
+      "output": "sequence/step_03_verification.jpg",
+      "prompt": "Close-up macro photograph of a professional farmer's weathered hands, one hand gently cradling a small healthy white rabbit, the other hand carefully adjusting a small custom antique-bronze metal ear tag on the rabbit's ear, the ear tag shows a finely engraved QR code and embossed text reading JULIET'S ORGANIC MEATS with a small seal emblem, natural warm diffused light, clean farm setting background slightly blurred, macro photography quality, shallow depth of field, extremely detailed, photorealistic"
+    },
+    {
+      "id": "step_04_transfer",
+      "output": "sequence/step_04_transfer.jpg",
+      "prompt": "Mid-ground photograph taken from inside the back of a clean refrigerated transport van, a farmer in clean work clothes is carefully placing a healthy white rabbit into a professional ventilated white transport container, warm diffused light from open van doors creates a calm gentle atmosphere, clean stainless steel van interior, the scene feels careful and considered not industrial, editorial photojournalism quality, photorealistic, no text"
+    },
+    {
+      "id": "step_05_ledger",
+      "output": "sequence/step_05_ledger.jpg",
+      "prompt": "Extreme close-up macro photograph of an aged cream parchment leather-bound butcher's ledger open on a dark wooden table, a calligraphy quill pen rests diagonally across the page, the page shows elegant hand-inked calligraphy text reading SPECIMEN 01 RABBIT VERIFIED with a date written in the upper margin, beside the quill a deeply pressed wax seal in dark burgundy-red shows an ornate monogram JM in serif font with decorative border, warm raking side lighting, rich shadows and specular highlights, editorial still-life photography, extremely detailed, photorealistic"
+    },
+    {
+      "id": "step_06_master_plate",
+      "output": "sequence/step_06_master_plate.jpg",
+      "prompt": "Overhead flat-lay top-down photograph of a whole rabbit carcass laid out precisely on a clean light marble surface with faint graphite grid lines drawn on the surface, a muted translucent wash of warm terracotta pigment applied selectively to the saddle loin area along the spine and the hind leg portions, the muscle and skeletal structure subtly visible, clean clinical editorial food photography lighting, precise and scientific yet beautiful, photorealistic, no text labels"
+    },
+    {
+      "id": "step_07_marination",
+      "output": "sequence/step_07_marination.jpg",
+      "prompt": "Highly detailed close-up photograph of fabricated rabbit pieces — saddle, hind legs, front quarters — resting in a shallow wide white ceramic dish, pieces generously covered with vibrant fresh green rosemary, thyme and flat-leaf parsley, whole garlic cloves, cracked black pepper, glistening extra virgin olive oil pooling around the pieces, lower edge of frame shows the polished steel handle of a chef's knife resting on a marble surface, warm golden natural side light from a window, editorial food photography, photorealistic, appetizing"
+    },
+    {
+      "id": "step_08_sear",
+      "output": "sequence/step_08_sear.jpg",
+      "prompt": "Dramatic close-up action photograph of herb-rubbed rabbit pieces searing in a hot seasoned cast-iron skillet over a glowing blue-orange gas flame, extreme high contrast, visible maillard reaction caramelization forming golden-brown crust on the meat surface, white steam and aromatic smoke rising, deep orange flame glow beneath the skillet, sharp focus on the caramelized meat surface, flame slightly blurred, professional culinary action photography, cinematic drama, photorealistic"
+    },
+    {
+      "id": "step_09_plating",
+      "output": "sequence/step_09_plating.jpg",
+      "prompt": "Professional fine-dining plating photograph, a chef's hand holds small surgical steel tweezers delicately placing the final sprig of fresh rosemary onto a perfectly roasted rabbit dish arranged on a dark matte ceramic plate, golden-brown roasted rabbit portions alongside roasted root vegetables and a dark glossy jus, warm diffused light from the left, shallow depth of field, dark elegant restaurant background, Michelin-level presentation, editorial food photography, photorealistic"
+    },
+    {
+      "id": "step_10_circle",
+      "output": "sequence/step_10_circle.jpg",
+      "prompt": "Wide cinematic shot of an intimate rustic reclaimed-wood dining table set for one, center of frame the finished succulent roasted rabbit dish on a dark ceramic plate with herbs and jus, in the immediate foreground standing upright is a small custom antique-bronze metal medallion coin showing engraved silhouettes of a rabbit duck and chicken in a circular arrangement with decorative border, warm stone fireplace glowing in the background and a single lit taper candle in a brass holder casting long warm shadows, deep cinematic depth of field, rich amber light, photorealistic editorial hospitality photography"
+    }
+  ],
+  "breeds": [
+    {
+      "id": "silver_fox_portrait",
+      "output": "breeds/silver_fox_portrait.jpg",
+      "prompt": "Photorealistic close-up portrait of a Silver Fox rabbit doe standing alert in organic pasture grass, golden hour warm light. The rabbit has large commercial body type, small head, upright ears. Its coat is distinctively black with dense silver-frosted guard hairs giving a shimmering frosted silver-black sheen across the entire body. Extreme shallow depth of field, razor-sharp focus on the rabbit's eye and the silver-tipped fur texture, warm bokeh background. Professional editorial animal portrait photography, 85mm lens, indistinguishable from real photography, ultra high detail."
+    },
+    {
+      "id": "silver_fox_fullbody",
+      "output": "breeds/silver_fox_fullbody.jpg",
+      "prompt": "Photorealistic full body photograph of a Silver Fox rabbit doe on rustic wooden farm planks in warm natural light. The breed's large commercial body type is clearly visible — broad deep chest, wide well-muscled hindquarters, small head relative to the body, upright ears. The entire coat shows the distinctive silver-frosted black fur with silver-tipped guard hairs catching the light. Natural relaxed pose showing full body proportions. Clean farm environment, soft natural side light, breed documentation quality photography, photorealistic."
+    },
+    {
+      "id": "californian_portrait",
+      "output": "breeds/californian_portrait.jpg",
+      "prompt": "Photorealistic close-up portrait of a Californian rabbit in warm natural daylight. The breed's distinctive Himalayan-type coloring is clearly visible: pure dense white body fur, both ears fully colored dark chocolate-brown to black, dark-pigmented nose and muzzle, soft pink-red eyes. Well-muscled medium-large body, calm friendly expression. Standing on lush green pasture grass. Shallow depth of field, focus on the eye and the sharp color contrast between white body and dark ears. Professional animal portrait photography, photorealistic, ultra high detail."
+    },
+    {
+      "id": "californian_fullbody",
+      "output": "breeds/californian_fullbody.jpg",
+      "prompt": "Photorealistic full body photograph of a Californian rabbit on clean farm surface in natural light. Full breed standard coloring clearly shown: pure white body, both ears solidly dark brown-black, dark nose, dark pigmented feet and lower legs. Broad well-muscled hindquarters, commercial meat-type body, 8 to 11 pounds proportions. Relaxed natural sitting pose. Clean light background, natural bright daylight, breed standard documentation quality, photorealistic."
+    },
+    {
+      "id": "new_zealand_white_portrait",
+      "output": "breeds/new_zealand_white_portrait.jpg",
+      "prompt": "Photorealistic close-up portrait of a New Zealand White rabbit doe standing in lush organic pasture grass, golden hour warm amber light. Pure bright white dense coat, vivid pink-red albino eyes, large well-muscled body, upright ears. Extremely shallow depth of field, razor-sharp focus on the pink-red eye and the brilliant white fur texture, warm green bokeh background. Professional editorial animal portrait photography, 85mm lens, ultra high detail, indistinguishable from real photography."
+    },
+    {
+      "id": "new_zealand_white_fullbody",
+      "output": "breeds/new_zealand_white_fullbody.jpg",
+      "prompt": "Photorealistic full body photograph of a New Zealand White rabbit showing its commercial meat breed characteristics: large 9 to 12 pound pure white body, broad deep chest, prominent well-muscled hindquarters, small upright ears, pink-red albino eyes. Natural relaxed pose on a wooden farm surface. The white coat is clean and dense. Warm natural farm light showing coat quality and body condition. Breed documentation quality photography, photorealistic."
+    },
+    {
+      "id": "pekin_duck_portrait",
+      "output": "breeds/pekin_duck_portrait.jpg",
+      "prompt": "Photorealistic close-up portrait of a Pekin duck standing upright on a wooden farm surface, warm natural daylight. The breed shows its classic characteristics: large round body carried nearly upright at roughly 45 degrees, pure bright white plumage, broad orange-yellow bill, vivid orange feet. Full breast visible, calm expression, alert posture. Shallow depth of field, sharp focus on the bill and white feather texture catching the light. Professional editorial animal portrait photography, 85mm lens, ultra high detail, indistinguishable from real photography."
+    },
+    {
+      "id": "pekin_duck_fullbody",
+      "output": "breeds/pekin_duck_fullbody.jpg",
+      "prompt": "Photorealistic full body photograph of a Pekin duck on organic farm pasture in warm golden hour light. Full breed characteristics clearly shown: massive, heavy-bodied commercial meat duck, pure white plumage throughout, distinctive upright posture at 45-degree angle, broad deep chest and prominent breast, short thick neck, orange-yellow bill, bright orange feet and legs. The hallmark feature is the erect upright carriage unlike wild ducks. Relaxed natural pose showing full commercial body proportions. Soft golden farm light, breed documentation quality photography, photorealistic."
+    },
+    {
+      "id": "muscovy_duck_portrait",
+      "output": "breeds/muscovy_duck_portrait.jpg",
+      "prompt": "Photorealistic close-up portrait of a Muscovy duck showing the breed's most distinctive features: vivid red fleshy caruncles covering the face and base of bill, a flat broad head with a short crest of feathers. Pied black and white plumage. Large calm dark eyes. The caruncles are the defining feature - waxy red-pink fleshy bumps and patches of bare skin around and between the eyes and bill. Farm or natural setting, warm natural side light. Professional editorial animal portrait, shallow depth of field, razor-sharp focus on the textured red caruncles and eye, ultra high detail, indistinguishable from real photography."
+    },
+    {
+      "id": "muscovy_duck_fullbody",
+      "output": "breeds/muscovy_duck_fullbody.jpg",
+      "prompt": "Photorealistic full body photograph of a large Muscovy duck drake on a farm, natural daylight. The breed's characteristics are clearly visible: large heavy body with a more horizontal posture than Pekin ducks, distinctive pied black and white plumage with iridescent green and purple sheen on the black areas, red caruncle patches on the face, broad flat head, strong clawed feet. The Muscovy is notably larger and heavier-framed than other domestic ducks, with a long flat body and broad breast. Natural relaxed pose showing the full commercial body. Warm natural light, breed documentation quality photography, photorealistic."
+    },
+    {
+      "id": "chicken_fullbody",
+      "output": "breeds/chicken_fullbody.jpg",
+      "prompt": "Photorealistic full body photograph of a beautiful pasture-raised hen standing on green grass in warm golden afternoon light. Breed type: golden-amber feathered free-range chicken, full commercial meat breed, heavy-bodied with prominent breast and clean legs. The hen is alert, standing naturally in a relaxed pose facing slightly left. Rich amber and caramel feathers with hints of copper, clean white legs and feet, bright red comb. Background is soft-focus green pasture grass with warm bokeh. Shallow depth of field. Documentary quality farm photography. No cages, no confinement — open pasture. Photorealistic, natural colors, editorial quality."
+    }
+  ]
+}

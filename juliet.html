@@ -1,0 +1,2901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Juliet's Organic Meats — Costa Rica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;display:block}
+button{cursor:pointer;border:none;background:none}
+a{text-decoration:none;color:inherit}
+
+:root{
+  --black:#060606;
+  --ink:#1C1208;
+  --ink-mid:#3D2B1F;
+  --paper:#F0EAD2;
+  --paper2:#E5D9BC;
+  --red:#B11226;
+  --red-d:#7A0C1C;
+  --brass:#8B6914;
+  --brass-l:#C4A44A;
+  --white:#F7F4EE;
+  --grey:#666;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --font-disp:'Cormorant Garamond','Times New Roman',Georgia,serif;
+  --font-body:'EB Garamond',Georgia,'Times New Roman',serif;
+  --font-ui:'Inter',system-ui,-apple-system,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-ui);
+  font-size:1.0625rem;
+  line-height:1.65;
+  background:var(--black);
+  color:var(--white);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,h4{font-family:var(--font-disp);font-weight:400;line-height:1.1}
+h1{font-size:clamp(2.75rem,7vw,5.5rem)}
+h2{font-size:clamp(2rem,5vw,3.75rem)}
+h3{font-size:clamp(1.5rem,3vw,2.25rem)}
+h4{font-size:clamp(1.1rem,2vw,1.5rem)}
+p{font-family:var(--font-body);font-size:1.0625rem;line-height:1.7}
+em{font-family:var(--font-disp)}
+
+/* ── PAPER TEXTURE ── */
+.paper-tex{
+  position:relative;
+  background:var(--paper);
+  color:var(--ink);
+}
+.paper-tex::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:0;
+  opacity:.7;
+}
+.paper-tex>*{position:relative;z-index:1}
+
+/* ── FILM GRAIN ── */
+.film-grain{
+  position:relative;
+  background:var(--black);
+}
+.film-grain::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:0;
+  opacity:.5;
+}
+.film-grain>*{position:relative;z-index:1}
+
+/* ── SECTION BACKGROUND IMAGES ── */
+#hiw{
+  background:
+    linear-gradient(rgba(240,234,210,.88),rgba(240,234,210,.88)),
+    url('assets/lifestyle/restaurant_kitchen_service.jpg') center 35%/cover no-repeat;
+}
+#testi{
+  background:
+    linear-gradient(rgba(240,234,210,.86),rgba(240,234,210,.86)),
+    url('assets/lifestyle/family_table_dinner.jpg') center 45%/cover no-repeat;
+}
+#farm{
+  background:
+    linear-gradient(rgba(6,6,6,.72),rgba(6,6,6,.72)),
+    url('assets/farm/farm_aerial_rioclaro.jpg') center/cover no-repeat;
+}
+#email{
+  background:
+    linear-gradient(rgba(240,234,210,.91),rgba(240,234,210,.91)),
+    url('assets/recipes/recipe_duck_confit.jpg') center 60%/cover no-repeat;
+}
+#why{
+  background:
+    linear-gradient(rgba(6,6,6,.78),rgba(6,6,6,.78)),
+    url('assets/backgrounds/bg_why_kitchen.jpg') center 40%/cover no-repeat;
+}
+#boxes{
+  background:
+    linear-gradient(rgba(6,6,6,.76),rgba(6,6,6,.76)),
+    url('assets/backgrounds/bg_boxes_cuts.jpg') center/cover no-repeat;
+}
+#faq{
+  background:
+    linear-gradient(rgba(6,6,6,.8),rgba(6,6,6,.8)),
+    url('assets/backgrounds/bg_faq_herbs.jpg') center/cover no-repeat;
+}
+#breeds{
+  background:
+    linear-gradient(rgba(6,6,6,.8),rgba(6,6,6,.8)),
+    url('assets/farm/farm_animals_pasture.jpg') center 40%/cover no-repeat;
+}
+#recipes{
+  background:
+    linear-gradient(rgba(248,244,237,.9),rgba(248,244,237,.9)),
+    url('assets/recipes/recipe_roasted_chicken.jpg') center/cover no-repeat;
+}
+#anatomy{
+  background:
+    linear-gradient(rgba(248,244,237,.91),rgba(248,244,237,.91)),
+    url('assets/lifestyle/butcher_hands_board.jpg') center 40%/cover no-repeat;
+}
+#products{
+  background:
+    linear-gradient(rgba(248,244,237,.91),rgba(248,244,237,.91)),
+    url('assets/explainer/03_animals_sunset_portrait.jpg') center 30%/cover no-repeat;
+}
+.path-dark{
+  background:
+    linear-gradient(rgba(6,6,6,.84),rgba(6,6,6,.84)),
+    url('assets/lifestyle/restaurant_kitchen_service.jpg') center 25%/cover no-repeat;
+  border-right:1px solid rgba(247,244,238,.06);
+}
+.path-paper{
+  background:
+    linear-gradient(rgba(248,244,237,.88),rgba(248,244,237,.88)),
+    url('assets/backgrounds/bg_home_family.jpg') center/cover no-repeat;
+  position:relative;
+}
+
+/* ── CHAPTER LABEL ── */
+.ch-label{
+  display:inline-block;
+  font-family:var(--font-ui);
+  font-size:.625rem;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  margin-bottom:1.25rem;
+}
+.film-grain .ch-label,.dark-sec .ch-label{color:var(--brass-l)}
+.paper-tex .ch-label,.light-sec .ch-label{color:var(--red)}
+
+.rule{width:0;height:2px;margin:1rem 0;transition:width .85s .3s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible .rule{width:36px}
+.film-grain .rule,.dark-sec .rule{background:var(--brass-l)}
+.paper-tex .rule,.light-sec .rule{background:var(--red)}
+
+/* ── REVEALS ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(20px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.stagger.visible>:nth-child(1){opacity:1;transform:none;transition-delay:.05s}
+.stagger.visible>:nth-child(2){opacity:1;transform:none;transition-delay:.15s}
+.stagger.visible>:nth-child(3){opacity:1;transform:none;transition-delay:.25s}
+.stagger.visible>:nth-child(4){opacity:1;transform:none;transition-delay:.35s}
+
+/* ── LAYOUT ── */
+.container{max-width:1200px;margin:0 auto;padding:0 2.5rem}
+.sec{padding:6rem 0}
+.sec-wide{padding:8rem 0}
+
+/* ── BUTTONS ── */
+.btn{
+  display:inline-block;
+  font-family:var(--font-ui);
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.9rem 2rem;
+  transition:all .22s var(--ease);
+}
+.btn-red{background:var(--red);color:var(--white)}
+.btn-red:hover{background:var(--red-d)}
+.btn-ghost-w{border:1px solid rgba(247,244,238,.25);color:var(--white)}
+.btn-ghost-w:hover{border-color:var(--white);background:rgba(247,244,238,.06)}
+.btn-ghost-ink{border:1px solid rgba(28,18,8,.35);color:var(--ink)}
+.btn-ghost-ink:hover{background:var(--ink);color:var(--paper)}
+
+
+/* ════════════════════════════════════════════
+   NAV
+════════════════════════════════════════════ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  height:64px;
+  background:var(--black);
+  border-bottom:1px solid rgba(247,244,238,.06);
+  transition:background .3s,backdrop-filter .3s;
+}
+.nav.scrolled{background:rgba(6,6,6,.96);backdrop-filter:blur(14px)}
+.nav-inner{
+  height:100%;max-width:1200px;
+  margin:0 auto;padding:0 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{display:flex;align-items:center;gap:.75rem}
+.logo-j{width:44px;height:44px;flex-shrink:0;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(196,164,74,.25),0 2px 12px rgba(0,0,0,.4)}
+.logo-j img{width:100%;height:100%;object-fit:cover;display:block}
+.logo-txt{display:flex;flex-direction:column}
+.logo-name{font-family:var(--font-disp);font-size:.875rem;color:var(--white);letter-spacing:.02em}
+.logo-sub{font-family:var(--font-ui);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey)}
+nav ul{display:flex;gap:2.25rem;list-style:none}
+nav ul a{
+  font-family:var(--font-ui);
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(247,244,238,.45);
+  transition:color .2s;
+}
+nav ul a:hover{color:var(--white)}
+.nav-wa{
+  font-family:var(--font-ui);font-size:.72rem;
+  letter-spacing:.06em;color:var(--brass-l);
+  display:flex;align-items:center;gap:.35rem;
+}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--white);transition:all .25s}
+
+/* ════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════ */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding-bottom:5rem;
+  background:var(--black);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'J';
+  position:absolute;
+  bottom:-15vh;right:-4vw;
+  font-family:var(--font-disp);
+  font-size:65vw;
+  color:rgba(177,18,38,.03);
+  line-height:1;pointer-events:none;user-select:none;
+  z-index:0;
+}
+.hero-grain{
+  position:absolute;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+  opacity:.4;pointer-events:none;
+}
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:1200px;width:100%;
+  margin:0 auto;padding:0 2.5rem;
+  text-align:center;
+}
+.hero-eye{
+  font-family:var(--font-ui);font-size:.62rem;
+  letter-spacing:.25em;text-transform:uppercase;
+  justify-content:center;
+  color:var(--brass-l);
+  margin-bottom:2rem;
+  display:flex;align-items:center;gap:.75rem;
+}
+.hero-eye::before{content:'';display:block;width:28px;height:1px;background:var(--brass-l)}
+.hero h1{
+  font-size:clamp(2.4rem,5.5vw,5rem);
+  line-height:1.08;
+  color:var(--white);
+  text-align:center;
+  margin-bottom:1.75rem;
+}
+.hero h1 em{font-style:italic;color:rgba(247,244,238,.97)}
+.hero-sub{
+  font-family:var(--font-body);
+  font-size:1.125rem;
+  color:rgba(247,244,238,.5);
+  max-width:44ch;
+  margin-bottom:2.75rem;
+  line-height:1.65;
+}
+.hero-ctas{display:flex;gap:.875rem;flex-wrap:wrap;align-items:flex-start}
+.hero-cta-grp{display:flex;flex-direction:column;gap:.4rem}
+.hero-cta-note{font-family:var(--font-ui);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,244,238,.28)}
+.hero-stats{
+  display:flex;flex-direction:row;justify-content:center;gap:3rem;
+  margin-top:2.5rem;position:relative;z-index:2;
+}
+.hstat{
+  border-right:2px solid rgba(177,18,38,.35);
+  padding-right:1.25rem;text-align:right;
+}
+.hstat-n{font-family:var(--font-disp);font-size:2.25rem;color:var(--white);line-height:1}
+.hstat-l{font-family:var(--font-ui);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey)}
+
+/* ════════════════════════════════════════════
+   TWO PATHWAYS
+════════════════════════════════════════════ */
+.paths{display:grid;grid-template-columns:1fr 1fr;min-height:65vh}
+.path{padding:4.5rem 3.5rem;display:flex;flex-direction:column;justify-content:space-between}
+.path-dark{background:linear-gradient(rgba(6,6,6,.84),rgba(6,6,6,.84)),url('assets/lifestyle/restaurant_kitchen_service.jpg') center 25%/cover no-repeat;border-right:1px solid rgba(247,244,238,.06)}
+.path-paper{background:linear-gradient(rgba(248,244,237,.88),rgba(248,244,237,.88)),url('assets/backgrounds/bg_home_family.jpg') center/cover no-repeat;position:relative}
+.path-paper::after{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+  pointer-events:none;opacity:.6;
+}
+.path-paper>*{position:relative;z-index:1}
+.path-icon{font-size:1.75rem;margin-bottom:1.75rem}
+.path-dark .path-icon{color:var(--brass-l)}
+.path-paper .path-icon{color:var(--red)}
+.path-tag{font-family:var(--font-ui);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.75rem}
+.path-dark .path-tag{color:var(--brass-l)}
+.path-paper .path-tag{color:var(--red)}
+.path h3{margin-bottom:1rem}
+.path-dark h3{color:var(--white)}
+.path-paper h3{color:var(--ink)}
+.path-list{list-style:none;margin-bottom:2.25rem}
+.path-list li{
+  font-family:var(--font-body);font-size:.9375rem;
+  padding:.45rem 0;display:flex;align-items:flex-start;gap:.65rem;
+  border-bottom:1px solid rgba(28,18,8,.07);
+}
+.path-dark .path-list li{border-color:rgba(247,244,238,.06);color:rgba(247,244,238,.6)}
+.path-paper .path-list li{color:var(--ink-mid)}
+.path-list li::before{content:'—';opacity:.4;flex-shrink:0;margin-top:.1rem}
+
+/* ════════════════════════════════════════════
+   ANATOMY / BUTCHER'S GUIDE
+════════════════════════════════════════════ */
+.anat-sec{padding:6rem 0 5rem;background:var(--paper);position:relative}
+.anat-sec::after{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+  pointer-events:none;opacity:.65;z-index:0;
+}
+.anat-sec>.container{position:relative;z-index:1}
+.anat-sec h2{color:var(--ink)}
+.anat-sec h2 em{color:var(--red);font-style:italic}
+.anat-sec .rule{background:var(--red)}
+.anat-sec .ch-label{color:var(--red)}
+.anat-intro{font-family:var(--font-body);color:var(--ink-mid);max-width:55ch;margin:.75rem 0 2.5rem}
+
+.anat-tabs{
+  display:flex;
+  border-bottom:1px solid rgba(28,18,8,.15);
+  margin-bottom:2.75rem;
+}
+.anat-tab{
+  font-family:var(--font-disp);font-size:1.125rem;
+  color:rgba(28,18,8,.3);
+  padding:.875rem 2rem .875rem 0;margin-right:2rem;
+  border:none;background:none;cursor:pointer;
+  position:relative;transition:color .2s;
+}
+.anat-tab::after{
+  content:'';
+  position:absolute;bottom:-1px;left:0;right:2rem;
+  height:2px;background:var(--red);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--ease);
+}
+.anat-tab.active{color:var(--ink)}
+.anat-tab.active::after{transform:scaleX(1)}
+.anat-tab:hover{color:var(--ink-mid)}
+
+.anat-body{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:2.5rem;align-items:start;
+}
+.anat-tagline{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:1.5rem;color:var(--ink-mid);
+  margin-bottom:1.25rem;min-height:1.8em;
+}
+/* ── ANATOMY STAGE (image layers + hit zones) ── */
+.anat-stage{
+  position:relative;
+  width:100%;
+  aspect-ratio:1408/768;
+  overflow:hidden;
+  background:var(--paper2);
+  border:1px solid rgba(28,18,8,.12);
+  cursor:crosshair;
+  transform-style:preserve-3d;
+  will-change:transform,box-shadow;
+  box-shadow:0 12px 42px rgba(28,18,8,.18),0 3px 10px rgba(28,18,8,.1);
+  transition:box-shadow .35s ease;
+}
+.anat-inner{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  z-index:1;
+  user-select:none;pointer-events:none;
+  will-change:transform;
+  transform-origin:center center;
+}
+.anat-surface{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  z-index:2;
+  user-select:none;pointer-events:none;
+  clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
+  transition:clip-path 1.7s cubic-bezier(0.76,0,0.24,1);
+  will-change:transform,clip-path;
+  transform-origin:center center;
+}
+.anat-surface.peeled{
+  clip-path:polygon(0 0,5% -15%,9% 115%,0 100%);
+}
+.anat-zones{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  z-index:3;
+}
+@keyframes zone-pulse{
+  0%,100%{fill:rgba(196,164,74,0);stroke:rgba(196,164,74,.28);stroke-width:.6}
+  50%{fill:rgba(196,164,74,.09);stroke:rgba(196,164,74,.68);stroke-width:.9}
+}
+.zone-hit{
+  fill:transparent;stroke:rgba(196,164,74,.28);stroke-width:.6;
+  stroke-dasharray:3 2;cursor:pointer;
+  animation:zone-pulse 2.6s ease-in-out infinite;
+}
+.zone-hit:hover{
+  animation:none;
+  fill:rgba(196,164,74,.18);stroke:rgba(196,164,74,.72);
+  stroke-width:1.2;stroke-dasharray:3 2;
+}
+.zone-hit.active{
+  animation:none;
+  fill:rgba(196,164,74,.28);stroke:rgba(196,164,74,.95);
+  stroke-width:1.6;stroke-dasharray:3 2;
+}
+
+.anat-right{
+  background:var(--ink);color:var(--paper);
+  padding:0;
+  min-height:360px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:sticky;top:80px;
+  overflow:hidden;
+}
+.anat-empty{position:relative;width:100%;height:100%;min-height:360px;display:flex;align-items:center;justify-content:center}
+.anat-empty-bg{position:absolute;inset:0;background-image:url('assets/lifestyle/butcher_hands_board.jpg');background-size:cover;background-position:center;filter:brightness(.45)}
+.anat-empty-text{position:relative;z-index:2;text-align:center;padding:2rem 2rem}
+.anat-empty-text p{font-family:var(--font-body);font-style:italic;color:rgba(240,236,220,.72);font-size:1rem;line-height:1.7;margin:0}
+.anat-empty-text::before{content:'';display:block;width:32px;height:1px;background:var(--brass-l);margin:0 auto .875rem;opacity:.6}
+.cp-num{font-family:var(--font-ui);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-l);margin-bottom:.625rem}
+.cp-name{font-family:var(--font-disp);font-size:2.25rem;color:var(--paper);line-height:1;margin-bottom:.25rem}
+.cp-rule{width:28px;height:2px;background:var(--brass-l);margin:.75rem 0 1rem}
+.cp-desc{font-family:var(--font-body);font-size:.9375rem;color:rgba(240,234,210,.65);line-height:1.65;margin-bottom:1rem}
+.cp-lbl{font-family:var(--font-ui);font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-l);margin-bottom:.3rem}
+.cp-for{list-style:none;margin-bottom:1rem}
+.cp-for li{
+  font-family:var(--font-ui);font-size:.8125rem;
+  color:rgba(240,234,210,.55);
+  padding:.18rem 0;display:flex;align-items:center;gap:.4rem;
+}
+.cp-for li::before{content:'—';opacity:.35}
+.cp-tip{
+  font-family:var(--font-body);font-style:italic;
+  font-size:.875rem;color:rgba(240,234,210,.45);
+  line-height:1.55;
+  border-top:1px solid rgba(240,234,210,.07);
+  padding-top:.875rem;margin-bottom:.875rem;
+}
+.cp-desel{
+  font-family:var(--font-ui);font-size:.58rem;letter-spacing:.15em;
+  text-transform:uppercase;color:rgba(240,234,210,.25);
+  background:none;border:none;cursor:pointer;padding:0;
+  align-self:flex-start;transition:color .2s;
+}
+.cp-desel:hover{color:rgba(240,234,210,.6)}
+
+/* ════════════════════════════════════════════
+   BREEDS
+════════════════════════════════════════════ */
+.breed-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;background:rgba(247,244,238,.04);
+  border:2px solid rgba(247,244,238,.04);
+  margin-top:2.5rem;
+}
+.breed-card{
+  background:var(--black);
+  display:flex;flex-direction:column;
+  cursor:pointer;
+  transition:transform .3s var(--ease);
+}
+.breed-card:hover{transform:translateY(-3px)}
+.breed-cover{aspect-ratio:3/2;overflow:hidden;flex-shrink:0}
+.breed-cover img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .55s var(--ease);
+}
+.breed-card:hover .breed-cover img{transform:scale(1.04)}
+.breed-info{padding:1.75rem 1.75rem 2rem;flex:1;display:flex;flex-direction:column}
+.breed-num{
+  font-family:var(--font-ui);font-size:.52rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--brass-l);margin-bottom:.5rem;
+}
+.breed-name{
+  font-family:var(--font-disp);font-size:1.625rem;
+  color:var(--white);line-height:1;margin-bottom:.25rem;
+}
+.breed-sci{
+  font-family:var(--font-body);font-style:italic;
+  font-size:.8125rem;color:rgba(247,244,238,.25);margin-bottom:0;
+}
+.breed-rule{width:24px;height:1px;background:var(--brass-l);margin:.875rem 0 .75rem}
+.breed-desc{
+  font-family:var(--font-body);font-size:.9125rem;
+  color:rgba(247,244,238,.5);line-height:1.65;margin-bottom:1.25rem;flex:1;
+}
+.breed-specs{list-style:none;border-top:1px solid rgba(247,244,238,.06);padding-top:.875rem;margin-top:auto}
+.breed-specs li{
+  font-family:var(--font-ui);font-size:.72rem;
+  color:rgba(247,244,238,.32);padding:.24rem 0;
+  display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:1px solid rgba(247,244,238,.04);
+}
+.breed-specs li strong{color:rgba(247,244,238,.58);font-weight:500;text-align:right}
+
+/* ════════════════════════════════════════════
+   DELIVERY MAP
+════════════════════════════════════════════ */
+.map-wrap{
+  display:grid;grid-template-columns:1fr 1.3fr;
+  gap:4rem;align-items:center;
+}
+.map-zone-list{list-style:none;margin:1.25rem 0 1.75rem}
+.map-zone-list li{
+  font-family:var(--font-ui);font-size:.8rem;
+  color:var(--ink-mid);padding:.38rem 0;
+  border-bottom:1px solid rgba(28,18,8,.07);
+  display:flex;align-items:center;gap:.5rem;
+}
+.map-zone-list li::before{content:'—';opacity:.28;flex-shrink:0}
+.map-frame{
+  position:relative;aspect-ratio:4/3;overflow:hidden;
+  background:#061410;
+  box-shadow:0 20px 64px rgba(28,18,8,.32),0 4px 18px rgba(28,18,8,.22),inset 0 0 0 1px rgba(196,164,74,.15);
+}
+.cr-map-svg{
+  position:absolute;inset:0;z-index:1;
+  width:100%;height:100%;
+  padding:3% 3% 3% 6%;
+}
+.cr-land{
+  fill:#152b1c;
+  stroke:#c9a052;stroke-width:1.1;
+  filter:drop-shadow(0 3px 14px rgba(0,0,0,.7));
+}
+.cr-pin-dot{fill:#c9a052}
+.cr-farm-label{
+  fill:rgba(247,244,238,.92);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:9px;letter-spacing:.04em;
+}
+.cr-farm-sub{
+  fill:#c9a052;
+  font-size:5.5px;
+  font-family:var(--font-ui),system-ui,sans-serif;
+  letter-spacing:.22em;text-transform:uppercase;
+}
+.cr-bg-label{
+  fill:rgba(196,164,74,.05);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:22px;letter-spacing:.32em;text-anchor:middle;
+}
+.cr-ocean{
+  fill:rgba(196,164,74,.22);
+  font-family:var(--font-ui),system-ui,sans-serif;
+  font-style:italic;font-size:6.5px;letter-spacing:.18em;
+}
+
+/* ════════════════════════════════════════════
+   PRODUCTS
+════════════════════════════════════════════ */
+.prod-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(28,18,8,.1);
+  border:1px solid rgba(28,18,8,.1);
+  margin-top:2.5rem;
+}
+.prod-card{
+  background:var(--paper);padding:2.25rem 2rem;
+  transition:background .2s;
+}
+.prod-card:hover{background:var(--paper2)}
+.prod-n{font-family:var(--font-disp);font-size:4rem;color:rgba(28,18,8,.06);line-height:1;margin-bottom:.25rem}
+.prod-tag{font-family:var(--font-ui);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem}
+.prod-card h3{color:var(--ink);margin-bottom:.625rem;font-size:1.75rem}
+.prod-card>p{color:var(--ink-mid);font-size:.9375rem;margin-bottom:1rem}
+.prod-list{list-style:none;margin-bottom:1.25rem}
+.prod-list li{
+  font-family:var(--font-ui);font-size:.75rem;
+  color:rgba(61,43,31,.55);padding:.275rem 0;
+  border-bottom:1px solid rgba(28,18,8,.06);
+  display:flex;gap:.5rem;
+}
+.prod-list li::before{content:'—';opacity:.35}
+.prod-link{
+  font-family:var(--font-ui);font-size:.625rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--red);
+  display:inline-flex;align-items:center;gap:.35rem;transition:gap .18s;
+}
+.prod-link:hover{gap:.7rem}
+.prod-link::after{content:'→'}
+
+/* ════════════════════════════════════════════
+   WHY JULIET'S
+════════════════════════════════════════════ */
+.why-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(247,244,238,.04);
+  border-top:1px solid rgba(247,244,238,.06);
+  margin-top:2.5rem;
+}
+.why-card{
+  background:var(--black);padding:2.5rem 2rem;
+  border-top:2px solid transparent;
+  transition:border-color .2s;
+}
+.why-card:hover{border-top-color:var(--red)}
+.why-icon{margin-bottom:1.25rem;color:var(--brass-l);line-height:0}
+.why-icon svg{display:block;width:28px;height:28px}
+.why-card h4{color:var(--white);margin-bottom:.625rem;font-size:1.2rem}
+.why-card p{color:rgba(247,244,238,.4);font-size:.9rem}
+
+/* ════════════════════════════════════════════
+   RESTAURANT BANNER
+════════════════════════════════════════════ */
+.res-ban{
+  background:var(--red-d);padding:6rem 0;
+  text-align:center;position:relative;overflow:hidden;
+}
+.res-ban::before{
+  content:'BOUCHERIE';
+  position:absolute;
+  font-family:var(--font-disp);font-size:18vw;
+  color:rgba(240,234,210,.025);
+  white-space:nowrap;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  pointer-events:none;letter-spacing:.15em;
+}
+.res-ban .ch-label{color:rgba(240,234,210,.45)}
+.res-ban h2{color:var(--white);margin-bottom:1.25rem;max-width:22ch;margin-inline:auto}
+.res-ban>div>p{color:rgba(240,234,210,.55);font-family:var(--font-body);max-width:50ch;margin-inline:auto;margin-bottom:2.25rem}
+
+/* ════════════════════════════════════════════
+   HOW IT WORKS
+════════════════════════════════════════════ */
+.steps{margin-top:2.5rem}
+.step{
+  display:grid;grid-template-columns:72px 1fr;
+  gap:1.75rem;padding:1.75rem 0;
+  border-bottom:1px solid rgba(28,18,8,.1);
+}
+.step:last-child{border-bottom:none}
+.step-n{font-family:var(--font-disp);font-size:3.25rem;color:rgba(28,18,8,.1);line-height:1}
+.step h4{color:var(--ink);margin-bottom:.4rem}
+.step p{color:var(--ink-mid);font-size:.9375rem}
+
+/* ════════════════════════════════════════════
+   HOME BOXES
+════════════════════════════════════════════ */
+.boxes{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;margin-top:2.5rem;
+}
+.box{
+  background:var(--ink);
+  border:1px solid rgba(247,244,238,.05);
+  padding:2.25rem 2rem;position:relative;overflow:hidden;
+  transition:border-color .2s;
+}
+.box:hover{border-color:rgba(177,18,38,.35)}
+.box::before{
+  content:attr(data-r);
+  position:absolute;top:-1rem;right:.75rem;
+  font-family:var(--font-disp);font-size:6rem;
+  color:rgba(247,244,238,.025);line-height:1;pointer-events:none;
+}
+.box-tag{font-family:var(--font-ui);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-l);margin-bottom:.4rem}
+.box h4{color:var(--white);font-size:1.35rem;margin-bottom:.625rem}
+.box>p{color:rgba(247,244,238,.4);font-size:.875rem;margin-bottom:1.25rem}
+.box-price{font-family:var(--font-disp);font-size:1.75rem;color:var(--white);margin-bottom:1.35rem}
+.box-price span{font-family:var(--font-ui);font-size:.7rem;color:var(--grey)}
+
+/* ════════════════════════════════════════════
+   TESTIMONIALS
+════════════════════════════════════════════ */
+.testi-wrap{margin-top:2.5rem;min-height:180px}
+.testi-slide{display:none}
+.testi-slide.on{display:block;animation:tIn .5s var(--ease)}
+@keyframes tIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.testi-q{
+  font-family:var(--font-body);font-style:italic;
+  font-size:1.5rem;color:var(--ink);
+  line-height:1.5;max-width:60ch;margin-bottom:1.25rem;
+}
+.testi-q::before{content:'\201C ';color:var(--red)}
+.testi-author{font-family:var(--font-ui);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid)}
+.testi-dots{display:flex;gap:.45rem;margin-top:1.75rem}
+.tdot{width:6px;height:6px;border-radius:50%;background:rgba(28,18,8,.18);cursor:pointer;border:none;transition:background .2s}
+.tdot.on{background:var(--red)}
+
+/* ════════════════════════════════════════════
+   MADE IN COSTA RICA
+════════════════════════════════════════════ */
+.made-in{
+  position:relative;
+  height:88vh;min-height:480px;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.made-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center 30%;
+  transform:scale(1.03);
+  transition:transform 8s ease;
+}
+.made-in:hover .made-bg{transform:scale(1.0)}
+.made-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,6,6,.92) 0%,rgba(6,6,6,.50) 35%,rgba(6,6,6,.18) 70%,rgba(6,6,6,.08) 100%);
+}
+.made-inner{
+  position:relative;z-index:1;
+  width:100%;padding:0 5% 4.5rem;
+}
+.made-label{
+  font-family:var(--font-ui);font-size:.58rem;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--brass-l);margin-bottom:.875rem;
+  display:flex;align-items:center;gap:.75rem;
+}
+.made-label::before{content:'';width:28px;height:1px;background:var(--brass-l);opacity:.6}
+.made-headline{
+  font-family:'Cormorant Garamond','Times New Roman',Georgia,serif;
+  font-size:clamp(2.5rem,7vw,6rem);
+  font-weight:600;line-height:.88;
+  font-style:italic;
+  color:var(--white);
+  letter-spacing:.02em;
+  margin:0 0 .6rem;
+}
+.made-sub{
+  font-family:var(--font-body);font-style:italic;
+  font-size:1.0625rem;
+  color:rgba(247,244,238,.42);
+  letter-spacing:.03em;margin-top:.75rem;
+}
+
+/* ════════════════════════════════════════════
+   FARM STORY
+════════════════════════════════════════════ */
+.farm-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.farm-list{list-style:none;margin:1.25rem 0}
+.farm-list li{
+  font-family:var(--font-body);font-size:.9375rem;
+  color:rgba(247,244,238,.5);padding:.45rem 0;
+  border-bottom:1px solid rgba(247,244,238,.06);
+  display:flex;gap:.65rem;
+}
+.farm-list li::before{content:'—';opacity:.35}
+.farm-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(247,244,238,.06);margin-top:2rem}
+.fstat{background:rgba(247,244,238,.025);padding:1.75rem;text-align:center}
+.fstat-n{font-family:var(--font-disp);font-size:2.75rem;color:var(--white);line-height:1}
+.fstat-l{font-family:var(--font-ui);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-top:.2rem}
+
+/* ════════════════════════════════════════════
+   RECIPES
+════════════════════════════════════════════ */
+.rec-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(28,18,8,.1);
+  border:1px solid rgba(28,18,8,.1);
+  margin-top:2.5rem;
+}
+.rec-card{background:var(--paper);padding:2.25rem 2rem;transition:background .2s}
+.rec-card:hover{background:var(--paper2)}
+.rec-tag{font-family:var(--font-ui);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem}
+.rec-card h4{color:var(--ink);margin-bottom:.5rem;font-size:1.5rem}
+.rec-card>p{color:var(--ink-mid);font-size:.9375rem;margin-bottom:1.1rem}
+.rec-meta{display:flex;gap:1.25rem;font-family:var(--font-ui);font-size:.62rem;letter-spacing:.06em;color:rgba(61,43,31,.45);text-transform:uppercase}
+
+/* ════════════════════════════════════════════
+   FAQ
+════════════════════════════════════════════ */
+.faq{margin-top:2.5rem}
+.faq-item{border-bottom:1px solid rgba(247,244,238,.07)}
+.faq-q{
+  width:100%;text-align:left;
+  font-family:var(--font-body);font-size:1.0625rem;font-weight:400;
+  color:var(--white);padding:1.375rem 0;
+  display:flex;justify-content:space-between;align-items:center;gap:2rem;
+  background:none;border:none;cursor:pointer;transition:color .2s;
+}
+.faq-q:hover{color:var(--brass-l)}
+.faq-ico{
+  width:18px;height:18px;flex-shrink:0;
+  border:1px solid rgba(247,244,238,.2);border-radius:50%;position:relative;transition:border-color .2s;
+}
+.faq-ico::before,.faq-ico::after{
+  content:'';position:absolute;background:var(--white);
+  top:50%;left:50%;transition:all .22s;
+}
+.faq-ico::before{width:7px;height:1px;transform:translate(-50%,-50%)}
+.faq-ico::after{width:1px;height:7px;transform:translate(-50%,-50%)}
+.faq-item.open .faq-ico{border-color:var(--brass-l)}
+.faq-item.open .faq-ico::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+.faq-a{
+  display:none;
+  font-family:var(--font-body);font-size:.9375rem;
+  color:rgba(247,244,238,.45);
+  padding:0 0 1.375rem;max-width:65ch;line-height:1.7;
+}
+.faq-item.open .faq-a{display:block}
+
+/* ════════════════════════════════════════════
+   EMAIL
+════════════════════════════════════════════ */
+.email-form{max-width:500px;margin-top:2rem}
+.email-row{display:flex;gap:.4rem;margin-bottom:.625rem}
+.email-form input[type=text],.email-form input[type=email]{
+  flex:1;font-family:var(--font-ui);font-size:.875rem;
+  padding:.9rem 1.1rem;
+  border:1px solid rgba(28,18,8,.2);
+  background:rgba(240,234,210,.45);color:var(--ink);
+  outline:none;transition:border-color .2s;
+}
+.email-form input::placeholder{color:rgba(28,18,8,.32)}
+.email-form input:focus{border-color:var(--red)}
+.email-check{
+  display:flex;align-items:center;gap:.5rem;
+  font-family:var(--font-ui);font-size:.8rem;
+  color:var(--ink-mid);cursor:pointer;margin-bottom:1rem;
+}
+
+/* ════════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════════ */
+.footer{background:var(--ink);color:var(--paper);padding:5rem 0 2.75rem}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:2.75rem;margin-bottom:2.75rem;
+}
+.footer-j{font-family:var(--font-disp);font-size:2.5rem;color:var(--brass-l);margin-bottom:.4rem}
+.footer-tag{font-family:var(--font-body);font-size:.875rem;color:rgba(240,234,210,.4);line-height:1.6;max-width:26ch}
+.footer-col h5{font-family:var(--font-ui);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,234,210,.35);margin-bottom:1rem}
+.footer-col ul{list-style:none}
+.footer-col ul li{font-family:var(--font-body);font-size:.875rem;color:rgba(240,234,210,.5);padding:.25rem 0}
+.footer-col ul li a:hover{color:var(--paper)}
+.footer-bot{
+  border-top:1px solid rgba(240,234,210,.07);
+  padding-top:1.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-bot p{font-family:var(--font-ui);font-size:.68rem;color:rgba(240,234,210,.2)}
+
+/* ════════════════════════════════════════════
+   ASSET IMAGES — WIRE-IN
+════════════════════════════════════════════ */
+
+/* Hero background image */
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('assets/farm/hero_farm_pasture.jpg') center/cover no-repeat}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,6,.97) 0%,rgba(6,6,6,.76) 30%,rgba(6,6,6,.52) 65%,rgba(6,6,6,.48) 100%)}
+.hero-brand{font-family:var(--font-disp);font-size:clamp(4rem,13vw,9.5rem);font-style:italic;font-weight:600;color:var(--white);line-height:.88;letter-spacing:.01em;margin-bottom:.2em}
+
+/* Pathway background images */
+.path-dark{background:linear-gradient(rgba(6,6,6,.84),rgba(6,6,6,.84)),url('assets/lifestyle/restaurant_kitchen_service.jpg') center 25%/cover no-repeat;position:relative}
+.path-dark>*{position:relative;z-index:1}
+.path-paper{background:linear-gradient(rgba(248,244,237,.88),rgba(248,244,237,.88)),url('assets/backgrounds/bg_home_family.jpg') center/cover no-repeat;position:relative}
+.path-paper>*{position:relative;z-index:1}
+
+/* Card image bleed — product, recipe, box */
+.prod-img,.rec-img,.box-img{
+  margin:-2.25rem -2rem 1.75rem;
+  width:calc(100% + 4rem);
+  overflow:hidden;
+}
+.prod-img{aspect-ratio:3/2}
+.rec-img{aspect-ratio:4/3}
+.box-img{aspect-ratio:16/9}
+.prod-img img,.rec-img img,.box-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.prod-card:hover .prod-img img,.rec-card:hover .rec-img img,.box:hover .box-img img{transform:scale(1.04)}
+
+/* Restaurant banner — fireplace lifestyle */
+.res-ban{background:var(--black) url('assets/Logo/logo_coin_lifestyle.jpg') center 35%/cover no-repeat}
+.res-ban::after{content:'';position:absolute;inset:0;background:rgba(6,6,6,.72);z-index:0}
+.res-ban::before{z-index:2}
+.res-ban>.container{position:relative;z-index:3}
+
+/* Farm image stack */
+.farm-imgs{margin-bottom:1.5rem}
+.farm-img-main{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-bottom:.875rem;border:1px solid rgba(247,244,238,.06)}
+.farm-imgs-row{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
+.farm-imgs-row img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid rgba(247,244,238,.06)}
+
+/* ── 2-col poultry breed grid ── */
+.breed-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(247,244,238,.04);border:2px solid rgba(247,244,238,.04);margin-top:2px}
+.breed-row-divider{margin:2.5rem 0 0;display:flex;align-items:center;gap:1.25rem}
+.breed-row-divider span{font-family:var(--font-ui);font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(247,244,238,.28)}
+.breed-row-divider::before,.breed-row-divider::after{content:'';height:1px;background:rgba(247,244,238,.1);flex:1}
+.breed-row-divider::after{flex:4}
+
+/* ── Language toggle ── */
+.lang-toggle{font-family:var(--font-ui);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-l);background:none;border:1px solid rgba(196,164,74,.3);padding:.32rem .6rem;cursor:pointer;transition:all .18s;margin-left:.75rem;flex-shrink:0;line-height:1.4}
+.lang-toggle:hover{border-color:var(--brass-l);background:rgba(196,164,74,.09)}
+
+/* ── Recipe modal ── */
+.rec-card{cursor:pointer;transition:transform .3s var(--ease)}
+.rec-card:hover{transform:translateY(-3px)}
+.recipe-modal{display:none;position:fixed;inset:0;z-index:400;background:rgba(6,6,6,.9);backdrop-filter:blur(5px);overflow-y:auto;padding:3vh 1rem}
+.recipe-modal.open{display:flex;align-items:flex-start;justify-content:center}
+.recipe-box{background:var(--paper);color:var(--ink);max-width:680px;width:100%;margin:auto;padding:2.5rem 3rem;position:relative}
+.recipe-close{position:absolute;top:.875rem;right:1.25rem;background:none;border:none;font-size:2rem;color:var(--ink-mid);cursor:pointer;line-height:1;font-family:var(--font-disp);padding:0}
+.recipe-close:hover{color:var(--ink)}
+.recipe-tag-pill{font-family:var(--font-ui);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem}
+.recipe-modal h3{font-size:clamp(1.6rem,4vw,2.25rem);margin:.2rem 0 0;line-height:1.1}
+.recipe-meta-row{display:flex;flex-wrap:wrap;gap:2rem;margin:1.25rem 0 1.5rem;border-top:1px solid rgba(28,18,8,.09);border-bottom:1px solid rgba(28,18,8,.09);padding:.875rem 0}
+.recipe-meta-row dt{font-family:var(--font-ui);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-bottom:.15rem}
+.recipe-meta-row dd{font-family:var(--font-ui);font-size:.825rem;color:var(--ink);font-weight:500;margin:0}
+.recipe-col-head{font-family:var(--font-ui);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin:1.5rem 0 .625rem;border-top:1px solid rgba(28,18,8,.08);padding-top:1.25rem}
+.recipe-box ul{list-style:none;padding:0;margin:0}
+.recipe-box ul li{font-family:var(--font-body);font-size:.9375rem;padding:.3rem 0;border-bottom:1px solid rgba(28,18,8,.05)}
+.recipe-box ol{padding-left:1.1rem;margin:0}
+.recipe-box ol li{font-family:var(--font-body);font-size:.9375rem;padding:.35rem 0;line-height:1.65;color:var(--ink)}
+.recipe-img-header{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-bottom:1.75rem}
+
+/* ── Box detail modal ── */
+.box{cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.box:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.box-modal{display:none;position:fixed;inset:0;z-index:400;background:rgba(6,6,6,.92);backdrop-filter:blur(6px);overflow-y:auto;padding:3vh 1rem}
+.box-modal.open{display:flex;align-items:flex-start;justify-content:center}
+.box-panel{background:#111;color:var(--paper);max-width:720px;width:100%;margin:auto;position:relative;border:1px solid rgba(196,164,74,.18)}
+.box-panel-img{width:100%;aspect-ratio:16/7;object-fit:cover;display:block}
+.box-panel-body{padding:2.5rem 3rem 3rem}
+.box-panel-close{position:absolute;top:.875rem;right:1.25rem;background:none;border:none;font-size:2rem;color:rgba(240,236,220,.45);cursor:pointer;line-height:1;font-family:var(--font-disp);padding:0;z-index:2}
+.box-panel-close:hover{color:var(--brass-l)}
+.box-panel-tag{font-family:var(--font-ui);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-l);margin-bottom:.5rem}
+.box-panel h3{font-family:var(--font-disp);font-size:clamp(1.75rem,4vw,2.5rem);font-weight:400;font-style:italic;color:var(--paper);line-height:1.05;margin:.15rem 0 0}
+.box-panel-rule{width:36px;height:1px;background:var(--brass-l);margin:1.25rem 0}
+.box-section-head{font-family:var(--font-ui);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-l);margin:2rem 0 .875rem;padding-bottom:.5rem;border-bottom:1px solid rgba(196,164,74,.18)}
+.box-contents-list{list-style:none;padding:0;margin:0 0 .5rem}
+.box-contents-list li{font-family:var(--font-body);font-size:.9375rem;color:rgba(240,236,220,.78);padding:.4rem 0;border-bottom:1px solid rgba(240,236,220,.06);display:flex;align-items:baseline;gap:.625rem}
+.box-contents-list li::before{content:'—';color:var(--brass-l);font-size:.75rem;flex-shrink:0}
+.box-breed-row{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:.5rem}
+.box-breed-chip{background:rgba(196,164,74,.1);border:1px solid rgba(196,164,74,.25);padding:.45rem 1rem}
+.box-breed-chip strong{display:block;font-family:var(--font-ui);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-l);margin-bottom:.2rem}
+.box-breed-chip span{font-family:var(--font-body);font-size:.8125rem;color:rgba(240,236,220,.65);font-style:italic}
+.nutri-table{width:100%;border-collapse:collapse;margin-top:.25rem}
+.nutri-table th{font-family:var(--font-ui);font-size:.46rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,236,220,.35);text-align:left;padding:.4rem .5rem .4rem 0;border-bottom:1px solid rgba(240,236,220,.08)}
+.nutri-table td{font-family:var(--font-ui);font-size:.8125rem;color:rgba(240,236,220,.7);padding:.4rem .5rem .4rem 0;border-bottom:1px solid rgba(240,236,220,.05)}
+.nutri-table td:first-child{color:var(--paper);font-weight:500}
+.box-panel-cta{display:inline-block;margin-top:2.25rem;background:none;border:1px solid var(--brass-l);color:var(--brass-l);font-family:var(--font-ui);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;padding:.875rem 2rem;cursor:pointer;transition:all .18s;text-decoration:none}
+.box-panel-cta:hover{background:var(--brass-l);color:var(--ink)}
+
+/* ── Breed detail modal ── */
+.breed-modal{display:none;position:fixed;inset:0;z-index:400;background:rgba(6,6,6,.92);backdrop-filter:blur(6px);overflow-y:auto;padding:3vh 1rem}
+.breed-modal.open{display:flex;align-items:flex-start;justify-content:center}
+.breed-panel{background:#111;color:var(--paper);max-width:680px;width:100%;margin:auto;position:relative;border:1px solid rgba(196,164,74,.18)}
+.breed-panel-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center top;display:block}
+.breed-panel-body{padding:2.25rem 2.75rem 3rem}
+.breed-panel-close{position:absolute;top:.875rem;right:1.25rem;background:none;border:none;font-size:2rem;color:rgba(240,236,220,.45);cursor:pointer;line-height:1;font-family:var(--font-disp);padding:0;z-index:2}
+.breed-panel-close:hover{color:var(--brass-l)}
+.breed-panel-tag{font-family:var(--font-ui);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-l);margin-bottom:.5rem}
+.breed-panel h3{font-family:var(--font-disp);font-size:clamp(1.75rem,4vw,2.5rem);font-weight:400;font-style:italic;color:var(--paper);line-height:1.05;margin:.15rem 0 .2rem}
+.breed-panel-sci{font-family:var(--font-body);font-style:italic;font-size:.8125rem;color:rgba(240,236,220,.28);margin-bottom:0}
+.breed-panel-rule{width:36px;height:1px;background:var(--brass-l);margin:1.25rem 0}
+.breed-panel-desc{font-family:var(--font-body);font-size:.9375rem;color:rgba(240,236,220,.72);line-height:1.7}
+.breed-section-head{font-family:var(--font-ui);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-l);margin:2rem 0 .875rem;padding-bottom:.5rem;border-bottom:1px solid rgba(196,164,74,.18)}
+.breed-nutri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.breed-nutri-cell{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);padding:.625rem .75rem}
+.breed-nutri-cell dt{font-family:var(--font-ui);font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,236,220,.35);margin-bottom:.2rem}
+.breed-nutri-cell dd{font-family:var(--font-ui);font-size:.9375rem;color:var(--paper);font-weight:500;margin:0}
+.breed-nutri-note{font-family:var(--font-ui);font-size:.52rem;letter-spacing:.06em;color:rgba(240,236,220,.25);margin-top:.625rem}
+.breed-best-list{list-style:none;padding:0;margin:0}
+.breed-best-list li{font-family:var(--font-body);font-size:.9375rem;color:rgba(240,236,220,.75);padding:.4rem 0;border-bottom:1px solid rgba(240,236,220,.06);display:flex;align-items:baseline;gap:.625rem}
+.breed-best-list li::before{content:'—';color:var(--brass-l);font-size:.75rem;flex-shrink:0}
+.breed-flavor-text{font-family:var(--font-body);font-size:.9375rem;color:rgba(240,236,220,.72);line-height:1.7}
+
+/* ════════════════════════════════════════════
+   MOBILE MENU
+════════════════════════════════════════════ */
+.mobile-menu{
+  display:none;position:fixed;inset:0;
+  background:var(--black);z-index:200;
+  padding:5rem 2.5rem 3rem;flex-direction:column;
+}
+.mobile-menu.open{display:flex}
+.mmclose{
+  position:absolute;top:1.5rem;right:1.5rem;
+  font-family:var(--font-disp);font-size:1.5rem;
+  color:var(--white);background:none;border:none;cursor:pointer;
+}
+.mobile-menu ul{list-style:none;margin-top:1.5rem}
+.mobile-menu li{border-bottom:1px solid rgba(247,244,238,.07);padding:1.1rem 0}
+.mobile-menu li a{font-family:var(--font-disp);font-size:1.75rem;color:var(--white);display:block}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .anat-body{grid-template-columns:1fr;gap:2rem}
+  .anat-right{position:static;min-height:auto}
+  .farm-wrap{grid-template-columns:1fr;gap:3rem}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .container{padding:0 1.5rem}
+  .paths,.prod-grid,.boxes,.rec-grid{grid-template-columns:1fr}
+  nav ul,.nav-wa{display:none}
+  .hamburger{display:flex}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr}
+  .hero-stats{display:none}
+}
+
+/* ── Hero video background ── */
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease}
+.hero-video.loaded{opacity:1}
+
+/* ── Hero headline word stagger ── */
+.hero h1.reveal{opacity:1 !important;transform:none !important;transition:none !important}
+.hero h1 > span,.hero h1 > em{display:block;animation:heroWordIn .72s cubic-bezier(.22,.61,.36,1) both}
+.hero h1 > span:nth-child(1){animation-delay:.38s}
+.hero h1 > em:nth-child(2)  {animation-delay:.58s}
+.hero h1 > span:nth-child(3){animation-delay:.78s}
+.hero h1 > span:nth-child(4){animation-delay:.98s}
+@keyframes heroWordIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ── Live delivery dot ── */
+.hero-delivery{display:flex;align-items:center;justify-content:center;gap:.55rem;margin-top:1.1rem;font-family:var(--font-ui);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,244,238,.32)}
+.delivery-pulse{width:6px;height:6px;border-radius:50%;background:#25D366;flex-shrink:0;animation:dpulse 2.2s ease-in-out infinite}
+@keyframes dpulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(37,211,102,.55)}60%{opacity:.85;box-shadow:0 0 0 6px rgba(37,211,102,0)}}
+
+/* ── Box comparison strip ── */
+.box-compare{padding:4rem 0;background:rgba(6,6,6,.96);border-top:1px solid rgba(196,164,74,.1);border-bottom:1px solid rgba(196,164,74,.1)}
+.box-compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:2.5rem;border:1px solid rgba(196,164,74,.14)}
+.bc-col{padding:2rem 1.75rem;border-right:1px solid rgba(196,164,74,.1);position:relative}
+.bc-col:last-child{border-right:none}
+.bc-col.featured::before{content:'Most Popular';position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-family:var(--font-ui);font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;padding:.3rem .9rem;white-space:nowrap}
+.bc-head{font-family:var(--font-disp);font-size:1.25rem;font-style:italic;color:var(--brass-l);margin-bottom:.25rem}
+.bc-price{font-family:var(--font-ui);font-size:1.5rem;color:var(--white);font-weight:600;margin-bottom:1.5rem}
+.bc-price span{font-size:.55rem;letter-spacing:.1em;color:rgba(247,244,238,.3);font-weight:400}
+.bc-row{display:flex;justify-content:space-between;align-items:baseline;padding:.5rem 0;border-bottom:1px solid rgba(247,244,238,.06);gap:.5rem}
+.bc-row:last-of-type{border-bottom:none}
+.bc-lbl{font-family:var(--font-ui);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,244,238,.32)}
+.bc-val{font-family:var(--font-body);font-size:.8125rem;color:rgba(247,244,238,.82);text-align:right}
+.bc-cta{display:block;margin-top:1.75rem;background:none;border:1px solid rgba(196,164,74,.45);color:var(--brass-l);font-family:var(--font-ui);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;padding:.75rem 0;text-align:center;text-decoration:none;transition:background .18s,border-color .18s,color .18s;cursor:pointer;width:100%}
+.bc-cta:hover{background:var(--brass-l);border-color:var(--brass-l);color:var(--ink)}
+.bc-col.featured .bc-cta{border-color:var(--red);color:var(--white)}
+.bc-col.featured .bc-cta:hover{background:var(--red);border-color:var(--red)}
+@media(max-width:768px){.box-compare-grid{grid-template-columns:1fr}.bc-col{border-right:none;border-bottom:1px solid rgba(196,164,74,.1)}.bc-col:last-child{border-bottom:none}}
+
+/* ── Scroll progress bar ── */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--red),var(--brass-l));z-index:2001;pointer-events:none;transition:width .08s linear}
+
+/* ── WhatsApp sticky float ── */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:1500;display:flex;align-items:center;gap:.625rem;background:#25D366;color:#fff;font-family:var(--font-ui);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;padding:.8rem 1.375rem;text-decoration:none;box-shadow:0 4px 22px rgba(0,0,0,.38),0 1px 6px rgba(0,0,0,.18);transition:background .18s,transform .2s,box-shadow .2s;white-space:nowrap;border-radius:0}
+.wa-float:hover{background:#1ebe5a;transform:translateY(-3px);box-shadow:0 10px 34px rgba(0,0,0,.45)}
+.wa-float svg{flex-shrink:0;display:block}
+@media(max-width:768px){.wa-float{bottom:1.25rem;right:1.25rem;padding:.7rem 1rem;font-size:.46rem}}
+</style>
+</head>
+<body>
+
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<a href="https://wa.me/50660000000?text=Hello%2C%20I%27d%20like%20to%20order%20from%20Juliet%27s%20Organic%20Meats." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Order on WhatsApp
+</a>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-j"><img src="assets/Logo/logo_coin_clean.jpg" alt="Juliet's Organic Meats — medallion logo"/></span>
+      <span class="logo-txt">
+        <span class="logo-name">Juliet's</span>
+        <span class="logo-sub">Organic Meats</span>
+      </span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#" data-i18n="nav_home">Home</a></li>
+        <li><a href="#pathways" data-i18n="nav_restaurants">For Restaurants</a></li>
+        <li><a href="#pathways" data-i18n="nav_home2">For Home</a></li>
+        <li><a href="#anatomy" data-i18n="nav_cuts">Our Cuts</a></li>
+        <li><a href="#farm" data-i18n="nav_farm">Our Farm</a></li>
+        <li><a href="#recipes" data-i18n="nav_recipes">Recipes</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="https://wa.me/50660000000?text=Hello%2C%20I%27d%20like%20to%20order%20from%20Juliet%27s%20Organic%20Meats." class="nav-wa" target="_blank" rel="noopener">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      +506 6000-0000
+    </a>
+    <button class="lang-toggle" id="langToggle" onclick="toggleLang()">ES</button>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mmclose" id="mmclose">×</button>
+  <ul>
+    <li><a href="#" data-i18n="nav_home">Home</a></li>
+    <li><a href="#pathways" data-i18n="nav_restaurants">For Restaurants</a></li>
+    <li><a href="#pathways" data-i18n="nav_home2">For Home</a></li>
+    <li><a href="#anatomy" data-i18n="nav_cuts">Our Cuts</a></li>
+    <li><a href="#farm" data-i18n="nav_farm">Our Farm</a></li>
+    <li><a href="#recipes" data-i18n="nav_recipes">Recipes</a></li>
+    <li><a href="#email" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <a href="#email" class="btn btn-red" data-i18n="mob_wa" style="margin-top:2rem;display:inline-block">WhatsApp Us</a>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <video class="hero-video" id="heroVid" autoplay muted loop playsinline preload="auto">
+      <source src="assets/videos/04_farm_establishing.mp4" type="video/mp4">
+      <source src="assets/videos/01_aerial_farm.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-grain"></div>
+  <div class="hero-inner">
+    <div class="hero-brand reveal">Juliet's</div>
+    <div class="hero-eye reveal" data-i18n="hero_eye">Juliet's Organic Meats &nbsp;·&nbsp; Costa Rica</div>
+    <h1 class="reveal">
+      <span data-i18n="hero_organic" style="display:block;font-size:.26em;letter-spacing:.28em;color:rgba(247,244,238,.38);font-style:normal;margin-bottom:.55em">ORGANIC</span>
+      <em data-i18n="hero_animals">Rabbit, Duck</em>
+      <span data-i18n="hero_amp" style="display:block;font-size:.28em;color:var(--brass-l);letter-spacing:.55em;margin:.32em 0;font-style:normal">&amp;</span>
+      <span data-i18n="hero_chicken" style="display:block;font-size:.62em;color:rgba(247,244,238,.88);font-style:normal">Pasture&#8209;Raised Chicken</span>
+    </h1>
+    <p class="hero-sub reveal" data-i18n="hero_sub">Raised between San José and Río Claro. No hormones, no antibiotics. Delivered refrigerated to your kitchen — or your restaurant's pass.</p>
+    <div class="hero-ctas stagger" style="justify-content:center">
+      <div class="hero-cta-grp">
+        <a href="#pathways" class="btn btn-red" data-i18n="hero_cta1">I'm a Restaurant / Hotel</a>
+        <span class="hero-cta-note" data-i18n="hero_cta1_note">Special cuts &amp; volume pricing</span>
+      </div>
+      <div class="hero-cta-grp">
+        <a href="#pathways" class="btn btn-ghost-w" data-i18n="hero_cta2">Shop for My Home</a>
+        <span class="hero-cta-note" data-i18n="hero_cta2_note">Family boxes &amp; individual cuts</span>
+      </div>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l" data-i18n="hero_stat1">Organic</div></div>
+      <div class="hstat"><div class="hstat-n">2</div><div class="hstat-l" data-i18n="hero_stat2">Farms</div></div>
+      <div class="hstat"><div class="hstat-n">3</div><div class="hstat-l" data-i18n="hero_stat3">Animals</div></div>
+    </div>
+    <div class="hero-delivery reveal">
+      <span class="delivery-pulse"></span>
+      Now delivering · GAM &nbsp;·&nbsp; San José &nbsp;·&nbsp; Zona Sur
+    </div>
+  </div>
+</section>
+
+<!-- ══ TWO PATHWAYS ══════════════════════════════════ -->
+<section class="paths" id="pathways">
+  <div class="path path-dark reveal">
+    <div>
+      <div class="path-icon">⚔</div>
+      <div class="path-tag" data-i18n="path1_tag">For Restaurants &amp; Hotels</div>
+      <h3 data-i18n="path1_h3" style="color:var(--white)">Professional<br>Kitchen Partner</h3>
+      <div class="rule"></div>
+      <ul class="path-list">
+        <li data-i18n="path1_li1">Consistent supply from San José and Río Claro</li>
+        <li data-i18n="path1_li2">Rabbit, duck and organic chicken for fine dining</li>
+        <li data-i18n="path1_li3">Standardized cuts &amp; consistent gram weights</li>
+        <li data-i18n="path1_li4">Personalized service and volume pricing</li>
+        <li data-i18n="path1_li5">Punctual refrigerated delivery on your schedule</li>
+      </ul>
+    </div>
+    <a href="#email" class="btn btn-red" data-i18n="path1_btn">View Restaurant Solutions</a>
+  </div>
+  <div class="path path-paper reveal">
+    <div>
+      <div class="path-icon">⌂</div>
+      <div class="path-tag" data-i18n="path2_tag">For Your Home</div>
+      <h3 data-i18n="path2_h3" style="color:var(--ink)">The Home<br>Table</h3>
+      <div class="rule" style="background:var(--red)"></div>
+      <ul class="path-list">
+        <li data-i18n="path2_li1">Organic boxes with chicken, duck and rabbit</li>
+        <li data-i18n="path2_li2">Practical cuts for everyday meals or special dinners</li>
+        <li data-i18n="path2_li3">Refrigerated delivery in San José, GAM &amp; Southern Zone</li>
+        <li data-i18n="path2_li4">Flexible subscription or one-time orders</li>
+        <li data-i18n="path2_li5">Recipes and cooking guides included</li>
+      </ul>
+    </div>
+    <a href="#email" class="btn btn-ghost-ink" data-i18n="path2_btn">Shop Family Boxes</a>
+  </div>
+</section>
+
+<!-- ══ ANATOMY ════════════════════════════════════════ -->
+<section class="anat-sec" id="anatomy">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" style="color:var(--red)" data-i18n="anat_label">The Butcher's Guide</div>
+      <h2 style="color:var(--ink)" data-i18n="anat_h2">Know Every Cut.<br><em>Know What It's For.</em></h2>
+      <div class="rule" style="background:var(--red)"></div>
+      <p class="anat-intro" data-i18n="anat_intro">Scroll to reveal the anatomy. Click any cut to explore its flavor profile, best cooking methods, and chef's notes.</p>
+    </div>
+    <div class="anat-tabs reveal">
+      <button class="anat-tab active" data-animal="rabbit" data-i18n="anat_tab1">Rabbit</button>
+      <button class="anat-tab" data-animal="duck" data-i18n="anat_tab2">Duck</button>
+      <button class="anat-tab" data-animal="chicken" data-i18n="anat_tab3">Chicken</button>
+    </div>
+    <div class="anat-body">
+      <div class="anat-left">
+        <p class="anat-tagline" id="anat-tagline"></p>
+        <div class="anat-stage" id="anat-stage"></div>
+      </div>
+      <div class="anat-right" id="diag-right">
+        <div class="anat-empty">
+          <div class="anat-empty-bg"></div>
+          <div class="anat-empty-text"><p data-i18n="anat_empty_text">Click any cut on the diagram<br>to explore its profile.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRODUCTS ══════════════════════════════════════ -->
+<section class="paper-tex sec" id="products">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" data-i18n="prod_label">Our Animals</div>
+      <h2 data-i18n="prod_h2">Three Animals.<br>One Standard.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="prod-grid stagger">
+      <div class="prod-card">
+        <div class="prod-img"><img src="assets/farm/farm_rabbit_closeup.jpg" alt="Organic Rabbit" loading="lazy"/></div>
+        <div class="prod-n">01</div>
+        <div class="prod-tag" data-i18n="prod1_tag">Small Farm · San José</div>
+        <h3 data-i18n="prod1_h3">Organic Rabbit</h3>
+        <p data-i18n="prod1_p">Tender, lean and delicately flavored. Ideal for stews, ragùs and gourmet preparations at home or on your menu.</p>
+        <ul class="prod-list">
+          <li data-i18n="prod1_li1">Whole or portioned</li>
+          <li data-i18n="prod1_li2">Special cuts for restaurants</li>
+          <li data-i18n="prod1_li3">Saddle, legs, loin separately</li>
+        </ul>
+        <a href="#anatomy" class="prod-link" data-i18n="prod_explore">Explore Cuts</a>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img"><img src="assets/breeds/pekin_duck_fullbody.jpg" alt="Organic Duck" loading="lazy"/></div>
+        <div class="prod-n">02</div>
+        <div class="prod-tag" data-i18n="prod2_tag">Free Range · Río Claro</div>
+        <h3 data-i18n="prod2_h3">Organic Duck</h3>
+        <p data-i18n="prod2_p">Pasture-raised duck with high-quality fat and rich, intense meat. Perfect for confit, magret and chef-driven plates.</p>
+        <ul class="prod-list">
+          <li data-i18n="prod2_li1">Breasts, legs and whole duck</li>
+          <li data-i18n="prod2_li2">Professional kitchen presentations</li>
+          <li data-i18n="prod2_li3">Duck fat available separately</li>
+        </ul>
+        <a href="#anatomy" class="prod-link" data-i18n="prod_explore">Explore Cuts</a>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img"><img src="assets/breeds/chicken_fullbody.jpg" alt="Pasture-Raised Chicken" loading="lazy"/></div>
+        <div class="prod-n">03</div>
+        <div class="prod-tag" data-i18n="prod3_tag">Pasture-Raised · Both Farms</div>
+        <h3 data-i18n="prod3_h3">Pasture-Raised Chicken</h3>
+        <p data-i18n="prod3_p">Naturally grown chicken — juicy and flavorful, thanks to our farms in San José and Río Claro.</p>
+        <ul class="prod-list">
+          <li data-i18n="prod3_li1">Whole chicken and pieces</li>
+          <li data-i18n="prod3_li2">Family boxes &amp; subscriptions</li>
+          <li data-i18n="prod3_li3">Restaurant portion packs</li>
+        </ul>
+        <a href="#anatomy" class="prod-link" data-i18n="prod_explore">Explore Cuts</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY JULIET'S ══════════════════════════════════ -->
+<section class="film-grain sec" id="why">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" data-i18n="why_label">Why Juliet's</div>
+      <h2 data-i18n="why_h2">The Standard<br>We Keep.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="why-grid stagger">
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 22 C13 22 6 17 6 10 C6 6.5 9.1 4 13 4 C16.9 4 20 6.5 20 10 C20 17 13 22 13 22Z"/><line x1="13" y1="22" x2="13" y2="11"/><line x1="13" y1="14" x2="10" y2="11"/><line x1="13" y1="17.5" x2="16" y2="14.5"/></svg></div>
+        <h4 data-i18n="why1_h4">No Hormones.<br>No Antibiotics.</h4>
+        <p data-i18n="why1_p">Our animals are raised naturally, on pasture, without growth promoters or preventive antibiotics — ever.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2,22 9,7 16,22"/><polyline points="10,22 17.5,8.5 25,22"/><line x1="2" y1="22" x2="25" y2="22"/></svg></div>
+        <h4 data-i18n="why2_h4">Two Farms.<br>One Standard.</h4>
+        <p data-i18n="why2_p">San José and Río Claro share the same protocols, the same care, and the same commitment to quality.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><line x1="13" y1="2" x2="13" y2="24"/><line x1="2" y1="13" x2="24" y2="13"/><line x1="5.7" y1="5.7" x2="20.3" y2="20.3"/><line x1="20.3" y1="5.7" x2="5.7" y2="20.3"/><polyline points="10.5,4.5 13,2 15.5,4.5"/><polyline points="10.5,21.5 13,24 15.5,21.5"/><polyline points="4.5,10.5 2,13 4.5,15.5"/><polyline points="21.5,10.5 24,13 21.5,15.5"/></svg></div>
+        <h4 data-i18n="why3_h4">Cold Chain<br>Guaranteed.</h4>
+        <p data-i18n="why3_p">Vacuum-packaged and delivered at controlled temperature. From our farm to your door without compromise.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="9" width="22" height="8"/><line x1="6" y1="9" x2="6" y2="13.5"/><line x1="10" y1="9" x2="10" y2="12"/><line x1="13" y1="9" x2="13" y2="13.5"/><line x1="16" y1="9" x2="16" y2="12"/><line x1="20" y1="9" x2="20" y2="13.5"/></svg></div>
+        <h4 data-i18n="why4_h4">Consistent<br>Cuts &amp; Weights.</h4>
+        <p data-i18n="why4_p">Every portion is standardized. Restaurant kitchens rely on us because our product behaves the same every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESTAURANT BANNER ══════════════════════════════ -->
+<section class="res-ban">
+  <div class="container reveal">
+    <div class="ch-label" data-i18n="res_label">For Chefs, Hotels &amp; Catering</div>
+    <h2 data-i18n="res_h2">A Reliable Partner<br><em>for Your Professional Kitchen</em></h2>
+    <p data-i18n="res_p">Juliet's Organic Meats supplies rabbit, duck and organic chicken to restaurants across San José, the GAM and the Southern Zone. Standardized cuts, consistent gram weights, punctual deliveries.</p>
+    <a href="#email" class="btn btn-ghost-w" data-i18n="res_btn">Discover the Restaurant Program</a>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══════════════════════════════════ -->
+<section class="paper-tex sec" id="hiw">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" data-i18n="how_label">Process</div>
+      <h2 data-i18n="how_h2">How Juliet's Works.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div>
+          <h4 data-i18n="step1_h4">Place Your Order</h4>
+          <p data-i18n="step1_p">Select individual cuts, family boxes, or tell us what your restaurant needs. Order online or message us on WhatsApp.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div>
+          <h4 data-i18n="step2_h4">We Schedule Your Delivery</h4>
+          <p data-i18n="step2_p">We coordinate day and time based on your location — GAM, San José, or the Southern Zone near Río Claro.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div>
+          <h4 data-i18n="step3_h4">Arrives Cold. Ready to Cook.</h4>
+          <p data-i18n="step3_p">Vacuum-packed, labeled and delivered refrigerated. Open the box and it goes straight to your kitchen.</p>
+        </div>
+      </div>
+    </div>
+    <figure class="reveal" style="margin:3.5rem 0 0;overflow:hidden;aspect-ratio:21/5;border-top:1px solid rgba(28,18,8,.08)">
+      <img src="assets/farm/farm_packaging_vacuum.jpg" alt="Vacuum-packed cuts ready for delivery" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block"/>
+    </figure>
+  </div>
+</section>
+
+<!-- ══ HOME BOXES ════════════════════════════════════ -->
+<section class="film-grain sec" id="boxes">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" data-i18n="boxes_label">For Home</div>
+      <h2 data-i18n="boxes_h2">Choose Your Box.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="boxes stagger">
+      <div class="box" data-r="I" onclick="openBox('essentials')" role="button" tabindex="0">
+        <div class="box-img"><img src="assets/boxes/box_essentials_open.jpg" alt="Rabbit cuts — Essentials Box" loading="lazy"/></div>
+        <div class="box-tag" data-i18n="box1_tag">Starter</div>
+        <h4 data-i18n="box1_h4">The Essentials Box</h4>
+        <p data-i18n="box1_p">A weekly introduction to Juliet's quality. Chicken, rabbit or duck — your choice. Perfect for two.</p>
+        <div class="box-price">₡12,500 <span>/ delivery</span></div>
+        <a href="#email" class="btn btn-ghost-w" data-i18n="box1_btn" style="font-size:.625rem;padding:.7rem 1.5rem" onclick="event.stopPropagation()">Order This Box</a>
+      </div>
+      <div class="box" data-r="II" onclick="openBox('family')" role="button" tabindex="0">
+        <div class="box-img"><img src="assets/boxes/box_family_open.jpg" alt="Duck cuts — Family Box" loading="lazy"/></div>
+        <div class="box-tag" data-i18n="box2_tag">Family</div>
+        <h4 data-i18n="box2_h4">The Weekly Family Box</h4>
+        <p data-i18n="box2_p">Three proteins, portioned for a family of four. Chicken thighs, duck legs, rabbit portions. Recipes included.</p>
+        <div class="box-price">₡24,000 <span>/ delivery</span></div>
+        <a href="#email" class="btn btn-ghost-w" data-i18n="box2_btn" style="font-size:.625rem;padding:.7rem 1.5rem" onclick="event.stopPropagation()">Order This Box</a>
+      </div>
+      <div class="box" data-r="III" onclick="openBox('chefs')" role="button" tabindex="0">
+        <div class="box-img"><img src="assets/boxes/box_chefs_selection_open.jpg" alt="Chicken cuts — Chef's Selection" loading="lazy"/></div>
+        <div class="box-tag" data-i18n="box3_tag">Chef's Pick</div>
+        <h4 data-i18n="box3_h4">The Chef's Selection</h4>
+        <p data-i18n="box3_p">Premium cuts selected by our team — the saddle, the magret, the whole bird. For serious home cooking.</p>
+        <div class="box-price">₡38,000 <span>/ delivery</span></div>
+        <a href="#email" class="btn btn-ghost-w" data-i18n="box3_btn" style="font-size:.625rem;padding:.7rem 1.5rem" onclick="event.stopPropagation()">Order This Box</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOX COMPARISON ════════════════════════════════ -->
+<section class="box-compare">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <div class="ch-label" style="color:var(--brass-l)">Compare</div>
+      <h2 style="color:var(--white)">Which Box<br><em style="color:var(--brass-l)">is Right for You?</em></h2>
+      <div class="rule" style="background:var(--brass-l);margin:1rem auto"></div>
+    </div>
+    <div class="box-compare-grid reveal">
+      <div class="bc-col">
+        <div class="bc-head">The Essentials</div>
+        <div class="bc-price">₡12,500 <span>/ delivery</span></div>
+        <div class="bc-row"><span class="bc-lbl">For</span><span class="bc-val">2–3 people</span></div>
+        <div class="bc-row"><span class="bc-lbl">Proteins</span><span class="bc-val">1 (your choice)</span></div>
+        <div class="bc-row"><span class="bc-lbl">Contents</span><span class="bc-val">Chicken + rabbit saddle</span></div>
+        <div class="bc-row"><span class="bc-lbl">Packaging</span><span class="bc-val">Vacuum-sealed</span></div>
+        <div class="bc-row"><span class="bc-lbl">Recipes</span><span class="bc-val">—</span></div>
+        <a href="#email" class="bc-cta" onclick="openBox('essentials')">Order Essentials</a>
+      </div>
+      <div class="bc-col featured">
+        <div class="bc-head">The Family Box</div>
+        <div class="bc-price">₡24,000 <span>/ delivery</span></div>
+        <div class="bc-row"><span class="bc-lbl">For</span><span class="bc-val">Family of 4</span></div>
+        <div class="bc-row"><span class="bc-lbl">Proteins</span><span class="bc-val">3 proteins</span></div>
+        <div class="bc-row"><span class="bc-lbl">Contents</span><span class="bc-val">Chicken · Duck · Rabbit</span></div>
+        <div class="bc-row"><span class="bc-lbl">Packaging</span><span class="bc-val">Vacuum-sealed</span></div>
+        <div class="bc-row"><span class="bc-lbl">Recipes</span><span class="bc-val">2 cards included</span></div>
+        <a href="#email" class="bc-cta" onclick="openBox('family')">Order Family Box</a>
+      </div>
+      <div class="bc-col">
+        <div class="bc-head">Chef's Selection</div>
+        <div class="bc-price">₡38,000 <span>/ delivery</span></div>
+        <div class="bc-row"><span class="bc-lbl">For</span><span class="bc-val">2–4 people</span></div>
+        <div class="bc-row"><span class="bc-lbl">Proteins</span><span class="bc-val">3 premium cuts</span></div>
+        <div class="bc-row"><span class="bc-lbl">Contents</span><span class="bc-val">Saddle · Magret · Whole bird</span></div>
+        <div class="bc-row"><span class="bc-lbl">Packaging</span><span class="bc-val">Black label · Wax seal</span></div>
+        <div class="bc-row"><span class="bc-lbl">Recipes</span><span class="bc-val">Chef's notes included</span></div>
+        <a href="#email" class="bc-cta" onclick="openBox('chefs')">Order Chef's Box</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ═══════════════════════════════════ -->
+<section class="paper-tex sec" id="testi">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" data-i18n="testi_label">What They Say</div>
+      <h2 data-i18n="testi_h2">From the Pass<br><em>&amp; the Table.</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="testi-wrap reveal">
+      <div class="testi-slide on">
+        <p class="testi-q" data-i18n="testi_q1">The rabbit from Juliet's is the most consistent product I've ever worked with in Costa Rica. The saddle holds perfectly, the portions are exact, and the cold chain is impeccable.</p>
+        <div class="testi-author" data-i18n="testi_by1">Chef Marco Solís — Restaurant Silvestre, San José</div>
+      </div>
+      <div class="testi-slide">
+        <p class="testi-q" data-i18n="testi_q2">We switched to Juliet's for our Sunday family dinners three months ago. The difference in flavor is undeniable. The chicken actually tastes like chicken used to taste.</p>
+        <div class="testi-author" data-i18n="testi_by2">Andrea Mora — Home Customer, Escazú</div>
+      </div>
+      <div class="testi-slide">
+        <p class="testi-q" data-i18n="testi_q3">Their duck magret is exceptional. We run a French-influenced menu and couldn't source this quality locally — until Juliet's. Now it's a permanent fixture.</p>
+        <div class="testi-author" data-i18n="testi_by3">Chef Amélie Durand — Bouchon CR, San José</div>
+      </div>
+      <div class="testi-dots" id="tdots">
+        <button class="tdot on" data-i="0"></button>
+        <button class="tdot" data-i="1"></button>
+        <button class="tdot" data-i="2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MADE IN COSTA RICA ════════════════════════════ -->
+<section class="made-in" id="made-in">
+  <div class="made-bg" style="background-image:url('assets/farm/farm_animals_pasture.jpg')"></div>
+  <div class="made-inner">
+    <div class="made-label" data-i18n="made_label">Producido en Costa Rica · Desde 2018</div>
+    <h2 class="made-headline" data-i18n="made_h2">MADE IN<br>COSTA RICA</h2>
+    <p class="made-sub" data-i18n="made_sub">San José · Río Claro · Criado en Pastizales Abiertos</p>
+  </div>
+</section>
+
+<!-- ══ FARM STORY ════════════════════════════════════ -->
+<section class="film-grain sec-wide" id="farm">
+  <div class="container">
+    <div class="farm-wrap">
+      <div>
+        <div class="reveal">
+          <div class="ch-label" data-i18n="farm_label">Our Origin</div>
+          <h2 data-i18n="farm_h2">From Our Farms in<br><em style="color:var(--brass-l)">San José &amp; Río Claro</em><br>to Your Table.</h2>
+          <div class="rule"></div>
+        </div>
+        <div class="reveal">
+          <p data-i18n="farm_p" style="color:rgba(247,244,238,.55);font-family:var(--font-body);max-width:48ch;margin:1.25rem 0">Juliet's Organic Meats was born from a desire to offer more honest, more flavorful meat. Between San José and Río Claro we raise rabbit, duck and chicken on open pasture — caring for the land and the animals that live on it.</p>
+          <ul class="farm-list">
+            <li data-i18n="farm_li1">Production in San José and Río Claro, Costa Rica</li>
+            <li data-i18n="farm_li2">Careful management of soil and water</li>
+            <li data-i18n="farm_li3">Hygienic processing and vacuum packaging</li>
+            <li data-i18n="farm_li4">No hormones or preventive antibiotics</li>
+          </ul>
+          <a href="#email" class="btn btn-ghost-w" data-i18n="farm_btn" style="margin-top:1rem;display:inline-block">Learn Our Story &amp; Process</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="farm-imgs">
+          <img class="farm-img-main" src="assets/farm/farm_aerial_sanjose.jpg" alt="Farm San José — aerial view" loading="lazy"/>
+          <div class="farm-imgs-row">
+            <img src="assets/farm/farm_animals_pasture.jpg" alt="Animals on pasture" loading="lazy"/>
+            <img src="assets/maps/farm_locations_map.jpg" alt="Farm locations — San José &amp; Río Claro" loading="lazy"/>
+          </div>
+        </div>
+        <div class="farm-stats">
+          <div class="fstat"><div class="fstat-n">2</div><div class="fstat-l" data-i18n="fstat_farms">Farms</div></div>
+          <div class="fstat"><div class="fstat-n">3</div><div class="fstat-l" data-i18n="fstat_animals">Animals</div></div>
+          <div class="fstat"><div class="fstat-n">100%</div><div class="fstat-l" data-i18n="fstat_organic">Organic</div></div>
+          <div class="fstat"><div class="fstat-n">0</div><div class="fstat-l" data-i18n="fstat_hormones">Hormones</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DELIVERY MAP ══════════════════════════════════ -->
+<section class="paper-tex sec" id="delivery">
+  <div class="container">
+    <div class="map-wrap">
+      <div class="reveal">
+        <div class="ch-label" data-i18n="map_label">Delivery Zone</div>
+        <h2 data-i18n="map_h2">Two Farms.<br><em style="color:var(--red)">Direct to You.</em></h2>
+        <div class="rule" style="background:var(--red)"></div>
+        <p data-i18n="map_p" style="color:var(--ink-mid);font-family:var(--font-body);max-width:40ch;margin:.875rem 0 1.25rem">San José supplies the Greater Metropolitan Area. Río Claro serves the Southern Zone and Osa. Both farms operate a direct refrigerated cold chain — no third-party handling, no compromise on temperature.</p>
+        <ul class="map-zone-list">
+          <li data-i18n="map_li1">Gran Área Metropolitana (GAM)</li>
+          <li data-i18n="map_li2">San José city &amp; surrounding cantons</li>
+          <li data-i18n="map_li3">Río Claro, Golfito &amp; Southern Zone</li>
+          <li data-i18n="map_li4">Osa Peninsula on request</li>
+          <li data-i18n="map_li5">48-hour advance window · Cold chain guaranteed</li>
+        </ul>
+        <a href="#email" class="btn btn-red" data-i18n="map_btn">Confirm Your Delivery Zone →</a>
+      </div>
+      <div class="map-frame reveal">
+        <img src="assets/maps/farm_locations_map.jpg" alt="Juliet's Organic Meats — farm locations in San José and Río Claro, Costa Rica" style="width:100%;height:100%;object-fit:cover;display:block"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BREEDS ═════════════════════════════════════════ -->
+<section class="film-grain sec" id="breeds">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" data-i18n="breeds_label">Our Animals</div>
+      <h2 data-i18n="breeds_h2">Five Breeds.<br><em style="color:var(--brass-l)">Selected for Flavor.</em></h2>
+      <div class="rule"></div>
+      <p data-i18n="breeds_p" style="color:rgba(247,244,238,.45);font-family:var(--font-body);max-width:52ch;margin:.875rem 0 0">Every breed we raise was chosen for a reason. Not yield alone — flavor, texture, fat distribution, and temperament on pasture. These are the animals behind the cuts.</p>
+    </div>
+    <!-- ── Rabbit row: 3 heritage breeds ── -->
+    <div class="breed-grid stagger">
+
+      <!-- Silver Fox -->
+      <div class="breed-card" onclick="openBreed('sf')" role="button" tabindex="0">
+        <div class="breed-cover">
+          <img src="assets/breeds/silver_fox_fullbody.jpg" alt="Silver Fox rabbit" loading="lazy"/>
+        </div>
+        <div class="breed-info">
+          <div class="breed-num" data-i18n="breed_rabbit_num">Rabbit · Breed 01</div>
+          <div class="breed-name" data-i18n="breed_sf_name">Silver Fox</div>
+          <div class="breed-sci">Oryctolagus cuniculus domesticus</div>
+          <div class="breed-rule"></div>
+          <p class="breed-desc" data-i18n="breed_sf_desc">A heritage American breed — jet-black coat, exceptional meat-to-bone ratio. Dense, fine-grained muscle with mild, clean flavor that absorbs braising liquid beautifully. The saddle is prized by Costa Rican fine-dining chefs.</p>
+          <ul class="breed-specs">
+            <li><span data-i18n="spec_weight">Weight at harvest</span><strong>4.5 – 5.5 kg</strong></li>
+            <li><span data-i18n="spec_meat">Meat character</span><strong data-i18n="breed_sf_meat">Fine-grained, mild, lean</strong></li>
+            <li><span data-i18n="spec_prep">Best preparation</span><strong data-i18n="breed_sf_prep">Braise, confit, slow roast</strong></li>
+            <li><span data-i18n="spec_farm">Farm</span><strong data-i18n="farm_norte">Finca Norte — San José</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Californian -->
+      <div class="breed-card" onclick="openBreed('cal')" role="button" tabindex="0">
+        <div class="breed-cover">
+          <img src="assets/breeds/californian_fullbody.jpg" alt="Californian rabbit" loading="lazy"/>
+        </div>
+        <div class="breed-info">
+          <div class="breed-num" data-i18n="breed_rabbit_num">Rabbit · Breed 02</div>
+          <div class="breed-name" data-i18n="breed_cal_name">Californian</div>
+          <div class="breed-sci">Oryctolagus cuniculus domesticus</div>
+          <div class="breed-rule"></div>
+          <p class="breed-desc" data-i18n="breed_cal_desc">White body with distinctive dark points — the commercial standard for a reason. Broad hindquarters, deep loin, consistent portion weight. Mild and versatile: performs equally in rustic braises and refined restaurant preparations.</p>
+          <ul class="breed-specs">
+            <li><span data-i18n="spec_weight">Weight at harvest</span><strong>4.0 – 5.0 kg</strong></li>
+            <li><span data-i18n="spec_meat">Meat character</span><strong data-i18n="breed_cal_meat">Consistent, mild, wide loin</strong></li>
+            <li><span data-i18n="spec_prep">Best preparation</span><strong data-i18n="breed_cal_prep">Roast, stew, rabbit rillettes</strong></li>
+            <li><span data-i18n="spec_farm">Farm</span><strong data-i18n="farm_norte">Finca Norte — San José</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- New Zealand White -->
+      <div class="breed-card" onclick="openBreed('nzw')" role="button" tabindex="0">
+        <div class="breed-cover">
+          <img src="assets/breeds/new_zealand_white_fullbody.jpg" alt="New Zealand White rabbit" loading="lazy"/>
+        </div>
+        <div class="breed-info">
+          <div class="breed-num" data-i18n="breed_rabbit_num">Rabbit · Breed 03</div>
+          <div class="breed-name" data-i18n="breed_nzw_name">New Zealand White</div>
+          <div class="breed-sci">Oryctolagus cuniculus domesticus</div>
+          <div class="breed-rule"></div>
+          <p class="breed-desc" data-i18n="breed_nzw_desc">The largest of our three rabbit breeds — pure white, heavily muscled hindquarters, dense chest. Produces the highest yield per carcass. The legs are ideal for long confit; the loin, sliced, plates like veal. A workhorse breed with gourmet results.</p>
+          <ul class="breed-specs">
+            <li><span data-i18n="spec_weight">Weight at harvest</span><strong>4.5 – 6.0 kg</strong></li>
+            <li><span data-i18n="spec_meat">Meat character</span><strong data-i18n="breed_nzw_meat">High yield, firm, veal-like</strong></li>
+            <li><span data-i18n="spec_prep">Best preparation</span><strong data-i18n="breed_nzw_prep">Confit, pan-sear loin, ragù</strong></li>
+            <li><span data-i18n="spec_farm">Farm</span><strong data-i18n="farm_norte">Finca Norte — San José</strong></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── Poultry row: Duck + Chicken ── -->
+    <div class="breed-row-divider stagger"><span data-i18n="poultry_label">Poultry</span></div>
+    <div class="breed-grid-2 stagger">
+
+      <!-- Duck: Pekin + Muscovy -->
+      <div class="breed-card" onclick="openBreed('duck')" role="button" tabindex="0">
+        <div class="breed-cover">
+          <img src="assets/breeds/pekin_duck_fullbody.jpg" alt="Pekin Duck — pasture-raised" loading="lazy"/>
+        </div>
+        <div class="breed-info">
+          <div class="breed-num" data-i18n="breed_duck_num">Duck · Two Breeds</div>
+          <div class="breed-name" data-i18n="breed_duck_name">Duck — Pekin &amp; Muscovy</div>
+          <div class="breed-sci">Anas platyrhynchos domesticus · Cairina moschata</div>
+          <div class="breed-rule"></div>
+          <p class="breed-desc" data-i18n="breed_duck_desc">Two breeds, two flavor profiles. The Pekin delivers a generously fatted breast that lacquers brilliantly at high heat — the magret every fine-dining kitchen wants. The Muscovy, native to Central America, runs leaner with a complex, veal-like depth prized by serious kitchens.</p>
+          <ul class="breed-specs">
+            <li><span data-i18n="spec_weight">Weight at harvest</span><strong>3.5 – 6.0 kg</strong></li>
+            <li><span data-i18n="spec_meat">Meat character</span><strong data-i18n="breed_duck_meat">Rich magret, deep umami flavor</strong></li>
+            <li><span data-i18n="spec_prep">Best preparation</span><strong data-i18n="breed_duck_prep">Confit, sear, lacquered roast</strong></li>
+            <li><span data-i18n="spec_farm">Farm</span><strong data-i18n="farm_norte">Finca Norte — San José</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Chicken -->
+      <div class="breed-card" onclick="openBreed('chicken')" role="button" tabindex="0">
+        <div class="breed-cover">
+          <img src="assets/breeds/chicken_fullbody.jpg" alt="Pasture-raised chicken — whole bird" loading="lazy"/>
+        </div>
+        <div class="breed-info">
+          <div class="breed-num" data-i18n="breed_chicken_num">Chicken · Pasture-Raised</div>
+          <div class="breed-name" data-i18n="breed_chicken_name">Pasture-Raised Chicken</div>
+          <div class="breed-sci">Gallus gallus domesticus</div>
+          <div class="breed-rule"></div>
+          <p class="breed-desc" data-i18n="breed_chicken_desc">Slow-grown on open pasture in Río Claro — no confinement, no growth hormones. The result is a bird with genuine flavor: tight muscle, golden skin that crisps properly under dry heat, and dark meat that holds up to braising without falling apart. What chicken is supposed to taste like.</p>
+          <ul class="breed-specs">
+            <li><span data-i18n="spec_weight">Weight at harvest</span><strong>2.0 – 2.8 kg</strong></li>
+            <li><span data-i18n="spec_meat">Meat character</span><strong data-i18n="breed_chicken_meat">Firm, flavorful, golden skin</strong></li>
+            <li><span data-i18n="spec_prep">Best preparation</span><strong data-i18n="breed_chicken_prep">Roast, spatchcock, braise</strong></li>
+            <li><span data-i18n="spec_farm">Farm</span><strong data-i18n="farm_sur">Finca Sur — Río Claro</strong></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ RECIPES ════════════════════════════════════════ -->
+<section class="paper-tex sec" id="recipes">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" data-i18n="rec_label">From Our Kitchen</div>
+      <h2 data-i18n="rec_h2">Three Recipes<br>to Start With.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="rec-grid stagger">
+      <div class="rec-card" onclick="openRecipe('rabbit')" role="button" tabindex="0">
+        <div class="rec-img"><img src="assets/recipes/recipe_rabbit_braise.jpg" alt="Braised Rabbit in White Wine" loading="lazy"/></div>
+        <div class="rec-tag" data-i18n="rec_rabbit_tag">Rabbit · Main</div>
+        <h4 data-i18n="rec_rabbit_title">Braised Rabbit<br>in White Wine</h4>
+        <p data-i18n="rec_rabbit_desc">Slow-braised rabbit legs in white wine, thyme and garlic. Three hours of patience that rewards completely.</p>
+        <div class="rec-meta"><span data-i18n="rec_rabbit_time">3 hrs</span><span data-i18n="rec_rabbit_serves">Serves 4</span><span data-i18n="rec_rabbit_level">Medium</span></div>
+      </div>
+      <div class="rec-card" onclick="openRecipe('duck')" role="button" tabindex="0">
+        <div class="rec-img"><img src="assets/recipes/recipe_duck_confit.jpg" alt="Duck Confit with Crispy Skin" loading="lazy"/></div>
+        <div class="rec-tag" data-i18n="rec_duck_tag">Duck · Main</div>
+        <h4 data-i18n="rec_duck_title">Duck Confit<br>with Crispy Skin</h4>
+        <p data-i18n="rec_duck_desc">Classic French confit method. Duck legs cured in salt and thyme, then submerged in their own fat for 12 hours.</p>
+        <div class="rec-meta"><span data-i18n="rec_duck_time">12+ hrs</span><span data-i18n="rec_duck_serves">Serves 2</span><span data-i18n="rec_duck_level">Advanced</span></div>
+      </div>
+      <div class="rec-card" onclick="openRecipe('chicken')" role="button" tabindex="0">
+        <div class="rec-img"><img src="assets/recipes/recipe_roasted_chicken.jpg" alt="Roasted Chicken with Herb Butter" loading="lazy"/></div>
+        <div class="rec-tag" data-i18n="rec_chicken_tag">Chicken · Main</div>
+        <h4 data-i18n="rec_chicken_title">Roasted Chicken<br>with Herb Butter</h4>
+        <p data-i18n="rec_chicken_desc">A whole Juliet's chicken, herbed butter under the skin, roasted at high heat. Simple done perfectly.</p>
+        <div class="rec-meta"><span data-i18n="rec_chicken_time">1.5 hrs</span><span data-i18n="rec_chicken_serves">Serves 4</span><span data-i18n="rec_chicken_level">Easy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════════ -->
+<section class="film-grain sec" id="faq">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" data-i18n="faq_label">Questions</div>
+      <h2 data-i18n="faq_h2">Frequently<br>Asked.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq_q1">Where do you deliver?</span><span class="faq-ico"></span></button>
+        <div class="faq-a" data-i18n="faq_a1">We deliver throughout the Greater Metropolitan Area (GAM), San José city, and select areas in the Southern Zone near Río Claro. Contact us via WhatsApp to confirm your address.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq_q2">Is the meat really organic and pasture-raised?</span><span class="faq-ico"></span></button>
+        <div class="faq-a" data-i18n="faq_a2">Yes. Our animals are raised on open pasture on our two farms — in San José and Río Claro. We never use growth hormones or preventive antibiotics. Our practices are consistent and transparent.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq_q3">How is the cold chain maintained during delivery?</span><span class="faq-ico"></span></button>
+        <div class="faq-a" data-i18n="faq_a3">All products are vacuum-packaged immediately after processing and transported in refrigerated vehicles. Temperature is maintained from our farm to your door without interruption.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq_q4">How far in advance do I need to place my order?</span><span class="faq-ico"></span></button>
+        <div class="faq-a" data-i18n="faq_a4">We ask for 48 hours notice for most orders. For large restaurant orders or custom cuts, 72 hours is preferred. WhatsApp us to arrange a recurring delivery schedule.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq_q5">Do you offer volume pricing for restaurants and hotels?</span><span class="faq-ico"></span></button>
+        <div class="faq-a" data-i18n="faq_a5">Yes. We have a dedicated restaurant program with volume pricing, standardized cut weights, and flexible delivery schedules. Contact us to discuss your specific needs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EMAIL CAPTURE ══════════════════════════════════ -->
+<section class="paper-tex sec" id="email">
+  <div class="container">
+    <div class="reveal">
+      <div class="ch-label" data-i18n="email_label">Stay in Touch</div>
+      <h2 data-i18n="email_h2">Get 10% Off<br><em style="color:var(--red)">Your First Order.</em></h2>
+      <div class="rule"></div>
+      <p data-i18n="email_p" style="color:var(--ink-mid);max-width:46ch;margin:.875rem 0">Subscribe to receive offers, recipes, and news from our farms in San José and Río Claro.</p>
+    </div>
+    <div class="email-form reveal">
+      <div class="email-row">
+        <input type="text" data-i18n-ph="email_ph_name" placeholder="Your name"/>
+        <input type="email" data-i18n-ph="email_ph_email" placeholder="Email address"/>
+      </div>
+      <label class="email-check">
+        <input type="checkbox" style="accent-color:var(--red)"/>
+        <span data-i18n="email_check">I am a restaurant / hotel</span>
+      </label>
+      <button class="btn btn-red" data-i18n="email_btn" style="width:100%;font-size:.75rem">Subscribe &amp; Claim 10%</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════ -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-j"><img src="assets/Logo/logo_coin_clean.jpg" alt="Juliet's Organic Meats" style="width:64px;height:64px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px rgba(196,164,74,.2),0 3px 16px rgba(0,0,0,.5)"/></div>
+        <p class="footer-tag" data-i18n="footer_tag">Producers of organic rabbit, duck and chicken in San José and Río Claro, Costa Rica — connecting the farm to your table.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer_nav_head">Navigation</h5>
+        <ul>
+          <li><a href="#" data-i18n="nav_home">Home</a></li>
+          <li><a href="#pathways" data-i18n="nav_restaurants">For Restaurants</a></li>
+          <li><a href="#pathways" data-i18n="nav_home2">For Home</a></li>
+          <li><a href="#farm" data-i18n="nav_farm">Our Farm</a></li>
+          <li><a href="#delivery" data-i18n="footer_delivery">Delivery Zone</a></li>
+          <li><a href="#anatomy" data-i18n="nav_cuts">Our Cuts</a></li>
+          <li><a href="#breeds" data-i18n="footer_breeds">Our Breeds</a></li>
+          <li><a href="#recipes" data-i18n="nav_recipes">Recipes</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer_contact_head">Contact</h5>
+        <ul>
+          <li>+506 6000-0000</li>
+          <li><span data-i18n="footer_wa">WhatsApp</span>: +506 6000-0000</li>
+          <li>info@julietsorganicmeats.com</li>
+          <li style="margin-top:.5rem;opacity:.35">San José, Costa Rica</li>
+          <li style="opacity:.35" data-i18n="footer_rioclaro">Río Claro, Southern Zone</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer_follow_head">Follow Us</h5>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p data-i18n="footer_copy">© 2025 Juliet's Organic Meats. Costa Rica.</p>
+      <p data-i18n="footer_tagline">No hormones · No antibiotics · Pasture-raised</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+let currentLang = 'en';
+
+// ═══════════════════════════════════════════════════
+// ANATOMY DATA
+// ═══════════════════════════════════════════════════
+const ANIMALS = {
+  rabbit:{
+    name:'Rabbit',
+    surface:'assets/illustrations/rabbit_surface.png',
+    anatomy:'assets/illustrations/rabbit_anatomy_chart.png',
+    tagline:'Lean, delicate, and prized by chefs for its subtle, almost veal-like flavor.',
+    tagline_es:'Magro, delicado y apreciado por los chefs por su sabor sutil, casi como ternera.',
+    cuts:[
+      {id:'r1',n:1,lbl:'Saddle & Loin', zone:{cx:37,cy:21,rx:12,ry:7},  desc:'The prized center-back — the most tender part of the rabbit. Two delicate loins run along either side of the spine, known in French cuisine as "filets de lapin." Boneless saddle is a showpiece cut.',bestFor:['Roasting whole','Stuffed roulade','Fine-dining presentations'],tip:'Sear in clarified butter, finish in oven 350°F. Rest 5 min. Slice at the table.'},
+      {id:'r2',n:2,lbl:'Rack (Ribs)',   zone:{cx:56,cy:23,rx:10,ry:8},  desc:'The thin rib cage — delicate bones with excellent flavor. Used for rack presentations or ground into forcemeat. Frenched, it is a visual centerpiece.',bestFor:['Grilled rack','Ground rabbit','Stocks'],tip:'French the bones for a visual rack. Marinate overnight, grill hot and fast.'},
+      {id:'r3',n:3,lbl:'Hind Legs',     zone:{cx:17,cy:42,rx:13,ry:10}, desc:'The meatiest portion of the rabbit. Rich connective tissue that becomes extraordinarily silky with low, slow heat. The chef\'s first choice for a braise or confit.',bestFor:['Slow braise','Confit','Ragù & pasta sauce'],tip:'3 hours at 300°F in white wine, garlic, thyme. The meat should fall from the bone.'},
+      {id:'r4',n:4,lbl:'Flank',         zone:{cx:40,cy:45,rx:10,ry:6},  desc:'The flank is the lower abdominal wall — lean, active muscle with concentrated flavor. Best ground for forcemeat or slow-braised. The most honest cut on the animal.',bestFor:['Ground forcemeat','Slow braise','Terrine'],tip:'Thin and active muscle — needs long cooking or fine mincing. Ideal blended into rabbit sausage.'},
+      {id:'r5',n:5,lbl:'Belly',         zone:{cx:55,cy:46,rx:9,ry:5},   desc:'The belly covers the rib cage beneath — thin, slightly fatty, excellent for wrapping roasts or rendering. Adds extraordinary moisture to any preparation it surrounds.',bestFor:['Wrapping loin roasts','Self-basting preparations','Stocks'],tip:'Roll and tie around a stuffed loin. The fat keeps the meat moist through the entire cook.'},
+      {id:'r6',n:6,lbl:'Forequarter',   zone:{cx:78,cy:39,rx:12,ry:10}, desc:'Shoulder, front legs, and neck — smaller cuts with deep, layered flavor. The gelatin content is extraordinary. Essential for stock, terrines, and any preparation that demands body.',bestFor:['Stocks & consommé','Terrine','Slow stews'],tip:'Simmer 4+ hours for deep, gelatinous stock. Essential for a proper lapin sauce.'},
+    ]
+  },
+  duck:{
+    name:'Duck',
+    surface:'assets/illustrations/duck_surface.png',
+    anatomy:'assets/illustrations/duck_anatomy_chart.png',
+    tagline:"Rich, fatty, and intensely flavored. The chef's bird — every part has purpose.",
+    tagline_es:'Rico, graso e intensamente sabroso. El ave del chef — cada parte tiene un propósito.',
+    cuts:[
+      {id:'d1',n:1,lbl:'Magret (Breast)',  zone:{cx:70,cy:28,rx:12,ry:10}, desc:'The prized breast of a fatty duck. Dense, rich, treated like a fine steak.',bestFor:['Pan-seared medium-rare','Sliced over salads','Duck pastrami'],tip:'Score the fat cap. Cold pan, fat side down, render 8 min. Flip for 3. Rest 5. This is it.'},
+      {id:'d2',n:2,lbl:'Wing',             zone:{cx:52,cy:15,rx:9,ry:7},  desc:'Small, intensely flavored, and loaded with gelatin. Transforms stocks and braises.',bestFor:['Duck stock','Glazed appetizers','Ramen broth base'],tip:'Roast at 425°F until mahogany, then simmer 3h for the most intense stock imaginable.'},
+      {id:'d3',n:3,lbl:'Drumstick',        zone:{cx:18,cy:44,rx:8,ry:7},  desc:"The lower leg — lean, worked muscle with concentrated flavor. Perfect for slow braises.",bestFor:['Slow braise','Duck ragu','Confit'],tip:'Low and slow is the only way. 3h at 300°F in red wine and aromatics.'},
+      {id:'d4',n:4,lbl:'Thigh (Confit)',   zone:{cx:28,cy:36,rx:11,ry:9}, desc:'The workhorse of French cuisine. Slow-cooked in their own fat until collapse-tender.',bestFor:['Confit','Cassoulet','Shredded for pasta or tacos'],tip:'Cure 24h with salt, thyme, bay. Submerge in duck fat. 82°C for 8h. Rest in fat overnight.'},
+      {id:'d5',n:5,lbl:'Liver (Foie Gras)',zone:{cx:60,cy:38,rx:8,ry:7},  desc:'The liver of a well-nourished duck — rich, fatty, incomparably silky.',bestFor:['Seared foie gras','Duck liver mousse','Pan-fried with port reduction'],tip:'Season 1h before. Sear in butter, deglaze with port. 2 min total. Pink inside.'},
+      {id:'d6',n:6,lbl:'Giblets',          zone:{cx:72,cy:43,rx:7,ry:5},  desc:'Heart, gizzard, neck — the supporting cast that builds extraordinary stock.',bestFor:['Duck stock','Gravy base','Crostini topping'],tip:'Roast giblets until deep brown before simmering. They add body and depth no store stock can match.'},
+    ]
+  },
+  chicken:{
+    name:'Chicken',
+    surface:'assets/illustrations/chicken_surface.png',
+    anatomy:'assets/illustrations/chicken_anatomy_chart.png',
+    tagline:'The everyday bird — but raised right, it becomes something entirely different.',
+    tagline_es:'El ave de todos los días — pero criada bien, se convierte en algo completamente diferente.',
+    cuts:[
+      {id:'c1',n:1,lbl:'Breast (Pechuga)',      zone:{cx:67,cy:30,rx:11,ry:9},  desc:"The most versatile cut. When raised on pasture, the breast has flavor that supermarket birds can't match.",bestFor:['Pan-roasted','Stuffed supreme','Escalope'],tip:'Brine 4h before cooking. Cook to 155°F, not 165. The carry-over will finish it. Never dry.'},
+      {id:'c2',n:2,lbl:'Thigh (Muslo)',          zone:{cx:43,cy:39,rx:9,ry:7},   desc:'Darker, richer, more forgiving. The thigh is where flavor lives on a pasture-raised bird.',bestFor:['Braised','Crispy skin pan-fry','Spatchcocked'],tip:'Cook skin-side down in a cold pan. Render the fat slowly. Flip once. No touching.'},
+      {id:'c3',n:3,lbl:'Drumstick (Contramuslo)',zone:{cx:33,cy:47,rx:7,ry:5},   desc:'Affordable and deeply flavored. The connective tissue breaks down into a natural sauce.',bestFor:['Roasted','Glazed','Slow-cooked curry'],tip:'Score to the bone before marinating. Fat penetrates faster and cooks more evenly.'},
+      {id:'c4',n:4,lbl:'Wing (Ala)',             zone:{cx:55,cy:22,rx:8,ry:6},   desc:'All gelatin, all flavor. The wing is the backbone of great stock and an extraordinary appetizer.',bestFor:['Crispy baked','Stock','Glazed snacks'],tip:'Roast wings at 450°F for 45 min on a rack. The fat renders completely. Nothing flabby.'},
+      {id:'c5',n:5,lbl:'Back (Espinazo)',         zone:{cx:48,cy:20,rx:9,ry:5},   desc:'The frame and spine — undervalued but essential for any cook who takes stock seriously.',bestFor:['Chicken stock','Ramen base','Demi-glace foundation'],tip:'Roast the carcass until golden-brown before simmering. This is the difference between stock and broth.'},
+      {id:'c6',n:6,lbl:'Liver & Giblets',         zone:{cx:61,cy:34,rx:6,ry:5},   desc:'The organs of a healthy, pasture-raised bird — mild, iron-rich, and deeply nutritious.',bestFor:['Chicken liver pâté','Gravy','Sauté with onions'],tip:'Flash-fry at very high heat. 90 seconds. Pink in the middle. Salt generously beforehand.'},
+    ]
+  }
+};
+
+let cA = 'rabbit', cC = null;
+const peeled = {};
+
+function buildStage(animal){
+  const A = ANIMALS[animal];
+  const stage = document.getElementById('anat-stage');
+  stage.innerHTML = '';
+
+  // Layer 1 — anatomy (always beneath)
+  const inner = document.createElement('img');
+  inner.className = 'anat-inner';
+  inner.src = A.anatomy;
+  inner.alt = A.name + ' anatomy';
+  inner.draggable = false;
+  stage.appendChild(inner);
+
+  // Layer 2 — surface (peels away on scroll)
+  const surf = document.createElement('img');
+  surf.className = 'anat-surface';
+  surf.id = 'anat-surface-img';
+  surf.src = A.surface;
+  surf.alt = A.name + ' exterior';
+  surf.draggable = false;
+  if(peeled[animal]) surf.classList.add('peeled');
+  stage.appendChild(surf);
+
+  // Layer 3 — SVG hit zones
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(NS,'svg');
+  svg.setAttribute('viewBox','0 0 100 55');
+  svg.setAttribute('preserveAspectRatio','none');
+  svg.classList.add('anat-zones');
+
+  A.cuts.forEach(cut=>{
+    const z = cut.zone;
+    const el = document.createElementNS(NS,'ellipse');
+    el.setAttribute('cx',z.cx); el.setAttribute('cy',z.cy);
+    el.setAttribute('rx',z.rx); el.setAttribute('ry',z.ry);
+    el.classList.add('zone-hit');
+    if(cC && cC.id===cut.id) el.classList.add('active');
+    el.dataset.id = cut.id;
+    const title = document.createElementNS(NS,'title');
+    title.textContent = cut.lbl;
+    el.appendChild(title);
+    el.addEventListener('click',()=>{
+      cC = (cC && cC.id===cut.id) ? null : cut;
+      updateZones();
+      renderPanel(cC);
+    });
+    svg.appendChild(el);
+  });
+
+  stage.appendChild(svg);
+  window._currentAnimal = animal;
+  document.getElementById('anat-tagline').textContent = currentLang === 'es' && A.tagline_es ? A.tagline_es : A.tagline;
+}
+
+function triggerPeel(){
+  if(peeled[cA]) return;
+  const surf = document.getElementById('anat-surface-img');
+  if(!surf) return;
+  setTimeout(()=>{ surf.classList.add('peeled'); peeled[cA]=true; }, 500);
+}
+
+function updateZones(){
+  const cuts = ANIMALS[cA].cuts;
+  document.querySelectorAll('.zone-hit').forEach((el,i)=>{
+    if(cuts[i]) el.classList.toggle('active', !!(cC && cC.id===cuts[i].id));
+  });
+}
+
+function renderPanel(cut){
+  const r = document.getElementById('diag-right');
+  const L = currentLang;
+  const emptyText = L === 'es' ? 'Haz clic en cualquier corte del diagrama<br>para explorar su perfil.' : 'Click any cut on the diagram<br>to explore its profile.';
+  if(!cut){
+    r.innerHTML = `<div class="anat-empty"><div class="anat-empty-bg"></div><div class="anat-empty-text"><p>${emptyText}</p></div></div>`;
+    return;
+  }
+  const animalName = L === 'es'
+    ? ({rabbit:'Conejo',duck:'Pato',chicken:'Pollo'}[cA] || ANIMALS[cA].name)
+    : ANIMALS[cA].name;
+  const cutLabel  = L === 'es' ? (cut.lbl_es || cut.lbl) : cut.lbl;
+  const labelBestFor   = L === 'es' ? 'Mejor Para' : 'Best For';
+  const labelChefNote  = L === 'es' ? 'Nota del Chef' : "Chef's Note";
+  const labelCut       = L === 'es' ? 'Corte' : 'Cut';
+  const labelDesel     = L === 'es' ? 'Deseleccionar ×' : 'Deselect ×';
+  const desc = L === 'es' && cut.desc_es ? cut.desc_es : cut.desc;
+  const bestFor = L === 'es' && cut.bestFor_es ? cut.bestFor_es : cut.bestFor;
+  const tip = L === 'es' && cut.tip_es ? cut.tip_es : cut.tip;
+  r.innerHTML = `<div style="padding:2rem 1.75rem">
+    <div class="cp-num">${labelCut} ${cut.n} — ${animalName}</div>
+    <div class="cp-name">${cutLabel}</div>
+    <div class="cp-rule"></div>
+    <p class="cp-desc">${desc}</p>
+    <div class="cp-lbl">${labelBestFor}</div>
+    <ul class="cp-for">${bestFor.map(b=>`<li>${b}</li>`).join('')}</ul>
+    <div class="cp-lbl">${labelChefNote}</div>
+    <p class="cp-tip">${tip}</p>
+    <button class="cp-desel" onclick="cC=null;updateZones();renderPanel(null)">${labelDesel}</button>
+  </div>`;
+}
+
+// Tabs — reset peel state so animation replays on each switch
+document.querySelectorAll('.anat-tab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.anat-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    cA = btn.dataset.animal;
+    cC = null;
+    delete peeled[cA];
+    buildStage(cA);
+    renderPanel(null);
+    const surf = document.getElementById('anat-surface-img');
+    if(surf){
+      const doP = ()=>setTimeout(triggerPeel, 80);
+      surf.complete ? doP() : (surf.onload = doP);
+    }
+  });
+});
+
+// Peel on scroll into view
+const anatObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) triggerPeel(); });
+}, {threshold:0.35});
+anatObs.observe(document.getElementById('anatomy'));
+
+// ── PARALLAX + 3D TILT (live-photo floating depth effect) ────────────
+(function(){
+  const stage = document.getElementById('anat-stage');
+  let tgt = {x:0,y:0,rx:0,ry:0}, cur = {x:0,y:0,rx:0,ry:0}, raf = null;
+
+  function tick(){
+    const lerp = 0.09;
+    cur.x  += (tgt.x  - cur.x)  * lerp;
+    cur.y  += (tgt.y  - cur.y)  * lerp;
+    cur.rx += (tgt.rx - cur.rx) * lerp;
+    cur.ry += (tgt.ry - cur.ry) * lerp;
+
+    const inner = stage.querySelector('.anat-inner');
+    const surf  = stage.querySelector('.anat-surface');
+    const zones = stage.querySelector('.anat-zones');
+
+    // inner (anatomy, deeper) — moves less
+    if(inner) inner.style.transform = `translate(${cur.x*.55}px,${cur.y*.55}px)`;
+    // surf (skin, closer) — moves more, floats above
+    if(surf)  surf.style.transform  = `translate(${cur.x}px,${cur.y}px)`;
+    // zones track with inner so click targets stay on anatomy
+    if(zones) zones.style.transform = `translate(${cur.x*.55}px,${cur.y*.55}px)`;
+
+    // 3D perspective tilt on the whole stage — the "live photo" effect
+    stage.style.transform = `perspective(900px) rotateX(${cur.rx}deg) rotateY(${cur.ry}deg)`;
+    // Shadow shifts with tilt to reinforce depth
+    const sx = -(cur.ry * 2.8);
+    const sy = (cur.rx * 2) + 18;
+    stage.style.boxShadow = `${sx}px ${sy}px 54px rgba(28,18,8,.28), 0 4px 14px rgba(28,18,8,.12)`;
+
+    const still = Math.abs(cur.x-tgt.x)<.04 && Math.abs(cur.y-tgt.y)<.04
+               && Math.abs(cur.rx-tgt.rx)<.02 && Math.abs(cur.ry-tgt.ry)<.02;
+    raf = still ? null : requestAnimationFrame(tick);
+  }
+
+  stage.addEventListener('mousemove',e=>{
+    const r = stage.getBoundingClientRect();
+    const nx = (e.clientX - r.left) / r.width  - 0.5;
+    const ny = (e.clientY - r.top)  / r.height - 0.5;
+    tgt.x  = nx * 14;
+    tgt.y  = ny * 7;
+    tgt.rx = ny * -5;    // tilt top toward viewer when mouse at bottom
+    tgt.ry = nx * 7;     // tilt right face away when mouse moves right
+    if(!raf) raf = requestAnimationFrame(tick);
+  });
+
+  stage.addEventListener('mouseleave',()=>{
+    tgt = {x:0,y:0,rx:0,ry:0};
+    if(!raf) raf = requestAnimationFrame(tick);
+  });
+})();
+
+// Init
+buildStage(cA);
+renderPanel(null);
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!open) item.classList.add('open');
+  });
+});
+
+// Testimonials
+let tI=0;
+const tSlides = document.querySelectorAll('.testi-slide');
+const tDots = document.querySelectorAll('.tdot');
+function goT(i){
+  tSlides[tI].classList.remove('on'); tDots[tI].classList.remove('on');
+  tI=i;
+  tSlides[tI].classList.add('on'); tDots[tI].classList.add('on');
+}
+tDots.forEach(d=>d.addEventListener('click',()=>goT(+d.dataset.i)));
+let testiPaused=false;
+const _testiWrap=document.querySelector('.testi-wrap');
+if(_testiWrap){
+  _testiWrap.addEventListener('mouseenter',()=>testiPaused=true);
+  _testiWrap.addEventListener('mouseleave',()=>testiPaused=false);
+}
+setInterval(()=>{ if(!testiPaused) goT((tI+1)%tSlides.length); },5500);
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.1});
+document.querySelectorAll('.reveal,.stagger').forEach(el=>obs.observe(el));
+
+// Sticky nav + scroll progress
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
+  const doc=document.documentElement;
+  const scrolled=doc.scrollTop||document.body.scrollTop;
+  const max=doc.scrollHeight-doc.clientHeight;
+  if(max>0) document.getElementById('scroll-progress').style.width=(scrolled/max*100)+'%';
+});
+
+// Mobile menu
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('mmclose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
+
+// ─── RECIPE MODAL ────────────────────────────────────────────────────────────
+const RECIPES = {
+  rabbit: {
+    tag:    { en:'Rabbit · Main Course', es:'Conejo · Plato Principal' },
+    title:  { en:'Braised Rabbit in White Wine', es:'Conejo Estofado al Vino Blanco' },
+    img:    'assets/recipes/recipe_rabbit_braise.jpg',
+    meta:   [
+      { label:{en:'Total Time',es:'Tiempo Total'}, val:{en:'3 hrs 20 min',es:'3 hrs 20 min'} },
+      { label:{en:'Active',es:'Activo'}, val:{en:'20 min',es:'20 min'} },
+      { label:{en:'Serves',es:'Porciones'}, val:{en:'4',es:'4'} },
+      { label:{en:'Difficulty',es:'Dificultad'}, val:{en:'Medium',es:'Intermedio'} },
+    ],
+    ingredients: {
+      en: ['6 rabbit hind legs (from Juliet\'s)','500 ml dry white wine','250 ml chicken or rabbit stock','1 large onion, roughly chopped','6 cloves garlic, smashed','4 sprigs fresh thyme','2 bay leaves','2 tbsp olive oil','Salt and black pepper','Optional: 1 tbsp Dijon mustard to finish'],
+      es: ['6 patas traseras de conejo (de Juliet\'s)','500 ml vino blanco seco','250 ml caldo de pollo o conejo','1 cebolla grande, picada gruesa','6 dientes de ajo, aplastados','4 ramas de tomillo fresco','2 hojas de laurel','2 cdas aceite de oliva','Sal y pimienta negra','Opcional: 1 cda mostaza Dijon para terminar'],
+    },
+    method: {
+      en: ['Pat rabbit legs dry. Season generously with salt and pepper.','Heat olive oil in a heavy braising pot (Dutch oven) over high heat. Sear legs in batches until deep golden brown — about 3 min per side. Set aside.','Reduce heat to medium. Sauté onion and garlic in the same pot until soft, about 5 min.','Pour in white wine. Scrape up any browned bits. Let reduce by one-third (about 8 min).','Add stock, thyme, and bay leaves. Return rabbit to the pot. Liquid should come two-thirds up the legs.','Cover and braise at 160 °C (325 °F) for 2 hrs 30 min, turning legs once at the halfway mark.','Remove lid for the final 20 min to concentrate the sauce. Rest 10 min before serving.','Optional: stir in Dijon mustard off the heat for a sharper sauce.'],
+      es: ['Secar las patas de conejo. Salpimentar generosamente.','Calentar aceite de oliva en una olla de hierro a fuego alto. Sellar las patas en tandas hasta dorar profundamente — aprox. 3 min por lado. Reservar.','Bajar el fuego. Sofreír la cebolla y el ajo en la misma olla hasta blandos, unos 5 min.','Agregar el vino blanco. Raspar los fondos caramelizados. Reducir un tercio (aprox. 8 min).','Añadir el caldo, tomillo y laurel. Regresar el conejo a la olla. El líquido debe cubrir dos tercios de las patas.','Tapar y estofar a 160 °C por 2 horas 30 minutos, girando las patas a la mitad.','Destapar los últimos 20 min para concentrar la salsa. Reposar 10 min antes de servir.','Opcional: agregar mostaza Dijon fuera del fuego para una salsa más intensa.'],
+    },
+  },
+  duck: {
+    tag:    { en:'Duck · Main Course', es:'Pato · Plato Principal' },
+    title:  { en:'Duck Confit with Crispy Skin', es:'Confit de Pato con Piel Crujiente' },
+    img:    'assets/recipes/recipe_duck_confit.jpg',
+    meta:   [
+      { label:{en:'Total Time',es:'Tiempo Total'}, val:{en:'13+ hrs',es:'13+ hrs'} },
+      { label:{en:'Cure (overnight)',es:'Curado'}, val:{en:'12 hrs',es:'12 hrs'} },
+      { label:{en:'Serves',es:'Porciones'}, val:{en:'2–4',es:'2–4'} },
+      { label:{en:'Difficulty',es:'Dificultad'}, val:{en:'Advanced',es:'Avanzado'} },
+    ],
+    ingredients: {
+      en: ['4 Juliet\'s duck legs','100 g coarse sea salt','1 tbsp black pepper, cracked','4 cloves garlic, minced','4 sprigs fresh thyme','2 bay leaves, crumbled','1 L duck fat (or quality olive oil)','Optional: 1 tsp juniper berries, crushed'],
+      es: ['4 patas de pato Juliet\'s','100 g sal de mar gruesa','1 cda pimienta negra molida gruesa','4 dientes de ajo picados','4 ramas de tomillo fresco','2 hojas de laurel, desmenuzadas','1 L grasa de pato (o aceite de oliva de calidad)','Opcional: 1 cdta bayas de enebro, machacadas'],
+    },
+    method: {
+      en: ['Mix salt, pepper, garlic, thyme, bay leaf (and juniper if using). Rub all over duck legs. Place in a container, cover, and refrigerate 10–12 hours.','Rinse legs under cold water. Pat completely dry — this is critical for crispy skin.','Place legs in a deep oven dish. Melt duck fat and pour over until legs are fully submerged.','Cook uncovered at 90 °C (190 °F) for 10–12 hours. The fat should barely shimmer — never bubble.','Cool legs in the fat. Store refrigerated (up to 2 weeks submerged in fat).','To serve: remove legs from fat, scrape off excess. Place skin-side down in a cold dry pan. Heat gradually to high — skin renders and crisps, about 8 min. Do not move. Flip and heat 2 min more. Serve immediately.'],
+      es: ['Mezclar sal, pimienta, ajo, tomillo y laurel (más enebro si se usa). Frotar por todas las patas. Colocar en un recipiente, tapar y refrigerar 10–12 horas.','Enjuagar las patas con agua fría. Secar completamente — esto es esencial para la piel crujiente.','Colocar las patas en un molde hondo para horno. Derretir la grasa de pato y cubrir las patas completamente.','Cocinar destapado a 90 °C por 10–12 horas. La grasa debe brillar levemente — nunca debe hervir.','Dejar enfriar las patas en la grasa. Conservar en refrigeración (hasta 2 semanas sumergidas en grasa).','Para servir: retirar las patas de la grasa, raspar el exceso. Colocar con la piel hacia abajo en una sartén fría y seca. Calentar gradualmente a fuego alto — la grasa se funde y la piel queda crujiente, unos 8 min. No mover. Voltear y calentar 2 min más. Servir de inmediato.'],
+    },
+  },
+  chicken: {
+    tag:    { en:'Chicken · Main Course', es:'Pollo · Plato Principal' },
+    title:  { en:'Roasted Chicken with Herb Butter', es:'Pollo Rostizado con Mantequilla de Hierbas' },
+    img:    'assets/recipes/recipe_roasted_chicken.jpg',
+    meta:   [
+      { label:{en:'Total Time',es:'Tiempo Total'}, val:{en:'2 hrs',es:'2 hrs'} },
+      { label:{en:'Active',es:'Activo'}, val:{en:'20 min',es:'20 min'} },
+      { label:{en:'Serves',es:'Porciones'}, val:{en:'4',es:'4'} },
+      { label:{en:'Difficulty',es:'Dificultad'}, val:{en:'Easy',es:'Fácil'} },
+    ],
+    ingredients: {
+      en: ['1 whole Juliet\'s pasture-raised chicken (2–2.5 kg)','100 g unsalted butter, softened','4 cloves garlic, finely minced','2 tbsp fresh thyme leaves','1 tbsp fresh rosemary, chopped','Zest of 1 lemon','2 tbsp olive oil','Salt and black pepper','Optional: ½ lemon, halved onion, fresh thyme — to place inside cavity'],
+      es: ['1 pollo entero Juliet\'s de pastoreo (2–2.5 kg)','100 g mantequilla sin sal, blanda','4 dientes de ajo, finamente picados','2 cdas hojas de tomillo fresco','1 cda romero fresco picado','Ralladura de 1 limón','2 cdas aceite de oliva','Sal y pimienta negra','Opcional: ½ limón, ½ cebolla, tomillo fresco — para colocar dentro de la cavidad'],
+    },
+    method: {
+      en: ['Remove chicken from refrigerator 45 min before roasting. Preheat oven to 220 °C (425 °F).','Mix softened butter with garlic, thyme, rosemary, and lemon zest. Season with salt and pepper.','Gently separate the skin from the breast and thighs with your fingers — without tearing. Push herb butter underneath the skin and spread evenly.','Rub the outside of the bird with olive oil. Season generously with salt and pepper.','Place breast-side up in a roasting pan. Tuck wings. Add optional cavity aromatics.','Roast at 220 °C for 20 min (skin begins to brown). Reduce to 180 °C and continue for 50–60 min.','Check doneness: juices run clear when thigh is pierced, or internal temp 74 °C at thickest part.','Rest uncovered 15 min before carving — this step is non-negotiable.'],
+      es: ['Sacar el pollo del refrigerador 45 min antes de hornear. Precalentar el horno a 220 °C.','Mezclar la mantequilla blanda con el ajo, tomillo, romero y ralladura de limón. Salpimentar.','Separar suavemente la piel de la pechuga y muslos con los dedos — sin rasgar. Introducir la mantequilla de hierbas bajo la piel y extender de manera uniforme.','Untar el exterior del pollo con aceite de oliva. Salpimentar generosamente.','Colocar con la pechuga hacia arriba en un molde para hornear. Doblar las alas. Añadir los aromáticos a la cavidad si se desea.','Hornear a 220 °C por 20 min (la piel comienza a dorar). Bajar a 180 °C y continuar 50–60 min.','Verificar cocción: los jugos salen claros al pinchar el muslo, o temperatura interna de 74 °C en la parte más gruesa.','Reposar destapado 15 min antes de trinchar — este paso no es opcional.'],
+    },
+  },
+};
+
+function openRecipe(id) {
+  const r = RECIPES[id];
+  const L = currentLang;
+  const box = document.getElementById('recipeBox');
+  box.innerHTML = `
+    <button class="recipe-close" onclick="closeRecipeModal()">×</button>
+    <img class="recipe-img-header" src="${r.img}" alt="${r.title[L]}"/>
+    <div class="recipe-tag-pill">${r.tag[L]}</div>
+    <h3>${r.title[L]}</h3>
+    <dl class="recipe-meta-row">
+      ${r.meta.map(m=>`<div><dt>${m.label[L]}</dt><dd>${m.val[L]}</dd></div>`).join('')}
+    </dl>
+    <div class="recipe-col-head">${L==='es'?'Ingredientes':'Ingredients'}</div>
+    <ul>${r.ingredients[L].map(i=>`<li>${i}</li>`).join('')}</ul>
+    <div class="recipe-col-head">${L==='es'?'Preparación':'Method'}</div>
+    <ol>${r.method[L].map(s=>`<li>${s}</li>`).join('')}</ol>
+  `;
+  document.getElementById('recipeModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeRecipeModal(e) {
+  if(e && e.target !== document.getElementById('recipeModal')) return;
+  document.getElementById('recipeModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// Escape key handled by combined handler at bottom of page
+document.querySelectorAll('.rec-card').forEach(c=>{
+  c.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' ') c.click(); });
+});
+
+// ─── LANGUAGE TOGGLE ─────────────────────────────────────────────────────────
+const T = {
+  en: {
+    nav_home:'Home', nav_restaurants:'For Restaurants', nav_home2:'For Home',
+    nav_cuts:'Our Cuts', nav_farm:'Our Farm', nav_recipes:'Recipes', nav_contact:'Contact',
+    hero_eye:'Juliet\'s Organic Meats &nbsp;·&nbsp; Costa Rica',
+    hero_organic:'ORGANIC',
+    hero_animals:'Rabbit, Duck',
+    hero_amp:'&amp;',
+    hero_chicken:'Pasture&#8209;Raised Chicken',
+    hero_sub:'Raised between San José and Río Claro. No hormones, no antibiotics. Delivered refrigerated to your kitchen — or your restaurant\'s pass.',
+    hero_cta1:'I\'m a Restaurant / Hotel',
+    hero_cta1_note:'Special cuts &amp; volume pricing',
+    hero_cta2:'Shop for My Home',
+    hero_cta2_note:'Family boxes &amp; individual cuts',
+    hero_stat1:'Organic', hero_stat2:'Farms', hero_stat3:'Animals',
+    path1_tag:'For Restaurants &amp; Hotels',
+    path1_h3:'Professional<br>Kitchen Partner',
+    path1_li1:'Consistent supply from San José and Río Claro',
+    path1_li2:'Rabbit, duck and organic chicken for fine dining',
+    path1_li3:'Standardized cuts &amp; consistent gram weights',
+    path1_li4:'Personalized service and volume pricing',
+    path1_li5:'Punctual refrigerated delivery on your schedule',
+    path1_btn:'View Restaurant Solutions',
+    path2_tag:'For Your Home',
+    path2_h3:'The Home<br>Table',
+    path2_li1:'Organic boxes with chicken, duck and rabbit',
+    path2_li2:'Practical cuts for everyday meals or special dinners',
+    path2_li3:'Refrigerated delivery in San José, GAM &amp; Southern Zone',
+    path2_li4:'Flexible subscription or one-time orders',
+    path2_li5:'Recipes and cooking guides included',
+    path2_btn:'Shop Family Boxes',
+    anat_label:'The Butcher\'s Guide',
+    anat_h2:'Know Every Cut.<br><em>Know What It\'s For.</em>',
+    anat_intro:'Scroll to reveal the anatomy. Click any cut to explore its flavor profile, best cooking methods, and chef\'s notes.',
+    anat_tab1:'Rabbit', anat_tab2:'Duck', anat_tab3:'Chicken',
+    prod_label:'Our Animals', prod_h2:'Three Animals.<br>One Standard.',
+    why_label:'Why Juliet\'s', why_h2:'The Standard<br>We Keep.',
+    why1_h4:'No Hormones.<br>No Antibiotics.', why1_p:'Our animals are raised naturally, on pasture, without growth promoters or preventive antibiotics — ever.',
+    why2_h4:'Two Farms.<br>One Standard.', why2_p:'San José and Río Claro share the same protocols, the same care, and the same commitment to quality.',
+    why3_h4:'Cold Chain<br>Guaranteed.', why3_p:'Vacuum-packaged and delivered at controlled temperature. From our farm to your door without compromise.',
+    why4_h4:'Consistent<br>Cuts &amp; Weights.', why4_p:'Every portion is standardized. Restaurant kitchens rely on us because our product behaves the same every time.',
+    res_label:'For Chefs, Hotels &amp; Catering',
+    res_h2:'A Reliable Partner<br><em>for Your Professional Kitchen</em>',
+    res_p:'Juliet\'s Organic Meats supplies rabbit, duck and organic chicken to restaurants across San José, the GAM and the Southern Zone. Standardized cuts, consistent gram weights, punctual deliveries.',
+    res_btn:'Discover the Restaurant Program',
+    how_label:'Process', how_h2:'How Juliet\'s Works.',
+    step1_h4:'Place Your Order', step1_p:'Select individual cuts, family boxes, or tell us what your restaurant needs. Order online or message us on WhatsApp.',
+    step2_h4:'We Schedule Your Delivery', step2_p:'We coordinate day and time based on your location — GAM, San José, or the Southern Zone near Río Claro.',
+    step3_h4:'Arrives Cold. Ready to Cook.', step3_p:'Vacuum-packed, labeled and delivered refrigerated. Open the box and it goes straight to your kitchen.',
+    boxes_label:'For Home', boxes_h2:'Choose Your Box.',
+    box1_tag:'Starter', box1_h4:'The Essentials Box', box1_p:'A weekly introduction to Juliet\'s quality. Chicken, rabbit or duck — your choice. Perfect for two.', box1_btn:'Order This Box',
+    box2_tag:'Family', box2_h4:'The Weekly Family Box', box2_p:'Three proteins, portioned for a family of four. Chicken thighs, duck legs, rabbit portions. Recipes included.', box2_btn:'Order This Box',
+    box3_tag:'Chef\'s Pick', box3_h4:'The Chef\'s Selection', box3_p:'Premium cuts selected by our team — the saddle, the magret, the whole bird. For serious home cooking.', box3_btn:'Order This Box',
+    testi_label:'What They Say', testi_h2:'From the Pass<br><em>&amp; the Table.</em>',
+    breeds_label:'Our Animals', breeds_h2:'Five Breeds.<br><em style="color:var(--brass-l)">Selected for Flavor.</em>',
+    breeds_p:'Every breed we raise was chosen for a reason. Not yield alone — flavor, texture, fat distribution, and temperament on pasture. These are the animals behind the cuts.',
+    poultry_label:'Poultry',
+    breed_rabbit_num:'Rabbit · Breed', breed_duck_num:'Duck · Two Breeds', breed_chicken_num:'Chicken · Pasture-Raised',
+    spec_weight:'Weight at harvest', spec_meat:'Meat character', spec_prep:'Best preparation', spec_farm:'Farm',
+    farm_norte:'Finca Norte — San José', farm_sur:'Finca Sur — Río Claro',
+    rec_label:'From Our Kitchen', rec_h2:'Three Recipes<br>to Start With.',
+    rec_rabbit_tag:'Rabbit · Main', rec_rabbit_title:'Braised Rabbit<br>in White Wine', rec_rabbit_desc:'Slow-braised rabbit legs in white wine, thyme and garlic. Three hours of patience that rewards completely.', rec_rabbit_time:'3 hrs', rec_rabbit_serves:'Serves 4', rec_rabbit_level:'Medium',
+    rec_duck_tag:'Duck · Main', rec_duck_title:'Duck Confit<br>with Crispy Skin', rec_duck_desc:'Classic French confit method. Duck legs cured in salt and thyme, then submerged in their own fat for 12 hours.', rec_duck_time:'12+ hrs', rec_duck_serves:'Serves 2', rec_duck_level:'Advanced',
+    rec_chicken_tag:'Chicken · Main', rec_chicken_title:'Roasted Chicken<br>with Herb Butter', rec_chicken_desc:'A whole Juliet\'s chicken, herbed butter under the skin, roasted at high heat. Simple done perfectly.', rec_chicken_time:'1.5 hrs', rec_chicken_serves:'Serves 4', rec_chicken_level:'Easy',
+    map_label:'Delivery', map_h2:'Two Farms.<br><em style="color:var(--red)">Direct to You.</em>',
+    map_li1:'Gran Área Metropolitana (GAM)', map_li2:'San José city &amp; surrounding cantons', map_li3:'Río Claro, Golfito &amp; Southern Zone', map_li4:'Osa Peninsula on request', map_li5:'48-hour advance window · Cold chain guaranteed',
+    map_btn:'Confirm Your Delivery Zone →',
+    faq_label:'Questions', faq_h2:'Frequently<br>Asked.',
+    faq_q1:'Where do you deliver?',
+    faq_a1:'We deliver throughout the Greater Metropolitan Area (GAM), San José city, and select areas in the Southern Zone near Río Claro. Contact us via WhatsApp to confirm your address.',
+    faq_q2:'Is the meat really organic and pasture-raised?',
+    faq_a2:'Yes. Our animals are raised on open pasture on our two farms — in San José and Río Claro. We never use growth hormones or preventive antibiotics. Our practices are consistent and transparent.',
+    faq_q3:'How is the cold chain maintained during delivery?',
+    faq_a3:'All products are vacuum-packaged immediately after processing and transported in refrigerated vehicles. Temperature is maintained from our farm to your door without interruption.',
+    faq_q4:'How far in advance do I need to place my order?',
+    faq_a4:'We ask for 48 hours notice for most orders. For large restaurant orders or custom cuts, 72 hours is preferred. WhatsApp us to arrange a recurring delivery schedule.',
+    faq_q5:'Do you offer volume pricing for restaurants and hotels?',
+    faq_a5:'Yes. We have a dedicated restaurant program with volume pricing, standardized cut weights, and flexible delivery schedules. Contact us to discuss your specific needs.',
+    email_label:'Stay in Touch', email_h2:'Get 10% Off<br><em style="color:var(--red)">Your First Order.</em>',
+    email_p:'Subscribe to receive offers, recipes, and news from our farms in San José and Río Claro.',
+    email_check:'I am a restaurant / hotel', email_btn:'Subscribe &amp; Claim 10%',
+    email_ph_name:'Your name', email_ph_email:'Email address',
+    anat_empty_text:'Click any cut on the diagram<br>to explore its profile.',
+    prod_label:'Our Animals', prod_h2:'Three Animals.<br>One Standard.',
+    prod1_tag:'Small Farm · San José', prod1_h3:'Organic Rabbit',
+    prod1_p:'Tender, lean and delicately flavored. Ideal for stews, ragùs and gourmet preparations at home or on your menu.',
+    prod1_li1:'Whole or portioned', prod1_li2:'Special cuts for restaurants', prod1_li3:'Saddle, legs, loin separately',
+    prod2_tag:'Free Range · Río Claro', prod2_h3:'Organic Duck',
+    prod2_p:'Pasture-raised duck with high-quality fat and rich, intense meat. Perfect for confit, magret and chef-driven plates.',
+    prod2_li1:'Breasts, legs and whole duck', prod2_li2:'Professional kitchen presentations', prod2_li3:'Duck fat available separately',
+    prod3_tag:'Pasture-Raised · Both Farms', prod3_h3:'Pasture-Raised Chicken',
+    prod3_p:'Naturally grown chicken — juicy and flavorful, thanks to our farms in San José and Río Claro.',
+    prod3_li1:'Whole chicken and pieces', prod3_li2:'Family boxes &amp; subscriptions', prod3_li3:'Restaurant portion packs',
+    prod_explore:'Explore Cuts',
+    testi_q1:'The rabbit from Juliet\'s is the most consistent product I\'ve ever worked with in Costa Rica. The saddle holds perfectly, the portions are exact, and the cold chain is impeccable.',
+    testi_by1:'Chef Marco Solís — Restaurant Silvestre, San José',
+    testi_q2:'We switched to Juliet\'s for our Sunday family dinners three months ago. The difference in flavor is undeniable. The chicken actually tastes like chicken used to taste.',
+    testi_by2:'Andrea Mora — Home Customer, Escazú',
+    testi_q3:'Their duck magret is exceptional. We run a French-influenced menu and couldn\'t source this quality locally — until Juliet\'s. Now it\'s a permanent fixture.',
+    testi_by3:'Chef Amélie Durand — Bouchon CR, San José',
+    made_label:'Producido en Costa Rica · Desde 2018',
+    made_h2:'MADE IN<br>COSTA RICA',
+    made_sub:'San José · Río Claro · Criado en Pastizales Abiertos',
+    farm_label:'Our Origin',
+    farm_h2:'From Our Farms in<br><em style="color:var(--brass-l)">San José &amp; Río Claro</em><br>to Your Table.',
+    farm_p:'Juliet\'s Organic Meats was born from a desire to offer more honest, more flavorful meat. Between San José and Río Claro we raise rabbit, duck and chicken on open pasture — caring for the land and the animals that live on it.',
+    farm_li1:'Production in San José and Río Claro, Costa Rica',
+    farm_li2:'Careful management of soil and water',
+    farm_li3:'Hygienic processing and vacuum packaging',
+    farm_li4:'No hormones or preventive antibiotics',
+    farm_btn:'Learn Our Story &amp; Process',
+    fstat_farms:'Farms', fstat_animals:'Animals', fstat_organic:'Organic', fstat_hormones:'Hormones',
+    map_p:'San José supplies the Greater Metropolitan Area. Río Claro serves the Southern Zone and Osa. Both farms operate a direct refrigerated cold chain — no third-party handling, no compromise on temperature.',
+    breed_sf_name:'Silver Fox', breed_sf_desc:'A heritage American breed — jet-black coat, exceptional meat-to-bone ratio. Dense, fine-grained muscle with mild, clean flavor that absorbs braising liquid beautifully. The saddle is prized by Costa Rican fine-dining chefs.', breed_sf_meat:'Fine-grained, mild, lean', breed_sf_prep:'Braise, confit, slow roast',
+    breed_cal_name:'Californian', breed_cal_desc:'White body with distinctive dark points — the commercial standard for a reason. Broad hindquarters, deep loin, consistent portion weight. Mild and versatile: performs equally in rustic braises and refined restaurant preparations.', breed_cal_meat:'Consistent, mild, wide loin', breed_cal_prep:'Roast, stew, rabbit rillettes',
+    breed_nzw_name:'New Zealand White', breed_nzw_desc:'The largest of our three rabbit breeds — pure white, heavily muscled hindquarters, dense chest. Produces the highest yield per carcass. The legs are ideal for long confit; the loin, sliced, plates like veal. A workhorse breed with gourmet results.', breed_nzw_meat:'High yield, firm, veal-like', breed_nzw_prep:'Confit, pan-sear loin, ragù',
+    breed_duck_name:'Duck — Pekin &amp; Muscovy', breed_duck_desc:'Two breeds, two flavor profiles. The Pekin delivers a generously fatted breast that lacquers brilliantly at high heat — the magret every fine-dining kitchen wants. The Muscovy, native to Central America, runs leaner with a complex, veal-like depth prized by serious kitchens.', breed_duck_meat:'Rich magret, deep umami flavor', breed_duck_prep:'Confit, sear, lacquered roast',
+    breed_chicken_name:'Pasture-Raised Chicken', breed_chicken_desc:'Slow-grown on open pasture in Río Claro — no confinement, no growth hormones. The result is a bird with genuine flavor: tight muscle, golden skin that crisps properly under dry heat, and dark meat that holds up to braising without falling apart. What chicken is supposed to taste like.', breed_chicken_meat:'Firm, flavorful, golden skin', breed_chicken_prep:'Roast, spatchcock, braise',
+    footer_tag:'Producers of organic rabbit, duck and chicken in San José and Río Claro, Costa Rica — connecting the farm to your table.',
+    footer_nav_head:'Navigation', footer_contact_head:'Contact', footer_follow_head:'Follow Us',
+    footer_delivery:'Delivery Zone', footer_breeds:'Our Breeds',
+    footer_wa:'WhatsApp', footer_rioclaro:'Río Claro, Southern Zone',
+    footer_copy:'© 2025 Juliet\'s Organic Meats. Costa Rica.',
+    footer_tagline:'No hormones · No antibiotics · Pasture-raised',
+    mob_wa:'WhatsApp Us',
+  },
+  es: {
+    nav_home:'Inicio', nav_restaurants:'Para Restaurantes', nav_home2:'Para el Hogar',
+    nav_cuts:'Nuestros Cortes', nav_farm:'Nuestra Finca', nav_recipes:'Recetas', nav_contact:'Contacto',
+    hero_eye:'Juliet\'s Organic Meats &nbsp;·&nbsp; Costa Rica',
+    hero_organic:'ORGÁNICO',
+    hero_animals:'Conejo, Pato',
+    hero_amp:'&amp;',
+    hero_chicken:'Pollo de Pastoreo',
+    hero_sub:'Criados entre San José y Río Claro. Sin hormonas, sin antibióticos. Entregados refrigerados a su cocina — o al pase de su restaurante.',
+    hero_cta1:'Soy Restaurante / Hotel',
+    hero_cta1_note:'Cortes especiales y precios por volumen',
+    hero_cta2:'Comprar para mi Hogar',
+    hero_cta2_note:'Cajas familiares y cortes individuales',
+    hero_stat1:'Orgánico', hero_stat2:'Fincas', hero_stat3:'Animales',
+    path1_tag:'Para Restaurantes y Hoteles',
+    path1_h3:'Socio Profesional<br>de Cocina',
+    path1_li1:'Abastecimiento constante desde San José y Río Claro',
+    path1_li2:'Conejo, pato y pollo orgánico para alta cocina',
+    path1_li3:'Cortes estandarizados y pesos por gramo consistentes',
+    path1_li4:'Servicio personalizado y precios por volumen',
+    path1_li5:'Entrega refrigerada puntual según su horario',
+    path1_btn:'Ver Soluciones para Restaurantes',
+    path2_tag:'Para Su Hogar',
+    path2_h3:'La Mesa<br>del Hogar',
+    path2_li1:'Cajas orgánicas con pollo, pato y conejo',
+    path2_li2:'Cortes prácticos para el diario o cenas especiales',
+    path2_li3:'Entrega refrigerada en San José, GAM y Zona Sur',
+    path2_li4:'Suscripción flexible o pedidos únicos',
+    path2_li5:'Recetas y guías de cocina incluidas',
+    path2_btn:'Ver Cajas Familiares',
+    anat_label:'La Guía del Carnicero',
+    anat_h2:'Conoce Cada Corte.<br><em>Sabe Para Qué Sirve.</em>',
+    anat_intro:'Desplázate para revelar la anatomía. Haz clic en cualquier corte para explorar su perfil de sabor, métodos de cocción y notas del chef.',
+    anat_tab1:'Conejo', anat_tab2:'Pato', anat_tab3:'Pollo',
+    prod_label:'Nuestros Animales', prod_h2:'Tres Animales.<br>Un Solo Estándar.',
+    why_label:'Por Qué Juliet\'s', why_h2:'El Estándar<br>Que Mantenemos.',
+    why1_h4:'Sin Hormonas.<br>Sin Antibióticos.', why1_p:'Nuestros animales se crían de forma natural, en pastoreo, sin promotores de crecimiento ni antibióticos preventivos — nunca.',
+    why2_h4:'Dos Fincas.<br>Un Solo Estándar.', why2_p:'San José y Río Claro comparten los mismos protocolos, el mismo cuidado y el mismo compromiso con la calidad.',
+    why3_h4:'Cadena de Frío<br>Garantizada.', why3_p:'Empacado al vacío y entregado a temperatura controlada. Desde nuestra finca hasta su puerta sin compromiso.',
+    why4_h4:'Cortes y Pesos<br>Consistentes.', why4_p:'Cada porción está estandarizada. Las cocinas de restaurante confían en nosotros porque nuestro producto se comporta igual siempre.',
+    res_label:'Para Chefs, Hoteles y Catering',
+    res_h2:'Un Socio Confiable<br><em>para su Cocina Profesional</em>',
+    res_p:'Juliet\'s Organic Meats abastece conejo, pato y pollo orgánico a restaurantes en San José, el GAM y la Zona Sur. Cortes estandarizados, pesos por gramo consistentes, entregas puntuales.',
+    res_btn:'Descubrir el Programa de Restaurantes',
+    how_label:'Proceso', how_h2:'Cómo Funciona Juliet\'s.',
+    step1_h4:'Haz Tu Pedido', step1_p:'Selecciona cortes individuales, cajas familiares o cuéntanos qué necesita tu restaurante. Pide en línea o escríbenos por WhatsApp.',
+    step2_h4:'Coordinamos Tu Entrega', step2_p:'Coordinamos día y hora según tu ubicación — GAM, San José o la Zona Sur cerca de Río Claro.',
+    step3_h4:'Llega Frío. Listo para Cocinar.', step3_p:'Empacado al vacío, etiquetado y entregado refrigerado. Abre la caja y va directo a tu cocina.',
+    boxes_label:'Para el Hogar', boxes_h2:'Elige Tu Caja.',
+    box1_tag:'Básica', box1_h4:'La Caja Esencial', box1_p:'Una introducción semanal a la calidad de Juliet\'s. Pollo, conejo o pato — a su elección. Perfecta para dos.', box1_btn:'Pedir Esta Caja',
+    box2_tag:'Familiar', box2_h4:'La Caja Familiar Semanal', box2_p:'Tres proteínas, porcionadas para una familia de cuatro. Muslos de pollo, patas de pato, porciones de conejo. Recetas incluidas.', box2_btn:'Pedir Esta Caja',
+    box3_tag:'Selección del Chef', box3_h4:'La Selección del Chef', box3_p:'Cortes premium seleccionados por nuestro equipo — el lomo, el magret, el ave entera. Para cocina casera seria.', box3_btn:'Pedir Esta Caja',
+    testi_label:'Lo Que Dicen', testi_h2:'Del Pase<br><em>a la Mesa.</em>',
+    breeds_label:'Nuestros Animales', breeds_h2:'Cinco Razas.<br><em style="color:var(--brass-l)">Seleccionadas por Sabor.</em>',
+    breeds_p:'Cada raza que criamos fue elegida por una razón. No solo por rendimiento — sabor, textura, distribución de grasa y temperamento en pastoreo. Estos son los animales detrás de los cortes.',
+    poultry_label:'Aves de Corral',
+    breed_rabbit_num:'Conejo · Raza', breed_duck_num:'Pato · Dos Razas', breed_chicken_num:'Pollo · De Pastoreo',
+    spec_weight:'Peso al sacrificio', spec_meat:'Carácter de la carne', spec_prep:'Mejor preparación', spec_farm:'Finca',
+    farm_norte:'Finca Norte — San José', farm_sur:'Finca Sur — Río Claro',
+    rec_label:'De Nuestra Cocina', rec_h2:'Tres Recetas<br>Para Comenzar.',
+    rec_rabbit_tag:'Conejo · Plato Principal', rec_rabbit_title:'Conejo Estofado<br>al Vino Blanco', rec_rabbit_desc:'Patas de conejo estofadas lentamente en vino blanco, tomillo y ajo. Tres horas de paciencia que se recompensan completamente.', rec_rabbit_time:'3 hrs', rec_rabbit_serves:'4 porciones', rec_rabbit_level:'Intermedio',
+    rec_duck_tag:'Pato · Plato Principal', rec_duck_title:'Confit de Pato<br>con Piel Crujiente', rec_duck_desc:'Método clásico francés. Patas de pato curadas en sal y tomillo, sumergidas en su propia grasa por 12 horas.', rec_duck_time:'12+ hrs', rec_duck_serves:'2 porciones', rec_duck_level:'Avanzado',
+    rec_chicken_tag:'Pollo · Plato Principal', rec_chicken_title:'Pollo Rostizado<br>con Mantequilla de Hierbas', rec_chicken_desc:'Un pollo entero Juliet\'s, mantequilla de hierbas bajo la piel, asado a fuego alto. Sencillo hecho perfectamente.', rec_chicken_time:'1.5 hrs', rec_chicken_serves:'4 porciones', rec_chicken_level:'Fácil',
+    map_label:'Entregas', map_h2:'Dos Fincas.<br><em style="color:var(--red)">Directo a Usted.</em>',
+    map_li1:'Gran Área Metropolitana (GAM)', map_li2:'Ciudad de San José y cantones aledaños', map_li3:'Río Claro, Golfito y Zona Sur', map_li4:'Península de Osa bajo pedido', map_li5:'Ventana de 48 horas · Cadena de frío garantizada',
+    map_btn:'Confirmar Zona de Entrega →',
+    faq_label:'Preguntas', faq_h2:'Preguntas<br>Frecuentes.',
+    faq_q1:'¿A dónde entregan?',
+    faq_a1:'Hacemos entregas en toda el Área Metropolitana (GAM), la ciudad de San José y zonas selectas de la Zona Sur cerca de Río Claro. Contáctenos por WhatsApp para confirmar su dirección.',
+    faq_q2:'¿La carne es realmente orgánica y de pastoreo?',
+    faq_a2:'Sí. Nuestros animales se crían en pastoreo abierto en nuestras dos fincas — en San José y Río Claro. Nunca usamos hormonas de crecimiento ni antibióticos preventivos. Nuestras prácticas son consistentes y transparentes.',
+    faq_q3:'¿Cómo se mantiene la cadena de frío durante la entrega?',
+    faq_a3:'Todos los productos se empacan al vacío inmediatamente después del procesamiento y se transportan en vehículos refrigerados. La temperatura se mantiene desde nuestra finca hasta su puerta sin interrupción.',
+    faq_q4:'¿Con cuánta anticipación debo hacer mi pedido?',
+    faq_a4:'Pedimos un aviso de 48 horas para la mayoría de los pedidos. Para pedidos grandes de restaurante o cortes personalizados, se prefiere 72 horas. Escríbanos por WhatsApp para organizar un horario de entrega recurrente.',
+    faq_q5:'¿Ofrecen precios por volumen para restaurantes y hoteles?',
+    faq_a5:'Sí. Tenemos un programa dedicado para restaurantes con precios por volumen, pesos de corte estandarizados y horarios de entrega flexibles. Contáctenos para hablar de sus necesidades específicas.',
+    email_label:'Manténgase en Contacto', email_h2:'Obtén 10% de Descuento<br><em style="color:var(--red)">en Tu Primer Pedido.</em>',
+    email_p:'Suscríbete para recibir ofertas, recetas y noticias de nuestras fincas en San José y Río Claro.',
+    email_check:'Soy restaurante / hotel', email_btn:'Suscribirme y Reclamar 10%',
+    email_ph_name:'Tu nombre', email_ph_email:'Correo electrónico',
+    anat_empty_text:'Haz clic en cualquier corte del diagrama<br>para explorar su perfil.',
+    prod_label:'Nuestros Animales', prod_h2:'Tres Animales.<br>Un Solo Estándar.',
+    prod1_tag:'Finca Pequeña · San José', prod1_h3:'Conejo Orgánico',
+    prod1_p:'Tierno, magro y delicadamente sabroso. Ideal para estofados, ragús y preparaciones gourmet en casa o en tu menú.',
+    prod1_li1:'Entero o porcionado', prod1_li2:'Cortes especiales para restaurantes', prod1_li3:'Lomo, piernas y solomillo por separado',
+    prod2_tag:'Libre Pastoreo · Río Claro', prod2_h3:'Pato Orgánico',
+    prod2_p:'Pato de pastoreo con grasa de alta calidad y carne rica e intensa. Perfecto para confit, magret y platos de alta cocina.',
+    prod2_li1:'Pechugas, piernas y pato entero', prod2_li2:'Presentaciones para cocina profesional', prod2_li3:'Grasa de pato disponible por separado',
+    prod3_tag:'De Pastoreo · Ambas Fincas', prod3_h3:'Pollo de Pastoreo',
+    prod3_p:'Pollo criado naturalmente — jugoso y sabroso, gracias a nuestras fincas en San José y Río Claro.',
+    prod3_li1:'Pollo entero y en piezas', prod3_li2:'Cajas familiares y suscripciones', prod3_li3:'Porciones para restaurante',
+    prod_explore:'Ver Cortes',
+    testi_q1:'El conejo de Juliet\'s es el producto más consistente con el que he trabajado en Costa Rica. El lomo sale perfecto, las porciones son exactas y la cadena de frío es impecable.',
+    testi_by1:'Chef Marco Solís — Restaurante Silvestre, San José',
+    testi_q2:'Cambiamos a Juliet\'s para nuestras cenas familiares del domingo hace tres meses. La diferencia de sabor es innegable. El pollo sabe como el pollo solía saber.',
+    testi_by2:'Andrea Mora — Cliente del Hogar, Escazú',
+    testi_q3:'Su magret de pato es excepcional. Tenemos un menú de influencia francesa y no podíamos conseguir esta calidad localmente — hasta que llegó Juliet\'s. Ahora es un elemento permanente.',
+    testi_by3:'Chef Amélie Durand — Bouchon CR, San José',
+    made_label:'Producido en Costa Rica · Desde 2018',
+    made_h2:'HECHO EN<br>COSTA RICA',
+    made_sub:'San José · Río Claro · Criado en Pastizales Abiertos',
+    farm_label:'Nuestro Origen',
+    farm_h2:'De Nuestras Fincas en<br><em style="color:var(--brass-l)">San José &amp; Río Claro</em><br>a Tu Mesa.',
+    farm_p:'Juliet\'s Organic Meats nació del deseo de ofrecer una carne más honesta y más sabrosa. Entre San José y Río Claro criamos conejo, pato y pollo en pastoreo abierto — cuidando la tierra y los animales que viven en ella.',
+    farm_li1:'Producción en San José y Río Claro, Costa Rica',
+    farm_li2:'Manejo cuidadoso del suelo y el agua',
+    farm_li3:'Procesamiento higiénico y empaque al vacío',
+    farm_li4:'Sin hormonas ni antibióticos preventivos',
+    farm_btn:'Conocer Nuestra Historia y Proceso',
+    fstat_farms:'Fincas', fstat_animals:'Animales', fstat_organic:'Orgánico', fstat_hormones:'Hormonas',
+    map_p:'San José abastece el Gran Área Metropolitana. Río Claro sirve la Zona Sur y Osa. Ambas fincas operan una cadena de frío directa y refrigerada — sin intermediarios, sin compromiso en la temperatura.',
+    breed_sf_name:'Silver Fox', breed_sf_desc:'Una raza americana patrimonial — pelaje negro azabache, excepcional relación carne-hueso. Músculo denso y de grano fino con sabor suave y limpio que absorbe el líquido de estofado de forma extraordinaria. El lomo es apreciado por los chefs de alta cocina costarricense.', breed_sf_meat:'Grano fino, suave, magro', breed_sf_prep:'Estofado, confit, asado lento',
+    breed_cal_name:'Californiana', breed_cal_desc:'Cuerpo blanco con puntos oscuros característicos — el estándar comercial por una razón. Cuartos traseros anchos, lomo profundo, peso de porción consistente. Suave y versátil: funciona igual en estofados rústicos y preparaciones refinadas de restaurante.', breed_cal_meat:'Consistente, suave, lomo ancho', breed_cal_prep:'Asado, guiso, rillettes de conejo',
+    breed_nzw_name:'Nueva Zelanda Blanca', breed_nzw_desc:'La más grande de nuestras tres razas de conejo — blanco puro, cuartos traseros muy musculosos, pecho denso. Produce el mayor rendimiento por canal. Las piernas son ideales para confit largo; el lomo, en rodajas, se sirve como ternera. Una raza de trabajo con resultados gourmet.', breed_nzw_meat:'Alto rendimiento, firme, similar a ternera', breed_nzw_prep:'Confit, lomo sellado, ragú',
+    breed_duck_name:'Pato — Pekin y Muscovy', breed_duck_desc:'Dos razas, dos perfiles de sabor. El Pekin ofrece una pechuga generosamente engrasada que se carameliza brillantemente a fuego alto — el magret que toda cocina de alta gama quiere. El Muscovy, nativo de América Central, es más magro con una profundidad compleja similar a la ternera, apreciado por las cocinas serias.', breed_duck_meat:'Magret rico, sabor umami profundo', breed_duck_prep:'Confit, sellado, asado lacado',
+    breed_chicken_name:'Pollo de Pastoreo', breed_chicken_desc:'Criado lentamente en pastoreo abierto en Río Claro — sin confinamiento, sin hormonas de crecimiento. El resultado es un ave con sabor genuino: músculo firme, piel dorada que queda crujiente bajo calor seco y carne oscura que aguanta el estofado sin deshacerse. Lo que el pollo debería saber.', breed_chicken_meat:'Firme, sabroso, piel dorada', breed_chicken_prep:'Asado, spatchcock, estofado',
+    footer_tag:'Productores de conejo, pato y pollo orgánico en San José y Río Claro, Costa Rica — conectando la finca con su mesa.',
+    footer_nav_head:'Navegación', footer_contact_head:'Contacto', footer_follow_head:'Síguenos',
+    footer_delivery:'Zona de Entrega', footer_breeds:'Nuestras Razas',
+    footer_wa:'WhatsApp', footer_rioclaro:'Río Claro, Zona Sur',
+    footer_copy:'© 2025 Juliet\'s Organic Meats. Costa Rica.',
+    footer_tagline:'Sin hormonas · Sin antibióticos · De pastoreo',
+    mob_wa:'Escríbenos por WhatsApp',
+  }
+};
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'es' : 'en';
+  document.getElementById('langToggle').textContent = currentLang === 'en' ? 'ES' : 'EN';
+  document.documentElement.lang = currentLang;
+  const t = T[currentLang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if(t[k] !== undefined) el.innerHTML = t[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const k = el.dataset.i18nPh;
+    if(t[k] !== undefined) el.placeholder = t[k];
+  });
+  // Re-render anatomy tagline and panel labels
+  if(window._currentAnimal) {
+    buildStage(window._currentAnimal);
+    if(cC) renderPanel(cC); else renderPanel(null);
+  }
+}
+
+// Animated stat counters
+(function(){
+  const stats=document.querySelectorAll('.fstat-n');
+  if(!stats.length) return;
+  const targets=Array.from(stats).map(el=>{
+    const txt=el.textContent.trim();
+    const pct=txt.endsWith('%');
+    return {el,val:parseInt(txt,10)||0,pct,done:false};
+  });
+  function runCounter(item){
+    if(item.done) return; item.done=true;
+    const {el,val,pct}=item;
+    if(val===0){el.textContent='0'; return;}
+    const dur=1100, start=performance.now();
+    (function tick(now){
+      const t=Math.min((now-start)/dur,1);
+      const ease=1-Math.pow(1-t,3);
+      el.textContent=Math.round(ease*val)+(pct?'%':'');
+      if(t<1) requestAnimationFrame(tick);
+    })(start);
+  }
+  const farmStats=document.querySelector('.farm-stats');
+  if(farmStats){
+    new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting) targets.forEach(runCounter); });
+    },{threshold:0.4}).observe(farmStats);
+  }
+})();
+
+// Email form submit feedback
+(function(){
+  const form=document.querySelector('.email-form');
+  if(!form) return;
+  form.querySelector('.btn-red').addEventListener('click',function(){
+    const emailInput=form.querySelector('input[type="email"]');
+    if(!emailInput||!emailInput.value.includes('@')){
+      emailInput.style.outline='1px solid var(--red)';
+      setTimeout(()=>emailInput.style.outline='',2200);
+      return;
+    }
+    form.innerHTML='<div style="text-align:center;padding:3rem 0;font-family:var(--font-disp);font-size:2rem;color:var(--brass-l);font-style:italic;line-height:1.3">Thank you —<br><span style="font-size:1.1rem;opacity:.7">we\'ll be in touch.</span></div>';
+  });
+})();
+</script>
+
+<!-- Recipe Modal -->
+<div id="recipeModal" class="recipe-modal" onclick="closeRecipeModal(event)">
+  <div class="recipe-box" id="recipeBox"></div>
+</div>
+
+<!-- Box Detail Modal -->
+<div id="boxModal" class="box-modal" onclick="closeBoxModal(event)">
+  <div class="box-panel" id="boxPanel"></div>
+</div>
+
+<!-- Breed Detail Modal -->
+<div id="breedModal" class="breed-modal" onclick="closeBreedModal(event)">
+  <div class="breed-panel" id="breedPanel"></div>
+</div>
+
+<script>
+const BOX_DATA = {
+  essentials: {
+    tag: { en:'Starter Box', es:'Caja Básica' },
+    title: { en:'The Essentials Box', es:'La Caja Esencial' },
+    img: 'assets/boxes/box_essentials_open.jpg',
+    price: '₡12,500',
+    serves: { en:'2–3 people · Weekly delivery', es:'2–3 personas · Entrega semanal' },
+    contents: {
+      en: [
+        '1 whole pasture-raised chicken (1.5–1.8 kg), vacuum-packed',
+        '2 rabbit saddle portions (~400 g total), vacuum-packed',
+        'Chilled and labeled — arrives refrigerated, ready to cook',
+      ],
+      es: [
+        '1 pollo entero de pastoreo (1.5–1.8 kg), empacado al vacío',
+        '2 porciones de lomo de conejo (~400 g total), empacado al vacío',
+        'Refrigerado y etiquetado — listo para cocinar',
+      ],
+    },
+    breeds: [
+      { name:'New Zealand White / Californian', note:{ en:'Rotates weekly. Lean, mild-flavored, fine-grained — ideal for roasting or braising.', es:'Rota semanalmente. Magro, sabor suave y grano fino — ideal para asar o estofar.' } },
+      { name:'Free-Range Chicken', note:{ en:'Heritage strain, open-pasture raised. Firmer texture, deeper flavor than commodity birds.', es:'Criada en pastoreo abierto. Textura más firme, sabor más profundo.' } },
+    ],
+    nutrition: [
+      { protein:{ en:'Rabbit Saddle', es:'Lomo de Conejo' }, kcal:'108', protein_g:'22.4', fat:'2.8', carbs:'0', chol:'79' },
+      { protein:{ en:'Whole Chicken', es:'Pollo Entero' }, kcal:'143', protein_g:'23.1', fat:'5.2', carbs:'0', chol:'78' },
+    ],
+  },
+  family: {
+    tag: { en:'Family Box', es:'Caja Familiar' },
+    title: { en:'The Weekly Family Box', es:'La Caja Familiar Semanal' },
+    img: 'assets/boxes/box_family_open.jpg',
+    price: '₡24,000',
+    serves: { en:'Family of 4 · Weekly delivery · 2 recipe cards included', es:'Familia de 4 · Entrega semanal · 2 tarjetas de recetas incluidas' },
+    contents: {
+      en: [
+        '4 chicken thighs, skin-on, free-range (~800 g total)',
+        '4 Pekin duck legs, vacuum-packed (~1.2 kg total)',
+        '4 rabbit portions — mixed cuts (legs + saddle), ~700 g total',
+        '2 seasonal recipe cards developed by our kitchen team',
+      ],
+      es: [
+        '4 muslos de pollo con piel, de pastoreo (~800 g total)',
+        '4 piernas de pato Pekin, empacadas al vacío (~1.2 kg total)',
+        '4 porciones de conejo — cortes mixtos (piernas + lomo), ~700 g total',
+        '2 tarjetas de recetas de temporada desarrolladas por nuestro equipo',
+      ],
+    },
+    breeds: [
+      { name:'Silver Fox Rabbit', note:{ en:'Prized for lean, fine-grained meat with a mild, clean flavor. Excellent for family braising and stews.', es:'Apreciado por su carne magra, grano fino y sabor suave. Excelente para estofados familiares.' } },
+      { name:'Pekin Duck', note:{ en:'Mild, tender, high-yield. The most popular duck breed worldwide for family cooking.', es:'Suave, tierno y alto rendimiento. La raza de pato más popular del mundo.' } },
+      { name:'Free-Range Chicken', note:{ en:'Open pasture, no growth hormones, no preventive antibiotics.', es:'Pastoreo abierto, sin hormonas, sin antibióticos preventivos.' } },
+    ],
+    nutrition: [
+      { protein:{ en:'Silver Fox Rabbit', es:'Conejo Silver Fox' }, kcal:'114', protein_g:'21.2', fat:'3.5', carbs:'0', chol:'82' },
+      { protein:{ en:'Pekin Duck Leg', es:'Pierna Pato Pekin' }, kcal:'201', protein_g:'19.0', fat:'13.5', carbs:'0', chol:'91' },
+      { protein:{ en:'Chicken Thigh', es:'Muslo de Pollo' }, kcal:'143', protein_g:'23.1', fat:'5.2', carbs:'0', chol:'78' },
+    ],
+  },
+  chefs: {
+    tag: { en:"Chef's Pick", es:'Selección del Chef' },
+    title: { en:"The Chef's Selection", es:'La Selección del Chef' },
+    img: 'assets/boxes/box_chefs_selection_open.jpg',
+    price: '₡38,000',
+    serves: { en:'2–4 people · Weekly or bi-weekly · Artisan black-label packaging', es:'2–4 personas · Semanal o quincenal · Empaque artesanal etiqueta negra' },
+    contents: {
+      en: [
+        'Rabbit saddle, whole — premium cut (600–700 g), butcher paper wrapped',
+        '2 Muscovy duck magret breasts (~380–420 g each), vacuum-packed',
+        '1 whole pasture-raised chicken (1.8–2.2 kg), heritage strain',
+        'Black-label artisan packaging, sealed with wax',
+      ],
+      es: [
+        'Lomo entero de conejo — corte premium (600–700 g), envuelto en papel carnicero',
+        '2 pechugas magret de pato Muscovy (~380–420 g c/u), empacadas al vacío',
+        '1 pollo entero de pastoreo (1.8–2.2 kg), cepa patrimonial',
+        'Empaque artesanal etiqueta negra, sellado con cera',
+      ],
+    },
+    breeds: [
+      { name:'Silver Fox Rabbit', note:{ en:'Our most prized breed. Fine-grained, lean, with a subtle depth of flavor preferred by professional chefs.', es:'Nuestra raza más valorada. Grano fino, magro, con una sutileza de sabor preferida por chefs.' } },
+      { name:'Muscovy Duck', note:{ en:'Significantly lower in fat than Pekin (40% less). Deeper, more complex flavor — the preferred duck of professional kitchens.', es:'Significativamente más bajo en grasa que el Pekin (40% menos). Sabor más profundo y complejo.' } },
+      { name:'Heritage-Strain Chicken', note:{ en:'Slower-growing, open-pasture breed. Firmer, more flavorful — built for serious cooking techniques.', es:'Raza de crecimiento lento y pastoreo abierto. Más firme y sabrosa — para técnicas culinarias serias.' } },
+    ],
+    nutrition: [
+      { protein:{ en:'Rabbit Saddle', es:'Lomo de Conejo' }, kcal:'108', protein_g:'22.4', fat:'2.8', carbs:'0', chol:'79' },
+      { protein:{ en:'Muscovy Magret', es:'Magret Muscovy' }, kcal:'172', protein_g:'22.0', fat:'9.0', carbs:'0', chol:'87' },
+      { protein:{ en:'Whole Chicken', es:'Pollo Entero' }, kcal:'143', protein_g:'23.1', fat:'5.2', carbs:'0', chol:'78' },
+    ],
+  },
+};
+
+function openBox(id) {
+  const b = BOX_DATA[id];
+  const L = currentLang;
+  const panel = document.getElementById('boxPanel');
+  const nutriRows = b.nutrition.map(n => `
+    <tr>
+      <td>${n.protein[L]}</td>
+      <td>${n.kcal}</td>
+      <td>${n.protein_g}g</td>
+      <td>${n.fat}g</td>
+      <td>${n.carbs}g</td>
+      <td>${n.chol}mg</td>
+    </tr>`).join('');
+  const breedChips = b.breeds.map(br => `
+    <div class="box-breed-chip">
+      <strong>${br.name}</strong>
+      <span>${br.note[L]}</span>
+    </div>`).join('');
+  const contentItems = b.contents[L].map(c => `<li>${c}</li>`).join('');
+  const nutriHead = L === 'en'
+    ? ['Protein','Kcal / 100g','Protein','Fat','Carbs','Cholesterol']
+    : ['Proteína','Kcal / 100g','Proteína','Grasa','Carbos','Colesterol'];
+  const sectionWhat  = L === 'en' ? "What's Inside" : 'Contenido de la Caja';
+  const sectionBreed = L === 'en' ? 'Animal Breeds & Sourcing' : 'Razas & Origen';
+  const sectionNutri = L === 'en' ? 'Nutritional Values per 100g' : 'Valores Nutricionales por 100g';
+  const orderLabel   = L === 'en' ? 'Order This Box' : 'Pedir Esta Caja';
+  panel.innerHTML = `
+    <button class="box-panel-close" onclick="closeBoxModal()">×</button>
+    <img class="box-panel-img" src="${b.img}" alt="${b.title[L]}"/>
+    <div class="box-panel-body">
+      <div class="box-panel-tag">${b.tag[L]}</div>
+      <h3>${b.title[L]}</h3>
+      <div class="box-panel-rule"></div>
+      <div style="font-family:var(--font-ui);font-size:.75rem;color:rgba(240,236,220,.45);margin-bottom:.25rem">${b.serves[L]}</div>
+      <div style="font-family:var(--font-disp);font-size:1.75rem;color:var(--brass-l);font-style:italic;margin-bottom:1.5rem">${b.price} <span style="font-family:var(--font-ui);font-size:.7rem;color:rgba(240,236,220,.35);font-style:normal">/ delivery</span></div>
+
+      <div class="box-section-head">${sectionWhat}</div>
+      <ul class="box-contents-list">${contentItems}</ul>
+
+      <div class="box-section-head">${sectionBreed}</div>
+      <div class="box-breed-row">${breedChips}</div>
+
+      <div class="box-section-head">${sectionNutri}</div>
+      <table class="nutri-table">
+        <thead><tr>${nutriHead.map(h=>`<th>${h}</th>`).join('')}</tr></thead>
+        <tbody>${nutriRows}</tbody>
+      </table>
+
+      <a href="#email" class="box-panel-cta" onclick="closeBoxModal()">${orderLabel}</a>
+    </div>`;
+  document.getElementById('boxModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBoxModal(e) {
+  if (e && e.target !== document.getElementById('boxModal')) return;
+  document.getElementById('boxModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closeBoxModal(); closeRecipeModal(); closeBreedModal(); }
+});
+
+// ─── BREED MODAL ─────────────────────────────────────────────────────────────
+const BREED_DATA = {
+  sf: {
+    img: 'assets/breeds/silver_fox_fullbody.jpg',
+    tag: { en: 'Rabbit · Heritage Breed 01', es: 'Conejo · Raza Patrimonial 01' },
+    name: { en: 'Silver Fox', es: 'Zorro Plateado' },
+    sci: 'Oryctolagus cuniculus domesticus',
+    desc: {
+      en: 'A heritage American breed with jet-black coat and exceptional meat-to-bone ratio. Dense, fine-grained muscle with mild, clean flavor that absorbs braising liquid beautifully. The saddle is the prestige cut — prized by Costa Rican fine-dining chefs for its tenderness and plating elegance.',
+      es: 'Raza patrimonial americana de pelaje negro intenso y excepcional rendimiento cárnico. Músculo denso y de grano fino, con sabor suave y limpio que absorbe los líquidos de cocción a la perfección. El lomo es el corte premium — apreciado por los chefs de alta cocina costarricense por su terneza y elegancia.'
+    },
+    nutri: {
+      note: { en: 'Per 100g cooked, bone-out', es: 'Por 100g cocido, sin hueso' },
+      rows: [
+        { l: { en:'Calories',      es:'Calorías'      }, v: '197 kcal' },
+        { l: { en:'Protein',       es:'Proteína'      }, v: '29.1 g'   },
+        { l: { en:'Total Fat',     es:'Grasa Total'   }, v: '8.0 g'    },
+        { l: { en:'Saturated Fat', es:'Grasa Saturada'}, v: '2.4 g'    },
+        { l: { en:'Cholesterol',   es:'Colesterol'    }, v: '82 mg'    },
+        { l: { en:'Carbohydrates', es:'Carbohidratos' }, v: '0 g'      },
+      ]
+    },
+    best: {
+      en: ['Braise — saddle and legs with wine or stock','Confit — legs slow in duck fat','Slow roast with garlic and fresh herbs','Rabbit rillettes','Stuffed saddle — classic restaurant presentation'],
+      es: ['Estofado — lomo y patas con vino o caldo','Confit — patas lento en grasa de pato','Asado lento con ajo y hierbas frescas','Rillettes de conejo','Lomo relleno — presentación clásica de restaurante']
+    },
+    flavor: {
+      en: 'Mild and clean with a subtle sweetness — closer to veal than chicken. The fine muscle fiber holds moisture beautifully through long cooks. Low fat content means fat-based methods (confit, butter baste) elevate it significantly. The saddle slices cleanly and holds its shape on the plate.',
+      es: 'Suave y limpio, con una dulzura sutil — más cercano al ternero que al pollo. La fibra muscular fina retiene la humedad perfectamente en cocciones largas. El bajo contenido en grasa significa que los métodos con base de grasa (confit, baño en mantequilla) lo elevan considerablemente. El lomo se corta con precisión y mantiene su forma en el plato.'
+    }
+  },
+  cal: {
+    img: 'assets/breeds/californian_fullbody.jpg',
+    tag: { en: 'Rabbit · Heritage Breed 02', es: 'Conejo · Raza Patrimonial 02' },
+    name: { en: 'Californian', es: 'Californiano' },
+    sci: 'Oryctolagus cuniculus domesticus',
+    desc: {
+      en: 'White body with distinctive dark points — the commercial benchmark breed. Broad hindquarters, deep loin, consistent portion weights. Mild and versatile: performs equally well in rustic braises and refined restaurant preparations.',
+      es: 'Cuerpo blanco con puntos oscuros característicos — el referente comercial de la industria. Cuartos traseros anchos, lomo profundo, pesos de porción consistentes. Suave y versátil: funciona igual de bien en guisos rústicos y preparaciones refinadas de restaurante.'
+    },
+    nutri: {
+      note: { en: 'Per 100g cooked, bone-out', es: 'Por 100g cocido, sin hueso' },
+      rows: [
+        { l: { en:'Calories',      es:'Calorías'      }, v: '194 kcal' },
+        { l: { en:'Protein',       es:'Proteína'      }, v: '28.8 g'   },
+        { l: { en:'Total Fat',     es:'Grasa Total'   }, v: '7.8 g'    },
+        { l: { en:'Saturated Fat', es:'Grasa Saturada'}, v: '2.3 g'    },
+        { l: { en:'Cholesterol',   es:'Colesterol'    }, v: '80 mg'    },
+        { l: { en:'Carbohydrates', es:'Carbohidratos' }, v: '0 g'      },
+      ]
+    },
+    best: {
+      en: ['Whole roast with citrus and fresh herbs','Classic rabbit stew — wine, tomato, olives','Rillettes — good fat yield from hindquarters','Grilled portions — high heat tolerance','Rich rabbit stock and consommé'],
+      es: ['Asado entero con cítricos y hierbas frescas','Estofado clásico — vino, tomate, aceitunas','Rillettes — buen rendimiento en grasa de los cuartos','Porciones a la parrilla — alta tolerancia al calor','Caldo y consomé de conejo']
+    },
+    flavor: {
+      en: 'Mild, clean and reliable — the most versatile of our rabbit breeds. Slightly broader muscle mass than the Silver Fox. The hindquarter carries enough intramuscular fat to stay moist at high temperatures. Pairs beautifully with acidic braising liquids: wine, citrus, tomato.',
+      es: 'Suave, limpio y confiable — el más versátil de nuestras razas de conejo. Masa muscular ligeramente más amplia que el Zorro Plateado. La cuarta trasera lleva suficiente grasa intramuscular para mantenerse jugosa a altas temperaturas. Combina perfectamente con líquidos de cocción ácidos: vino, cítricos, tomate.'
+    }
+  },
+  nzw: {
+    img: 'assets/breeds/new_zealand_white_fullbody.jpg',
+    tag: { en: 'Rabbit · Heritage Breed 03', es: 'Conejo · Raza Patrimonial 03' },
+    name: { en: 'New Zealand White', es: 'Nueva Zelanda Blanco' },
+    sci: 'Oryctolagus cuniculus domesticus',
+    desc: {
+      en: 'The largest of our three rabbit breeds — pure white, heavily muscled hindquarters, dense chest. Highest yield per carcass. The legs are ideal for long confit; the loin, sliced thin, plates like veal. A workhorse breed with gourmet results.',
+      es: 'La mayor de nuestras tres razas de conejo — blanco puro, cuartos traseros muy musculados, pecho denso. Mayor rendimiento por canal. Las patas son ideales para confits largos; el lomo, en láminas finas, se emplata como ternera. Una raza de trabajo con resultados gourmet.'
+    },
+    nutri: {
+      note: { en: 'Per 100g cooked, bone-out', es: 'Por 100g cocido, sin hueso' },
+      rows: [
+        { l: { en:'Calories',      es:'Calorías'      }, v: '201 kcal' },
+        { l: { en:'Protein',       es:'Proteína'      }, v: '29.6 g'   },
+        { l: { en:'Total Fat',     es:'Grasa Total'   }, v: '8.5 g'    },
+        { l: { en:'Saturated Fat', es:'Grasa Saturada'}, v: '2.5 g'    },
+        { l: { en:'Cholesterol',   es:'Colesterol'    }, v: '84 mg'    },
+        { l: { en:'Carbohydrates', es:'Carbohidratos' }, v: '0 g'      },
+      ]
+    },
+    best: {
+      en: ['Confit — legs, long and slow in duck fat','Pan-seared loin medallions, butter basted','Rabbit ragù — deep slow-braised sauce','Whole roast — high yield makes it economical','Farce and stuffed preparations'],
+      es: ['Confit — patas, largo y lento en grasa de pato','Medallones de lomo salteados con mantequilla','Ragù de conejo — salsa profunda y estofada','Asado entero — alto rendimiento lo hace económico','Preparaciones de relleno y farsa']
+    },
+    flavor: {
+      en: 'The most assertive of our three rabbit breeds — slightly richer in the legs with a deeper, almost game-adjacent tone when slow-cooked. The loin is clean and delicate, nearly veal-like. High protein density and low fat keep it lean even through long cooking. The size advantage means better portioning for restaurant service.',
+      es: 'El más pronunciado de nuestras tres razas de conejo — ligeramente más rico en las patas con un tono más profundo, casi de caza, en cocciones lentas. El lomo es limpio y delicado, casi como ternera. La alta densidad proteica y la baja grasa lo mantienen magro incluso en cocciones largas. La ventaja de tamaño significa mejor porcionado para servicio de restaurante.'
+    }
+  },
+  duck: {
+    img: 'assets/breeds/pekin_duck_fullbody.jpg',
+    tag: { en: 'Poultry · Two Breeds', es: 'Aves · Dos Razas' },
+    name: { en: 'Duck — Pekin & Muscovy', es: 'Pato — Pekin y Muscovy' },
+    sci: 'Anas platyrhynchos domesticus · Cairina moschata',
+    desc: {
+      en: 'Two breeds, two flavor profiles. The Pekin delivers a generously fatted breast that lacquers brilliantly at high heat — the magret every fine-dining kitchen wants. The Muscovy, native to Central America, runs leaner with a complex, almost veal-like depth that serious kitchens prize.',
+      es: 'Dos razas, dos perfiles de sabor. El Pekin ofrece una pechuga generosamente grasa que se lacquea brillantemente a alta temperatura — el magret que toda cocina de alta gastronomía desea. El Muscovy, nativo de Centroamérica, es más magro con una profundidad compleja, casi como ternera, que las cocinas serias valoran.'
+    },
+    nutri: {
+      note: { en: 'Per 100g cooked breast, skin-off', es: 'Por 100g pechuga cocida, sin piel' },
+      rows: [
+        { l: { en:'Calories',      es:'Calorías'      }, v: '201 kcal' },
+        { l: { en:'Protein',       es:'Proteína'      }, v: '27.2 g'   },
+        { l: { en:'Total Fat',     es:'Grasa Total'   }, v: '10.2 g'   },
+        { l: { en:'Saturated Fat', es:'Grasa Saturada'}, v: '3.5 g'    },
+        { l: { en:'Cholesterol',   es:'Colesterol'    }, v: '89 mg'    },
+        { l: { en:'Carbohydrates', es:'Carbohidratos' }, v: '0 g'      },
+      ]
+    },
+    best: {
+      en: ['Magret — pan-seared breast, scored skin, cold-pan start','Duck leg confit — classic 8-hour slow cook','Whole lacquered roast (Pekin)','Duck rillettes and pâté','Slow braise — legs in red wine and aromatics'],
+      es: ['Magret — pechuga salteada con piel marcada, sartén fría','Confit de pata — clásico cocción lenta 8 horas','Asado entero lacado (Pekin)','Rillettes y paté de pato','Estofado lento — patas en vino tinto y aromáticos']
+    },
+    flavor: {
+      en: 'The most complex flavor of any animal we raise. Duck fat is where the flavor lives — the Pekin subcutaneous layer renders into silk at high heat, basting the breast from within. The Muscovy carries iron-rich muscle closer to beef than poultry. Both benefit from acid: cherry, orange, vinegar, wine. Score the skin and start in a cold pan to render properly.',
+      es: 'El sabor más complejo de cualquier animal que criamos. La grasa del pato es donde vive el sabor — la capa subcutánea del Pekin se funde en seda a alta temperatura, bañando la pechuga desde adentro. El Muscovy lleva músculo rico en hierro, más cercano a la carne de res que a las aves. Ambos se benefician de la acidez: cereza, naranja, vinagre, vino. Marque la piel y comience en sartén fría para rendir correctamente.'
+    }
+  },
+  chicken: {
+    img: 'assets/breeds/chicken_fullbody.jpg',
+    tag: { en: 'Poultry · Pasture-Raised', es: 'Aves · Crianza Extensiva' },
+    name: { en: 'Pasture-Raised Chicken', es: 'Pollo de Campo' },
+    sci: 'Gallus gallus domesticus',
+    desc: {
+      en: 'Slow-grown on open pasture in Río Claro — no confinement, no growth hormones. Tight muscle, golden skin that crisps properly under dry heat, and dark meat that holds up to braising without falling apart. What chicken is supposed to taste like.',
+      es: 'Criado lentamente en pastizales abiertos en Río Claro — sin confinamiento, sin hormonas de crecimiento. Músculo firme, piel dorada que se vuelve crujiente correctamente bajo calor seco, y carne oscura que aguanta el estofado sin deshacerse. Lo que el pollo debe saber.'
+    },
+    nutri: {
+      note: { en: 'Per 100g cooked, skin-off', es: 'Por 100g cocido, sin piel' },
+      rows: [
+        { l: { en:'Calories',      es:'Calorías'      }, v: '185 kcal' },
+        { l: { en:'Protein',       es:'Proteína'      }, v: '28.3 g'   },
+        { l: { en:'Total Fat',     es:'Grasa Total'   }, v: '7.1 g'    },
+        { l: { en:'Saturated Fat', es:'Grasa Saturada'}, v: '2.0 g'    },
+        { l: { en:'Cholesterol',   es:'Colesterol'    }, v: '85 mg'    },
+        { l: { en:'Carbohydrates', es:'Carbohidratos' }, v: '0 g'      },
+      ]
+    },
+    best: {
+      en: ['Spatchcock roast — high heat 230°C, 45 min','Whole roast — herb butter under the skin','Braise — thighs and legs only, with wine','Poché — poached in aromatic stock','Rich chicken stock and consommé'],
+      es: ['Asado spatchcock — calor alto 230°C, 45 min','Asado entero — mantequilla de hierbas bajo la piel','Estofado — solo muslos y patas, con vino','Poché — pochado en caldo aromático','Caldo y consomé de pollo']
+    },
+    flavor: {
+      en: 'Genuinely different from commercially raised birds — pasture diet and slow growth develop real depth in the fat and dark meat. The skin has structural integrity and renders golden under dry heat. The breast is firmer and more flavorful than factory chicken; the thighs carry a mild richness that stands up to bold seasoning. Save the rendered fat — it is worth cooking with.',
+      es: 'Genuinamente diferente a las aves criadas comercialmente — la dieta de pastoreo y el crecimiento lento desarrollan verdadera profundidad en la grasa y la carne oscura. La piel tiene integridad estructural y se vuelve dorada bajo calor seco. La pechuga es más firme y sabrosa que el pollo industrial; los muslos llevan una riqueza suave que aguanta condimentos fuertes. Guarde la grasa rendida — vale la pena cocinar con ella.'
+    }
+  }
+};
+
+function openBreed(id) {
+  const b = BREED_DATA[id];
+  const L = currentLang;
+  const lNutri   = L === 'es' ? 'Perfil Nutricional' : 'Nutritional Profile';
+  const lBest    = L === 'es' ? 'Mejores Preparaciones' : 'Best Preparations';
+  const lFlavor  = L === 'es' ? 'Perfil de Sabor' : 'Flavor Notes';
+  document.getElementById('breedPanel').innerHTML = `
+    <button class="breed-panel-close" onclick="closeBreedModal()">×</button>
+    <img class="breed-panel-img" src="${b.img}" alt="${b.name[L]}"/>
+    <div class="breed-panel-body">
+      <div class="breed-panel-tag">${b.tag[L]}</div>
+      <h3>${b.name[L]}</h3>
+      <div class="breed-panel-sci">${b.sci}</div>
+      <div class="breed-panel-rule"></div>
+      <p class="breed-panel-desc">${b.desc[L]}</p>
+
+      <div class="breed-section-head">${lNutri} <span style="font-size:.44rem;opacity:.5;text-transform:none;letter-spacing:.04em;margin-left:.5rem">${b.nutri.note[L]}</span></div>
+      <dl class="breed-nutri-grid">
+        ${b.nutri.rows.map(r=>`<div class="breed-nutri-cell"><dt>${r.l[L]}</dt><dd>${r.v}</dd></div>`).join('')}
+      </dl>
+
+      <div class="breed-section-head">${lBest}</div>
+      <ul class="breed-best-list">
+        ${b.best[L].map(i=>`<li>${i}</li>`).join('')}
+      </ul>
+
+      <div class="breed-section-head">${lFlavor}</div>
+      <p class="breed-flavor-text">${b.flavor[L]}</p>
+    </div>
+  `;
+  document.getElementById('breedModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBreedModal(e) {
+  if (e && e.target !== document.getElementById('breedModal')) return;
+  document.getElementById('breedModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Hero video fade-in
+(function(){
+  const vid = document.getElementById('heroVid');
+  if(!vid) return;
+  function onReady(){ vid.classList.add('loaded'); }
+  if(vid.readyState >= 3) onReady();
+  else { vid.addEventListener('canplay', onReady, {once:true}); }
+  vid.addEventListener('error', function(){ vid.style.display='none'; }, {once:true});
+})();
+</script>
+
+</body>
+</html>

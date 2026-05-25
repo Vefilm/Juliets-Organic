@@ -1,0 +1,18 @@
+{
+  "generated": [
+    "chicken_fullbody"
+  ],
+  "failed": [],
+  "skipped": [
+    "silver_fox_portrait",
+    "silver_fox_fullbody",
+    "californian_portrait",
+    "californian_fullbody",
+    "new_zealand_white_portrait",
+    "new_zealand_white_fullbody",
+    "pekin_duck_portrait",
+    "pekin_duck_fullbody",
+    "muscovy_duck_portrait",
+    "muscovy_duck_fullbody"
+  ]
+}
