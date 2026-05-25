@@ -1092,6 +1092,10 @@ nav ul a:hover{color:var(--white)}
   .fstat-n{font-size:2.25rem}
   .why-card{padding:1.5rem 1.25rem}
   .footer-grid{grid-template-columns:1fr}
+  .breed-specs li{flex-direction:column;gap:.1rem;padding:.4rem 0}
+  .breed-specs li strong{text-align:left;color:rgba(247,244,238,.72)}
+  .bc-row{flex-wrap:wrap;gap:.2rem}
+  .bc-val{text-align:left}
 }
 
 /* ── Hero video background ── */
@@ -1117,7 +1121,7 @@ nav ul a:hover{color:var(--white)}
 .box-compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:2.5rem;border:1px solid rgba(196,164,74,.14)}
 .bc-col{padding:2rem 1.75rem;border-right:1px solid rgba(196,164,74,.1);position:relative}
 .bc-col:last-child{border-right:none}
-.bc-col.featured::before{content:'Most Popular';position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-family:var(--font-ui);font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;padding:.3rem .9rem;white-space:nowrap}
+.bc-popular{display:block;position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-family:var(--font-ui);font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;padding:.3rem .9rem;white-space:nowrap}
 .bc-head{font-family:var(--font-disp);font-size:1.25rem;font-style:italic;color:var(--brass-l);margin-bottom:.25rem}
 .bc-price{font-family:var(--font-ui);font-size:1.5rem;color:var(--white);font-weight:600;margin-bottom:1.5rem}
 .bc-price span{font-size:.55rem;letter-spacing:.1em;color:rgba(247,244,238,.3);font-weight:400}
@@ -1233,7 +1237,7 @@ nav ul a:hover{color:var(--white)}
     </div>
     <div class="hero-delivery reveal">
       <span class="delivery-pulse"></span>
-      Now delivering · GAM &nbsp;·&nbsp; San José &nbsp;·&nbsp; Zona Sur
+      <span data-i18n="delivery_dot">Now delivering · GAM · San José · Zona Sur</span>
     </div>
   </div>
 </section>
@@ -1476,40 +1480,41 @@ nav ul a:hover{color:var(--white)}
 <section class="box-compare">
   <div class="container">
     <div class="reveal" style="text-align:center">
-      <div class="ch-label" style="color:var(--brass-l)">Compare</div>
-      <h2 style="color:var(--white)">Which Box<br><em style="color:var(--brass-l)">is Right for You?</em></h2>
+      <div class="ch-label" style="color:var(--brass-l)" data-i18n="bc_compare_label">Compare</div>
+      <h2 style="color:var(--white)" data-i18n="bc_h2">Which Box<br><em style="color:var(--brass-l)" data-i18n="bc_h2_em">is Right for You?</em></h2>
       <div class="rule" style="background:var(--brass-l);margin:1rem auto"></div>
     </div>
     <div class="box-compare-grid reveal">
       <div class="bc-col">
-        <div class="bc-head">The Essentials</div>
-        <div class="bc-price">₡12,500 <span>/ delivery</span></div>
-        <div class="bc-row"><span class="bc-lbl">For</span><span class="bc-val">2–3 people</span></div>
-        <div class="bc-row"><span class="bc-lbl">Proteins</span><span class="bc-val">1 (your choice)</span></div>
-        <div class="bc-row"><span class="bc-lbl">Contents</span><span class="bc-val">Chicken + rabbit saddle</span></div>
-        <div class="bc-row"><span class="bc-lbl">Packaging</span><span class="bc-val">Vacuum-sealed</span></div>
-        <div class="bc-row"><span class="bc-lbl">Recipes</span><span class="bc-val">—</span></div>
-        <a href="#email" class="bc-cta" onclick="openBox('essentials')">Order Essentials</a>
+        <div class="bc-head" data-i18n="bc1_head">The Essentials</div>
+        <div class="bc-price">₡12,500 <span data-i18n="bc_delivery">/ delivery</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_for">For</span><span class="bc-val" data-i18n="bc1_for">2–3 people</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_proteins">Proteins</span><span class="bc-val" data-i18n="bc1_proteins">1 (your choice)</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_contents">Contents</span><span class="bc-val" data-i18n="bc1_contents">Chicken + rabbit saddle</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_packaging">Packaging</span><span class="bc-val" data-i18n="bc1_packaging">Vacuum-sealed</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_recipes">Recipes</span><span class="bc-val" data-i18n="bc1_recipes">—</span></div>
+        <a href="#email" class="bc-cta" data-i18n="bc1_cta" onclick="openBox('essentials')">Order Essentials</a>
       </div>
       <div class="bc-col featured">
-        <div class="bc-head">The Family Box</div>
-        <div class="bc-price">₡24,000 <span>/ delivery</span></div>
-        <div class="bc-row"><span class="bc-lbl">For</span><span class="bc-val">Family of 4</span></div>
-        <div class="bc-row"><span class="bc-lbl">Proteins</span><span class="bc-val">3 proteins</span></div>
-        <div class="bc-row"><span class="bc-lbl">Contents</span><span class="bc-val">Chicken · Duck · Rabbit</span></div>
-        <div class="bc-row"><span class="bc-lbl">Packaging</span><span class="bc-val">Vacuum-sealed</span></div>
-        <div class="bc-row"><span class="bc-lbl">Recipes</span><span class="bc-val">2 cards included</span></div>
-        <a href="#email" class="bc-cta" onclick="openBox('family')">Order Family Box</a>
+        <span class="bc-popular" data-i18n="bc_popular">Most Popular</span>
+        <div class="bc-head" data-i18n="bc2_head">The Family Box</div>
+        <div class="bc-price">₡24,000 <span data-i18n="bc_delivery">/ delivery</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_for">For</span><span class="bc-val" data-i18n="bc2_for">Family of 4</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_proteins">Proteins</span><span class="bc-val" data-i18n="bc2_proteins">3 proteins</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_contents">Contents</span><span class="bc-val" data-i18n="bc2_contents">Chicken · Duck · Rabbit</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_packaging">Packaging</span><span class="bc-val" data-i18n="bc2_packaging">Vacuum-sealed</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_recipes">Recipes</span><span class="bc-val" data-i18n="bc2_recipes">2 cards included</span></div>
+        <a href="#email" class="bc-cta" data-i18n="bc2_cta" onclick="openBox('family')">Order Family Box</a>
       </div>
       <div class="bc-col">
-        <div class="bc-head">Chef's Selection</div>
-        <div class="bc-price">₡38,000 <span>/ delivery</span></div>
-        <div class="bc-row"><span class="bc-lbl">For</span><span class="bc-val">2–4 people</span></div>
-        <div class="bc-row"><span class="bc-lbl">Proteins</span><span class="bc-val">3 premium cuts</span></div>
-        <div class="bc-row"><span class="bc-lbl">Contents</span><span class="bc-val">Saddle · Magret · Whole bird</span></div>
-        <div class="bc-row"><span class="bc-lbl">Packaging</span><span class="bc-val">Black label · Wax seal</span></div>
-        <div class="bc-row"><span class="bc-lbl">Recipes</span><span class="bc-val">Chef's notes included</span></div>
-        <a href="#email" class="bc-cta" onclick="openBox('chefs')">Order Chef's Box</a>
+        <div class="bc-head" data-i18n="bc3_head">Chef's Selection</div>
+        <div class="bc-price">₡38,000 <span data-i18n="bc_delivery">/ delivery</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_for">For</span><span class="bc-val" data-i18n="bc3_for">2–4 people</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_proteins">Proteins</span><span class="bc-val" data-i18n="bc3_proteins">3 premium cuts</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_contents">Contents</span><span class="bc-val" data-i18n="bc3_contents">Saddle · Magret · Whole bird</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_packaging">Packaging</span><span class="bc-val" data-i18n="bc3_packaging">Black label · Wax seal</span></div>
+        <div class="bc-row"><span class="bc-lbl" data-i18n="bc_lbl_recipes">Recipes</span><span class="bc-val" data-i18n="bc3_recipes">Chef's notes included</span></div>
+        <a href="#email" class="bc-cta" data-i18n="bc3_cta" onclick="openBox('chefs')">Order Chef's Box</a>
       </div>
     </div>
   </div>
@@ -2401,6 +2406,16 @@ const T = {
     footer_copy:'© 2025 Juliet\'s Organic Meats. Costa Rica.',
     footer_tagline:'No hormones · No antibiotics · Pasture-raised',
     mob_wa:'WhatsApp Us',
+    delivery_dot:'Now delivering · GAM · San José · Zona Sur',
+    bc_compare_label:'Compare',
+    bc_h2:'Which Box<br><em style="color:var(--brass-l)">is Right for You?</em>',
+    bc_h2_em:'is Right for You?',
+    bc_popular:'Most Popular',
+    bc_delivery:'/ delivery',
+    bc_lbl_for:'For', bc_lbl_proteins:'Proteins', bc_lbl_contents:'Contents', bc_lbl_packaging:'Packaging', bc_lbl_recipes:'Recipes',
+    bc1_head:'The Essentials', bc1_for:'2–3 people', bc1_proteins:'1 (your choice)', bc1_contents:'Chicken + rabbit saddle', bc1_packaging:'Vacuum-sealed', bc1_recipes:'—', bc1_cta:'Order Essentials',
+    bc2_head:'The Family Box', bc2_for:'Family of 4', bc2_proteins:'3 proteins', bc2_contents:'Chicken · Duck · Rabbit', bc2_packaging:'Vacuum-sealed', bc2_recipes:'2 cards included', bc2_cta:'Order Family Box',
+    bc3_head:"Chef's Selection", bc3_for:'2–4 people', bc3_proteins:'3 premium cuts', bc3_contents:'Saddle · Magret · Whole bird', bc3_packaging:'Black label · Wax seal', bc3_recipes:"Chef's notes included", bc3_cta:"Order Chef's Box",
   },
   es: {
     nav_home:'Inicio', nav_restaurants:'Para Restaurantes', nav_home2:'Para el Hogar',
@@ -2526,6 +2541,16 @@ const T = {
     footer_copy:'© 2025 Juliet\'s Organic Meats. Costa Rica.',
     footer_tagline:'Sin hormonas · Sin antibióticos · De pastoreo',
     mob_wa:'Escríbenos por WhatsApp',
+    delivery_dot:'Entregando ahora · GAM · San José · Zona Sur',
+    bc_compare_label:'Comparar',
+    bc_h2:'¿Cuál Caja<br><em style="color:var(--brass-l)">es la Indicada para Ti?</em>',
+    bc_h2_em:'es la Indicada para Ti?',
+    bc_popular:'Más Popular',
+    bc_delivery:'/ entrega',
+    bc_lbl_for:'Para', bc_lbl_proteins:'Proteínas', bc_lbl_contents:'Contenido', bc_lbl_packaging:'Empaque', bc_lbl_recipes:'Recetas',
+    bc1_head:'La Caja Esencial', bc1_for:'2–3 personas', bc1_proteins:'1 (a su elección)', bc1_contents:'Pollo + lomo de conejo', bc1_packaging:'Empacado al vacío', bc1_recipes:'—', bc1_cta:'Pedir Caja Esencial',
+    bc2_head:'La Caja Familiar', bc2_for:'Familia de 4', bc2_proteins:'3 proteínas', bc2_contents:'Pollo · Pato · Conejo', bc2_packaging:'Empacado al vacío', bc2_recipes:'2 tarjetas incluidas', bc2_cta:'Pedir Caja Familiar',
+    bc3_head:'Selección del Chef', bc3_for:'2–4 personas', bc3_proteins:'3 cortes premium', bc3_contents:'Lomo · Magret · Ave entera', bc3_packaging:'Etiqueta negra · Sello de cera', bc3_recipes:'Notas del chef incluidas', bc3_cta:'Pedir Selección del Chef',
   }
 };
 
